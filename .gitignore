@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+node_modules/
+build/
+temp/
+
+tmp/*
+!tmp/.gitkeep
+
+ormconfig.json
+
+src/modules/appointments/*
+src/modules/appointments/**
+
+ytec

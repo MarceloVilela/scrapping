@@ -1,0 +1,32 @@
+{
+  "link": "https://tecnoblog.net/349911/google-chrome-para-android-enfim-ganha-versao-de-64-bits/",
+  "title": "Google Chrome para Android enfim ganha versão de 64 bits",
+  "thumb": "https://tecnoblog.net/wp-content/uploads/2020/07/google-chrome-app-android-tecnoblog-700x394.jpg",
+  "contents": [
+    {
+      "type": "text",
+      "value": "O Google finalmente está lançando uma versão do Chrome para Android que roda em 64 bits. A novidade é promissora, mas ela será limitada aos usuários que estão em aparelhos que rodam o Android 10 e isso não engloba muita gente não – mas já é um começo, vai."
+    },
+    {
+      "type": "text",
+      "value": "O Android já suporta processadores 64 bits desde 2014, quando o Android 6 Marshmallow foi lançado. Diferente da Apple, que mudou para 64 bits e depois de um tempo obrigou todo app a ser feito para 64 bits, o Google ficou no “quem quiser vem” e isso alcançou até mesmo o Google Chrome para dispositivos móveis."
+    },
+    {
+      "type": "text",
+      "value": "Só agora, seis anos depois da mudança, o navegador do gigante das buscas começou a ganhar uma versão de 64 bits. Ele é o Chrome 85 e seguiu para o 86, ambos ainda em estádio inicial de testes (Dev e Canary) e que já exibem a informação de que foram criados com os 64 bits em mente – é possível ver isso na primeira linha que aparece ao digitar chrome://version no navegador."
+    },
+    {
+      "type": "text",
+      "value": "Aparentemente esta versão de 64 bits do Chrome está chegando apenas para usuários que estão com o Android 10 instalado e isso não significa que são muitas pessoas. De acordo com dados do Google do dia 10 de abril deste ano, apenas 8,2% de todos os Androids estão no Android 10, mesmo quase que um ano depois de seu lançamento. A versão mais utilizada é o Android 9, com 31,3% dos aparelhos."
+    },
+    {
+      "type": "text",
+      "value": "Mesmo que para poucos, antes tarde do que ainda mais tarde com seus próprios apps, não é Google?"
+    },
+    {
+      "type": "text",
+      "value": "Com informações: Android Police."
+    }
+  ],
+  "created_at": "2020-08-14T18:59:45.231Z"
+}
