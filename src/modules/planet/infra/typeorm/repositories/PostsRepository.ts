@@ -9,7 +9,7 @@ class PostsRepository implements IPostsRepository {
   private ormRepository: Repository<Bulletin>;
 
   constructor() {
-    this.ormRepository = getRepository(Bulletin, 'mongo');
+    this.ormRepository = getRepository(Bulletin, process.env.DB_MONGO_CONNECTION);
   }
 
   public async create({

@@ -12,7 +12,7 @@ class HistoryRepository implements IPostsRepository {
   private ormRepository: Repository<Post>;
 
   constructor() {
-    this.ormRepository = getRepository(History, 'mongo');
+    this.ormRepository = getRepository(History, process.env.DB_MONGO_CONNECTION);
   }
 
   public async create({

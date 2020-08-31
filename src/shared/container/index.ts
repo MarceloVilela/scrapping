@@ -1,18 +1,7 @@
 import { container } from 'tsyringe';
 
-import '@modules/users/providers';
 import '../providers';
 
-import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
-import AppointmentsRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentsRepository';
-
-import IUsersRepository from '@modules/users/repositories/IUsersRepository';
-import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
-import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
-import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
-import INotificationsRepository from '@modules/notifications/repositories/INotificationsRepository';
-import NotificationsRepository from '@modules/notifications/infra/typeorm/repositories/NotificationsRepository';
-//
 import IPostsRepository from '@modules/technews/repositories/IPostRepository';
 import PostsRepository from '@modules/technews/infra/typeorm/repositories/PostsRepository';
 //
@@ -28,26 +17,6 @@ import PlanetHistoryRepository from '@modules/planet/infra/typeorm/repositories/
 //
 import IPlanetSourcePost from '@modules/planetSource/repositories/IPostRepository';
 import PlanetSuzy from '@modules/planetSource/infra/crosscutting/repositories/PlanetSuzy';
-
-container.registerSingleton<IAppointmentsRepository>(
-  'AppointmentsRepository',
-  AppointmentsRepository,
-);
-
-container.registerSingleton<IUsersRepository>(
-  'UsersRepository',
-  UsersRepository,
-);
-
-container.registerSingleton<IUserTokensRepository>(
-  'UserTokensRepository',
-  UserTokensRepository,
-);
-
-container.registerSingleton<INotificationsRepository>(
-  'NotificationsRepository',
-  NotificationsRepository,
-);
 
 container.registerSingleton<IPostsRepository>(
   'PostsRepository',

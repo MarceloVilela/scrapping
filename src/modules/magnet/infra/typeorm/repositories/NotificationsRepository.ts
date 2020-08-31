@@ -7,7 +7,7 @@ class NotificationsRepository implements INotificationsRepository {
   private ormRepository: Repository<Notification>;
 
   constructor() {
-    this.ormRepository = getRepository(Notification, 'mongo');
+    this.ormRepository = getRepository(Notification, process.env.DB_MONGO_CONNECTION);
   }
 
   public async create({

@@ -12,7 +12,7 @@ class PostsRepository implements IPostsRepository {
   private ormRepository: Repository<Post>;
 
   constructor() {
-    this.ormRepository = getRepository(Post, 'mongo');
+    this.ormRepository = getRepository(Post, process.env.DB_MONGO_CONNECTION);
   }
 
   public async create({
