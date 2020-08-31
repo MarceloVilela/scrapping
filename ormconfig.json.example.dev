@@ -1,0 +1,31 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "isilo.db.elephantsql.com",
+    "port": 5432,
+    "username": "swmwqfow",
+    "password": "",
+    "database": "swmwqfow",
+    "entities": [
+      "./src/modules/**/infra/typeorm/entities/*.ts"
+    ],
+    "migrations": [
+      "./src/shared/infra/typeorm/migrations/*.ts"
+    ],
+    "cli": {
+      "migrationsDir": "./src/shared/infra/typeorm/migrations"
+    }
+  },
+  {
+    "name": "mongo",
+    "type": "mongodb",
+    "url": "mongodb+srv://USER:PASSWORD@cluster0-fq4ze.mongodb.net/tracking?retryWrites=true",
+    "useUnifiedTopology": true,
+    "ssl": true,
+    "entities": [
+      "./src/modules/**/infra/typeorm/schemas/*.ts"
+    ],
+    "logging": "all"
+  }
+]
