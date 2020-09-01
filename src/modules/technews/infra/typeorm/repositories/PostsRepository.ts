@@ -28,7 +28,7 @@ class PostsRepository implements IPostsRepository {
       contents,
     });
 
-    const contentRepostitory = getRepository(PostContent, 'mongo');
+    const contentRepostitory = getRepository(PostContent, process.env.DB_MONGO_CONNECTION);
     const contentsItems = contentRepostitory.create(contents);
 
     post.contents = contentsItems;
