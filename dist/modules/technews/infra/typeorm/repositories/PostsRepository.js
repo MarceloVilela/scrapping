@@ -31,7 +31,7 @@ class PostsRepository {
       thumb,
       contents
     });
-    const contentRepostitory = (0, _typeorm.getRepository)(_PostContent.default, 'mongo');
+    const contentRepostitory = (0, _typeorm.getRepository)(_PostContent.default, process.env.DB_MONGO_CONNECTION);
     const contentsItems = contentRepostitory.create(contents);
     post.contents = contentsItems;
     await this.ormRepository.save(post);
