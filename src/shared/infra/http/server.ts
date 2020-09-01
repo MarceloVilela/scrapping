@@ -36,6 +36,6 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(process.env.APP_PORT, () => {
-  console.log('Server listen on port: '+process.env.APP_PORT);
+app.listen(process.env.PORT, () => {
+  console.log('Server listen on port: '+process.env.PORT);
 });
