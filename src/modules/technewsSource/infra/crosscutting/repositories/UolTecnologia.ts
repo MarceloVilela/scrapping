@@ -5,58 +5,53 @@ import IShowPostDTO from '@modules/technewsSource/dtos/IShowPostDTO';
 import IResponseHomeDTO from '@modules/technewsSource/dtos/IResponseHomeDTO';
 import Article from '../schemas/Article';
 
-class Tecmundo implements IArticlesRepository {
+class UolTecnologia implements IArticlesRepository {
   getOriginUrl(): string {
-    return 'https://www.tecmundo.com.br';
+    return 'https://www.uol.com.br/tilt';
   }
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@TecMundo/getHome()/url:${url}`);
-    const response = await JSDOM.fromURL(url);
+    console.log(`@UolTecnologia/getHome()/url:${url}`);
+    const response = await JSDOM.fromURL(`${url}`);
     const { document } = response.window;
 
-    const getContent = (elPost: Element) => ({
-      link: elPost.querySelector('h3 a')?.getAttribute('href'),
-      title: elPost.querySelector('h3')?.textContent,
-      thumb: elPost.querySelector('figure img')?.getAttribute('data-src'),
-      // preview: '',
-      created_at: elPost.querySelector('.tec--timestamp__item')?.textContent,
-    });
+    const getContent = (elPost: Element) => {
+      return {
+        link: elPost.querySelector('a')?.getAttribute('href'),
+        title: elPost.querySelector('h3')?.textContent,
+        thumb: elPost.querySelector('img')?.getAttribute('data-src'),
+        created_at: ''
+      }
+    };
 
-    const postsData = [
-      ...document.querySelectorAll('.tec--list.z--mt-24 .tec--list__item'),
-    ].map((elPost) => getContent(elPost));
+    const postsData = [...document.querySelectorAll('.thumbnails-wrapper'),]
+      .map(elPost => getContent(elPost));
 
     return { posts: postsData };
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {
-    console.log(`@TecMundo/getPost()/url:${url}`);
+    console.log(`@UolTecnologia/getPost()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 
-    const link = document
-      .querySelector('link[rel="canonical"]')
-      ?.getAttribute('href');
+    const link = document.querySelector('meta[property="og:url"]')?.getAttribute('content');
 
-    const title = document
-      .querySelector('meta[property="og:title"]')
-      ?.getAttribute('content');
+    const title = document.querySelector('header h1')?.textContent?.replace(/\s+/, '');
 
     const thumb = document
-      .querySelector('.tec--article__header figure img')
-      ?.getAttribute('data-src');
+      .querySelector('img.pinit-img')
+      ?.getAttribute('src');
 
     const getContent = (el: Element) => {
       if (
-        el.querySelector('img') !== null
-        && el.querySelector('img')?.getAttribute('data-lazy-srcset')
+        el.querySelector('img') !== null &&
+        el.querySelector('img')?.getAttribute('data-lazy-srcset')
       ) {
-        const imgSrc = el
-          .querySelector('img')
-          ?.getAttribute('data-lazy-srcset')
-        const [img] = imgSrc ? imgSrc.split(' ') : '';
+        const [img] = String(el.querySelector('img')?.getAttribute('data-lazy-srcset'))
+          .split(' ');
+
         if (img !== thumb) {
           return {
             type: 'image',
@@ -74,9 +69,9 @@ class Tecmundo implements IArticlesRepository {
         };
       }
       if (
-        el.tagName === 'P'
-        && el.getAttribute('class') === null
-        && el.getAttribute('id') === null
+        el.tagName === 'P' &&
+        el.getAttribute('class') === null &&
+        el.getAttribute('id') === null
       ) {
         return { type: 'text', content: el.textContent };
       }
@@ -86,9 +81,9 @@ class Tecmundo implements IArticlesRepository {
       return {};
     };
 
-    const contents = [...document.querySelectorAll('.tec--article__body *')]
-      .map(elPost => getContent(elPost))
-      .map(dataPost => ({
+    const contents = Array.from(document.querySelectorAll('.content-article .text > *'))
+      .map((elPost) => getContent(elPost))
+      .map((dataPost) => ({
         type: String(dataPost.type),
         value: String(dataPost.content),
       }));
@@ -105,4 +100,4 @@ class Tecmundo implements IArticlesRepository {
   }
 }
 
-export default Tecmundo;
+export default UolTecnologia;

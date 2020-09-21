@@ -5,58 +5,60 @@ import IShowPostDTO from '@modules/technewsSource/dtos/IShowPostDTO';
 import IResponseHomeDTO from '@modules/technewsSource/dtos/IResponseHomeDTO';
 import Article from '../schemas/Article';
 
-class Tecmundo implements IArticlesRepository {
-  getOriginUrl(): string {
-    return 'https://www.tecmundo.com.br';
+class GizModo implements IArticlesRepository {
+  getOriginUrl() {
+    return 'https://gizmodo.uol.com.br';
   }
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@TecMundo/getHome()/url:${url}`);
-    const response = await JSDOM.fromURL(url);
+    console.log(`@GizModo/getHome()/url:${url}`);
+    const response = await JSDOM.fromURL(`${url}`);
     const { document } = response.window;
 
     const getContent = (elPost: Element) => ({
       link: elPost.querySelector('h3 a')?.getAttribute('href'),
-      title: elPost.querySelector('h3')?.textContent,
-      thumb: elPost.querySelector('figure img')?.getAttribute('data-src'),
-      // preview: '',
-      created_at: elPost.querySelector('.tec--timestamp__item')?.textContent,
+      title: elPost.querySelector('h3')?.textContent?.replace(/\n|\r|\t/g, ''),
+      thumb: elPost
+        .querySelector('.postFeaturedImg img')
+        ?.getAttribute('srcset')
+        ?.split(' ')[0],
+      created_at: elPost.querySelector('.published.updated')?.textContent,
     });
 
-    const postsData = [
-      ...document.querySelectorAll('.tec--list.z--mt-24 .tec--list__item'),
-    ].map((elPost) => getContent(elPost));
+    const postsData = [...document.querySelectorAll('.layoutContent-main .list-item'),]
+      .map((elPost) => getContent(elPost));
+    console.log(postsData);
 
     return { posts: postsData };
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {
-    console.log(`@TecMundo/getPost()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 
     const link = document
-      .querySelector('link[rel="canonical"]')
-      ?.getAttribute('href');
+      .querySelector('meta[property="og:url"]')
+      ?.getAttribute('content');
 
     const title = document
-      .querySelector('meta[property="og:title"]')
+      .querySelector('meta[property="og:title"]')!
       ?.getAttribute('content');
 
     const thumb = document
-      .querySelector('.tec--article__header figure img')
-      ?.getAttribute('data-src');
+      .querySelector('.postFeaturedImg--single img')
+      ?.getAttribute('src');
 
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null
-        && el.querySelector('img')?.getAttribute('data-lazy-srcset')
+        && el.querySelector('img')?.getAttribute('src')
       ) {
         const imgSrc = el
           .querySelector('img')
-          ?.getAttribute('data-lazy-srcset')
-        const [img] = imgSrc ? imgSrc.split(' ') : '';
+          ?.getAttribute('src')
+
+        const img = String(imgSrc);
         if (img !== thumb) {
           return {
             type: 'image',
@@ -86,7 +88,7 @@ class Tecmundo implements IArticlesRepository {
       return {};
     };
 
-    const contents = [...document.querySelectorAll('.tec--article__body *')]
+    const contents = [...document.querySelectorAll('.postContent *')]
       .map(elPost => getContent(elPost))
       .map(dataPost => ({
         type: String(dataPost.type),
@@ -105,4 +107,4 @@ class Tecmundo implements IArticlesRepository {
   }
 }
 
-export default Tecmundo;
+export default GizModo;
