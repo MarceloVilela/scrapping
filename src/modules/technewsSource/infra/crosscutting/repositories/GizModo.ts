@@ -12,7 +12,6 @@ class GizModo implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@GizModo/getHome()/url:${url}`);
     const response = await JSDOM.fromURL(`${url}`);
     const { document } = response.window;
 
@@ -28,8 +27,7 @@ class GizModo implements IArticlesRepository {
 
     const postsData = [...document.querySelectorAll('.layoutContent-main .list-item'),]
       .map((elPost) => getContent(elPost));
-    console.log(postsData);
-
+    
     return { posts: postsData };
   }
 

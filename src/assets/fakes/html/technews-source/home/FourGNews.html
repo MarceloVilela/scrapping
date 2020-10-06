@@ -1,0 +1,4484 @@
+<html lang="pt-pt">
+
+<head>
+  <meta charset="utf-8">
+  <title>4gnews</title>
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1">
+
+  <meta name="description"
+    content="4gnews | Notícias de tecnologia | Android, iOS, Apple, Windows Mobile, Microsoft, Huawei, Samsung e muito mais! Tudo o que precisas de saber está aqui!">
+
+  <meta property="og:title" content="4gnews">
+
+  <meta property="og:description"
+    content="4gnews | Notícias de tecnologia | Android, iOS, Apple, Windows Mobile, Microsoft, Huawei, Samsung e muito mais! Tudo o que precisas de saber está aqui!">
+
+  <meta property="og:url" content="https://4gnews.pt/">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:image" content="https://cdn.4gnews.pt/ogimage.png">
+
+  <meta property="og:site_name" content="4gnews">
+
+  <meta property="fb:app_id" content="355926974900518">
+
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="canonical" href="https://4gnews.pt/">
+
+
+  <link rel="manifest" href="/manifest.json">
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://4gnews.pt/feed/">
+
+
+
+  <meta property="fb:pages" content="168951706630127">
+
+  <style>
+    a {
+      text-decoration: none;
+      color: #e68a00
+    }
+
+    input {
+      -webkit-appearance: none
+    }
+
+    html {
+      -ms-overflow-style: scrollbar;
+      font-size: 16px;
+      min-height: 100%
+    }
+
+    ::after,
+    ::before {
+      -webkit-box-sizing: inherit;
+      box-sizing: inherit
+    }
+
+    .container {
+      width: 100%;
+      padding-right: 10px;
+      padding-left: 10px;
+      margin-right: auto;
+      margin-left: auto
+    }
+
+    @media (min-width:576px) {
+      .container {
+        max-width: 540px
+      }
+    }
+
+    @media (min-width:768px) {
+      .container {
+        max-width: 720px
+      }
+    }
+
+    @media (min-width:992px) {
+      .container {
+        max-width: 960px
+      }
+    }
+
+    @media (min-width:1200px) {
+      .container {
+        max-width: 1140px
+      }
+    }
+
+    .container-fluid {
+      width: 100%;
+      padding-right: 10px;
+      padding-left: 10px;
+      margin-right: auto;
+      margin-left: auto
+    }
+
+    .row {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -10px;
+      margin-left: -10px
+    }
+
+    .col,
+    .col-12,
+    .col-3,
+    .col-4,
+    .col-6,
+    .col-8 {
+      width: 100%
+    }
+
+    .col,
+    .col-12,
+    .col-3,
+    .col-4,
+    .col-6,
+    .col-8,
+    .col-auto {
+      position: relative;
+      padding-right: 10px;
+      padding-left: 10px
+    }
+
+    .col-lg,
+    .col-lg-12,
+    .col-lg-3,
+    .col-lg-4,
+    .col-lg-6,
+    .col-lg-8,
+    .col-lg-auto,
+    .col-md,
+    .col-md-12,
+    .col-md-3,
+    .col-md-4,
+    .col-md-6,
+    .col-md-8,
+    .col-md-auto {
+      position: relative;
+      width: 100%;
+      padding-right: 10px;
+      padding-left: 10px
+    }
+
+    .col {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%
+    }
+
+    .col-auto {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: auto;
+      max-width: 100%
+    }
+
+    .col-3,
+    .col-4 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%
+    }
+
+    .col-4 {
+      -ms-flex: 0 0 33.3%;
+      flex: 0 0 33.3%;
+      max-width: 33.3%
+    }
+
+    .col-12,
+    .col-6,
+    .col-8 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%
+    }
+
+    .col-12,
+    .col-8 {
+      -ms-flex: 0 0 66.6%;
+      flex: 0 0 66.6%;
+      max-width: 66.6%
+    }
+
+    .col-12 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%
+    }
+
+    @media (min-width:768px) {
+      .col-md {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%
+      }
+
+      .col-md-auto {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+      }
+
+      .col-md-3 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%
+      }
+
+      .col-md-4,
+      .col-md-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.3%;
+        flex: 0 0 33.3%;
+        max-width: 33.3%
+      }
+
+      .col-md-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+      }
+
+      .col-md-12,
+      .col-md-8 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.6%;
+        flex: 0 0 66.6%;
+        max-width: 66.6%
+      }
+
+      .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+    }
+
+    @media (min-width:992px) {
+      .col-lg {
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%
+      }
+
+      .col-lg-auto {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%
+      }
+
+      .col-lg-3 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%
+      }
+
+      .col-lg-4,
+      .col-lg-6 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.3%;
+        flex: 0 0 33.3%;
+        max-width: 33.3%
+      }
+
+      .col-lg-6 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%
+      }
+
+      .col-lg-12,
+      .col-lg-8 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.6%;
+        flex: 0 0 66.6%;
+        max-width: 66.6%
+      }
+
+      .col-lg-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+      }
+    }
+
+    .d-none {
+      display: none
+    }
+
+    .d-inline-block {
+      display: inline-block
+    }
+
+    .d-flex {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+    }
+
+    .d-inline-flex {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex
+    }
+
+    @media (min-width:768px) {
+      .d-md-none {
+        display: none
+      }
+
+      .d-md-inline-block {
+        display: inline-block
+      }
+
+      .d-md-flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+      }
+
+      .d-md-inline-flex {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex
+      }
+    }
+
+    @media (min-width:992px) {
+      .d-lg-none {
+        display: none
+      }
+
+      .d-lg-inline-block {
+        display: inline-block
+      }
+
+      .d-lg-flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex
+      }
+
+      .d-lg-inline-flex {
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex
+      }
+    }
+
+    @media print {
+      .d-print-none {
+        display: none !important
+      }
+
+      .d-print-inline {
+        display: inline !important
+      }
+
+      .d-print-inline-block {
+        display: inline-block !important
+      }
+
+      .d-print-block {
+        display: block !important
+      }
+
+      .d-print-table {
+        display: table !important
+      }
+
+      .d-print-table-row {
+        display: table-row !important
+      }
+
+      .d-print-table-cell {
+        display: table-cell !important
+      }
+
+      .d-print-flex {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important
+      }
+
+      .d-print-inline-flex {
+        display: -webkit-inline-box !important;
+        display: -ms-inline-flexbox !important;
+        display: inline-flex !important
+      }
+    }
+
+    .b-jc-start {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start
+    }
+
+    .b-jc-end {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end
+    }
+
+    .b-jc-center {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center
+    }
+
+    .b-jc-between {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between
+    }
+
+    .b-jc-around {
+      -ms-flex-pack: distribute;
+      justify-content: space-around
+    }
+
+    .b-ai-start {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start
+    }
+
+    .b-ai-end {
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end
+    }
+
+    .b-ai-center {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center
+    }
+
+    .b-ac-start {
+      -ms-flex-line-pack: start;
+      align-content: flex-start
+    }
+
+    .b-ac-end {
+      -ms-flex-line-pack: end;
+      align-content: flex-end
+    }
+
+    .b-ac-center {
+      -ms-flex-line-pack: center;
+      align-content: center
+    }
+
+    .b-ac-between {
+      -ms-flex-line-pack: justify;
+      align-content: space-between
+    }
+
+    .b-ac-around {
+      -ms-flex-line-pack: distribute;
+      align-content: space-around
+    }
+
+    .b-as-start {
+      -ms-flex-item-align: start;
+      align-self: flex-start
+    }
+
+    .b-as-end {
+      -ms-flex-item-align: end;
+      align-self: flex-end
+    }
+
+    .b-as-center {
+      -ms-flex-item-align: center;
+      align-self: center
+    }
+
+    @media (min-width:768px) {
+      .b-jc-md-start {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start
+      }
+
+      .b-jc-md-end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end
+      }
+
+      .b-jc-md-center {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+      }
+
+      .b-jc-md-between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+      }
+
+      .b-jc-md-around {
+        -ms-flex-pack: distribute;
+        justify-content: space-around
+      }
+
+      .b-ai-md-start {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start
+      }
+
+      .b-ai-md-end {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end
+      }
+
+      .b-ai-md-center {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+      }
+
+      .b-ac-md-start {
+        -ms-flex-line-pack: start;
+        align-content: flex-start
+      }
+
+      .b-ac-md-end {
+        -ms-flex-line-pack: end;
+        align-content: flex-end
+      }
+
+      .b-ac-md-center {
+        -ms-flex-line-pack: center;
+        align-content: center
+      }
+
+      .b-ac-md-between {
+        -ms-flex-line-pack: justify;
+        align-content: space-between
+      }
+
+      .b-ac-md-around {
+        -ms-flex-line-pack: distribute;
+        align-content: space-around
+      }
+
+      .b-as-md-start {
+        -ms-flex-item-align: start;
+        align-self: flex-start
+      }
+
+      .b-as-md-end {
+        -ms-flex-item-align: end;
+        align-self: flex-end
+      }
+
+      .b-as-md-center {
+        -ms-flex-item-align: center;
+        align-self: center
+      }
+    }
+
+    @media (min-width:992px) {
+      .b-jc-lg-start {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start
+      }
+
+      .b-jc-lg-end {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end
+      }
+
+      .b-jc-lg-center {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+      }
+
+      .b-jc-lg-between {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+      }
+
+      .b-jc-lg-around {
+        -ms-flex-pack: distribute;
+        justify-content: space-around
+      }
+
+      .b-ai-lg-start {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start
+      }
+
+      .b-ai-lg-end {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end
+      }
+
+      .b-ai-lg-center {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+      }
+
+      .b-ac-lg-start {
+        -ms-flex-line-pack: start;
+        align-content: flex-start
+      }
+
+      .b-ac-lg-end {
+        -ms-flex-line-pack: end;
+        align-content: flex-end
+      }
+
+      .b-ac-lg-center {
+        -ms-flex-line-pack: center;
+        align-content: center
+      }
+
+      .b-ac-lg-between {
+        -ms-flex-line-pack: justify;
+        align-content: space-between
+      }
+
+      .b-ac-lg-around {
+        -ms-flex-line-pack: distribute;
+        align-content: space-around
+      }
+
+      .b-as-lg-start {
+        -ms-flex-item-align: start;
+        align-self: flex-start
+      }
+
+      .b-as-lg-end {
+        -ms-flex-item-align: end;
+        align-self: flex-end
+      }
+
+      .b-as-lg-center {
+        -ms-flex-item-align: center;
+        align-self: center
+      }
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Regular.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Regular.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Regular.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Regular.svg#Montserrat) format("svg")
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-600.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-600.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-600.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-600.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-600.svg#Montserrat) format("svg")
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      font-style: Italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic.svg#Montserrat) format("svg")
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      font-style: Italic;
+      font-weight: 600;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic600.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic600.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic600.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic600.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Montserrat/Montserrat-Italic600.svg#Montserrat) format("svg")
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Regular.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Regular.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Regular.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Regular.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Regular.svg#Roboto) format("svg")
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-700.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-700.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-700.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-700.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-700.svg#Roboto) format("svg")
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      font-style: Italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic.svg#Roboto) format("svg")
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      font-style: Italic;
+      font-weight: 700;
+      font-display: swap;
+      src: url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic700.eot?) format("eot"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic700.woff) format("woff"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic700.woff2) format("woff2"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic700.ttf) format("truetype"), url(https://cdn.4gnews.pt/fonts/Roboto/Roboto-Italic700.svg#Roboto) format("svg")
+    }
+
+    *,
+    :after,
+    :before,
+    html {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    body,
+    td,
+    th {
+      font-size: 1rem
+    }
+
+    body,
+    p {
+      font-family: "Roboto", Helvetica, Arial, sans-serif
+    }
+
+    body {
+      background: #fff;
+      color: #404040;
+      margin: 0;
+      line-height: 1.5
+    }
+
+    p {
+      line-height: 1.625;
+      font-size: 1.125rem
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      padding: 0
+    }
+
+    .title,
+    article strong,
+    h1,
+    h2,
+    h3,
+    h4 {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    blockquote,
+    ol,
+    p,
+    ul {
+      word-wrap: break-word
+    }
+
+    blockquote,
+    ol,
+    p {
+      margin: 1em 0 1.5em
+    }
+
+    ul {
+      padding: 0;
+      list-style: none
+    }
+
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border: 0;
+      border-top: 1px solid #eee
+    }
+
+    .search-for {
+      color: #757575
+    }
+
+    .m0,
+    .table-wrapper table,
+    table ol,
+    table p,
+    table ul,
+    ul {
+      margin: 0
+    }
+
+    .mt10 {
+      margin-top: 10px
+    }
+
+    .mt15 {
+      margin-top: 15px
+    }
+
+    .mt20 {
+      margin-top: 20px
+    }
+
+    .mt30 {
+      margin-top: 30px
+    }
+
+    .mt40 {
+      margin-top: 40px
+    }
+
+    .mt60 {
+      margin-top: 60px
+    }
+
+    .mb10 {
+      margin-bottom: 10px
+    }
+
+    .mb20 {
+      margin-bottom: 20px
+    }
+
+    .mtb10 {
+      margin-top: 10px;
+      margin-bottom: 10px
+    }
+
+    .mtb20 {
+      margin-top: 20px;
+      margin-bottom: 20px
+    }
+
+    .mb30 {
+      margin-bottom: 30px
+    }
+
+    .mb40 {
+      margin-bottom: 40px
+    }
+
+    .mb50 {
+      margin-bottom: 50px
+    }
+
+    .mcenter {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .p0 {
+      padding: 0
+    }
+
+    .pl0 {
+      padding-left: 0
+    }
+
+    .ptb20 {
+      padding-top: 20px;
+      padding-bottom: 20px
+    }
+
+    .ps15,
+    .ps20 {
+      padding-left: 20px;
+      padding-right: 20px
+    }
+
+    .pt10 {
+      padding-top: 10px
+    }
+
+    .pt20 {
+      padding-top: 20px
+    }
+
+    .pt30 {
+      padding-top: 30px
+    }
+
+    .pb10 {
+      padding-bottom: 10px
+    }
+
+    .pb20 {
+      padding-bottom: 20px
+    }
+
+    .pb30 {
+      padding-bottom: 30px
+    }
+
+    .pr0 {
+      padding-right: 0
+    }
+
+    .pos-r {
+      position: relative
+    }
+
+    .fw-wrap {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap
+    }
+
+    .visually-hidden {
+      border: 0;
+      clip: rect(1px 1px 1px 1px);
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px
+    }
+
+    .w-100,
+    article span.img {
+      width: 100%
+    }
+
+    .mw-685 {
+      max-width: 685px
+    }
+
+    .mw-p {
+      max-width: 42em
+    }
+
+    .h-100 {
+      height: 100%
+    }
+
+    .h-auto {
+      height: auto
+    }
+
+    .min-h--120 {
+      min-height: 120px
+    }
+
+    .min-h--250 {
+      min-height: 250px
+    }
+
+    .min-h--280 {
+      min-height: 280px
+    }
+
+    .txt-l,
+    table {
+      text-align: left
+    }
+
+    .txt-r {
+      text-align: right
+    }
+
+    .txt-c {
+      text-align: center
+    }
+
+    .full-img-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%
+    }
+
+    .full-h-img-bg img,
+    .full-img-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      margin: auto;
+      height: 100%;
+      min-height: 100%
+    }
+
+    .full-h-img-bg {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 0
+    }
+
+    .full-h-img-bg img {
+      width: auto
+    }
+
+    .bg-white {
+      background-color: #fff
+    }
+
+    .bg-light-gray {
+      background-color: #f9f9f9
+    }
+
+    .block {
+      display: block
+    }
+
+    .inline-block {
+      display: inline-block
+    }
+
+    .w-full-row {
+      width: calc(100% + 30px)
+    }
+
+    .brand-txt-color {
+      color: #995c00
+    }
+
+    table {
+      border: 1px solid #dadada;
+      border-collapse: collapse;
+      width: 100%;
+      line-height: 1.35;
+      margin: 1em 0
+    }
+
+    table ol,
+    table ul {
+      padding: 0 0 0 1.25rem
+    }
+
+    td,
+    th {
+      vertical-align: baseline;
+      padding: 7px .625rem 4px
+    }
+
+    th {
+      font-weight: 700;
+      background: #eee;
+      font-family: "Montserrat", Helvetica, Arial, sans-serif
+    }
+
+    th,
+    tr:not(:last-child) {
+      border-bottom: 1px solid #dadada
+    }
+
+    td:not(:last-child) {
+      border-right: 1px solid #dadada
+    }
+
+    .table-responsive {
+      margin: 1em 0;
+      position: relative;
+      overflow: hidden
+    }
+
+    .table-shadow {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      z-index: 2;
+      background: -webkit-gradient(linear, left top, right top, from(transparent), to(rgba(0, 0, 0, .25)));
+      background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, .25) 100%);
+      width: 15px
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      overflow-y: hidden;
+      min-height: .01%
+    }
+
+    @media (max-width:991.98px) {
+      table {
+        font-size: .875rem
+      }
+
+      th {
+        font-size: .9375rem;
+        padding: .3125rem
+      }
+
+      td,
+      th {
+        max-width: 140px;
+        padding: 7px 5px 4px
+      }
+
+      .table-responsive {
+        margin-right: -15px;
+        margin-left: -15px
+      }
+
+      .table-wrapper {
+        padding-left: 15px;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar
+      }
+
+      .table-wrapper table {
+        white-space: normal
+      }
+
+      .table-wrapper td,
+      .table-wrapper th {
+        max-width: inherit;
+        min-width: 140px
+      }
+
+      table.table-normal {
+        width: calc(100% + 30px);
+        table-layout: fixed;
+        margin-right: -15px;
+        margin-left: -15px;
+        white-space: normal
+      }
+
+      table.table-normal td,
+      table.table-normal th {
+        max-width: inherit
+      }
+    }
+
+    article {
+      font-family: "Roboto", Helvetica, Arial, sans-serif
+    }
+
+    article header {
+      display: inline-block;
+      width: 100%;
+      margin-top: 5px
+    }
+
+    @media (min-width:992px) {
+      article header {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px
+      }
+    }
+
+    article .comment-anchor {
+      float: right;
+      position: relative;
+      font-size: .8125rem;
+      text-decoration: none;
+      margin: 0
+    }
+
+    @media (min-width:992px) {
+      article .comment-anchor {
+        margin: 0
+      }
+    }
+
+    article .comment-anchor i {
+      position: relative;
+      font-size: .625rem;
+      display: inline-block;
+      width: 16px
+    }
+
+    article .ncl-author-boku+.comment-anchor {
+      top: 16px
+    }
+
+    @supports (-webkit-overflow-scrolling:touch) {
+      article .ncl-author-boku+.comment-anchor {
+        top: 17px
+      }
+    }
+
+    @media (min-width:992px) {
+      article .ncl-author-boku+.comment-anchor {
+        top: 4px
+      }
+    }
+
+    article h1 {
+      font-family: "Montserrat", Helvetica, Arial, sans-serif;
+      font-size: 1.75rem;
+      line-height: 1.3;
+      letter-spacing: -.7px;
+      margin-bottom: 10px
+    }
+
+    @media (min-width:768px) {
+      article h1 {
+        font-size: 2.5rem;
+        line-height: 1.2
+      }
+    }
+
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6 {
+      line-height: 1.3;
+      letter-spacing: -.3px;
+      margin: 30px 0 20px
+    }
+
+    article h4,
+    article h5,
+    article h6 {
+      line-height: 1.5
+    }
+
+    article h2 {
+      font-size: 1.5rem
+    }
+
+    @media (min-width:768px) {
+      article h2 {
+        font-size: 1.875rem
+      }
+    }
+
+    article blockquote *,
+    article h2,
+    article h3 {
+      font-family: "Montserrat", Helvetica, Arial, sans-serif
+    }
+
+    article h3 {
+      font-size: 1.3125rem
+    }
+
+    @media (min-width:768px) {
+      article h3 {
+        font-size: 1.5625rem
+      }
+    }
+
+    article h4 {
+      font-size: 1.25rem
+    }
+
+    article h5 {
+      font-size: 1.125rem
+    }
+
+    article h6 {
+      font-size: 1rem
+    }
+
+    article .subtitle {
+      font-size: 1.25rem;
+      font-style: italic;
+      line-height: 24px;
+      color: #999;
+      margin: 10px 0
+    }
+
+    article ol,
+    article p,
+    article ul {
+      letter-spacing: -.3px;
+      font-size: 1.09375rem
+    }
+
+    @media (min-width:992px) {
+
+      article ol,
+      article p,
+      article ul {
+        font-size: 1.15625rem
+      }
+    }
+
+    article p+ol,
+    article p+ul {
+      margin: -10px 0 20px
+    }
+
+    article ol,
+    article ul {
+      margin: 10px 0;
+      font-style: normal;
+      padding-left: 25px
+    }
+
+    @media (min-width:768px) {
+
+      article ol,
+      article ul {
+        padding-left: 35px
+      }
+    }
+
+    article ol .ad-unit,
+    article ul .ad-unit {
+      margin-left: -25px
+    }
+
+    article ul {
+      list-style: disc
+    }
+
+    article li {
+      margin-bottom: 15px;
+      line-height: 1.4
+    }
+
+    article a {
+      color: #e68a00;
+      text-decoration: underline
+    }
+
+    article em {
+      font-style: italic
+    }
+
+    article blockquote {
+      position: relative;
+      border-left: none;
+      margin: 20px 0 18px;
+      padding: 0
+    }
+
+    article blockquote * {
+      font-style: italic
+    }
+
+    article blockquote h2,
+    article blockquote h3,
+    article blockquote h4,
+    article blockquote h5 {
+      font-weight: 400;
+      margin: 20px 0 18px
+    }
+
+    article blockquote p {
+      text-transform: uppercase;
+      color: #e68a00;
+      font-size: 1.125rem;
+      line-height: 1.5
+    }
+
+    article table {
+      width: 100%;
+      background-color: #eee;
+      line-height: 1.3;
+      text-align: left;
+      margin: 1rem 0
+    }
+
+    article table ol,
+    article table p,
+    article table ul {
+      font-size: 1.09375rem;
+      margin: 0;
+      padding: 0;
+      max-width: none
+    }
+
+    @media (min-width:992px) {
+
+      article table ol,
+      article table p,
+      article table ul {
+        font-size: 1.15625rem
+      }
+    }
+
+    article table ol li,
+    article table p li,
+    article table ul li {
+      position: relative;
+      left: 15px;
+      padding-right: 10px
+    }
+
+    article caption {
+      padding: .5em 0;
+      text-align: left;
+      font-weight: 700
+    }
+
+    article caption strong {
+      font-weight: 400
+    }
+
+    article td,
+    article th {
+      padding: 10px
+    }
+
+    article th {
+      background-color: #3f6f96;
+      color: #fff;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: 700;
+      border-bottom: 2px solid #dee2e6
+    }
+
+    article th:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    article tr:not(:last-child) {
+      border-bottom: 1px solid #dee2e6
+    }
+
+    article td:not(:last-child) {
+      border-right: 1px solid #dee2e6
+    }
+
+    @media (max-width:767.98px) {
+      article span.img {
+        display: block;
+        text-align: center;
+        margin: 0 -10px;
+        width: auto
+      }
+    }
+
+    article .article--body {
+      margin: 5px 0 0
+    }
+
+    @media (min-width:992px) {
+      article .article--body {
+        margin: 20px 0 0
+      }
+    }
+
+    article .article--body>p:first-of-type {
+      margin-top: 0
+    }
+
+    @media (min-width:992px) {
+      article .gpt-article-top {
+        float: right;
+        display: inline-block;
+        min-width: 336px;
+        min-height: 250px;
+        margin: -10px 0 25px 25px;
+        padding: 20px 0 10px
+      }
+
+      article .gpt-article-top>div {
+        float: right
+      }
+
+      article .gpt-article-top>div:before {
+        text-align: right
+      }
+    }
+
+    article img {
+      opacity: 0;
+      max-width: 100%;
+      height: auto
+    }
+
+    article .article-image,
+    article figure.image {
+      margin: 20px 0 30px
+    }
+
+    article .article-image span.img,
+    article figure.image span.img {
+      display: inline-block;
+      line-height: 0
+    }
+
+    article figcaption,
+    article span.caption.legend {
+      position: relative;
+      display: block;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      color: #737373;
+      font-size: .875rem;
+      font-style: italic;
+      margin-top: 2px
+    }
+
+    @media (max-width:767.98px) {
+
+      article figcaption,
+      article span.caption.legend {
+        text-align: center
+      }
+    }
+
+    .ncl-author-boku {
+      display: inline-block
+    }
+
+    .author-article {
+      color: #757575;
+      margin: 0;
+      font-size: .75rem
+    }
+
+    .author-article:after,
+    .author-article:before {
+      content: " ";
+      display: table
+    }
+
+    .author-article:after {
+      clear: both
+    }
+
+    .author-article--b__photo,
+    .author-article--t__photo {
+      position: relative;
+      overflow: hidden;
+      float: left;
+      margin-right: 10px;
+      width: 36px;
+      height: 36px
+    }
+
+    .author-article--b__photo amp-img,
+    .author-article--b__photo>img,
+    .author-article--t__photo amp-img,
+    .author-article--t__photo>img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      height: auto;
+      width: auto;
+      min-height: 100%;
+      min-width: 100%;
+      max-width: 100%;
+      max-height: 100%
+    }
+
+    .author-article--b__photo--circle,
+    .author-article--t__photo--circle {
+      border-radius: 50%
+    }
+
+    .author-article a {
+      font-weight: 700;
+      color: #e68a00;
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .author-article a:hover {
+      color: #1330cf;
+      text-decoration: underline
+    }
+
+    .author-article--t {
+      display: inline-block
+    }
+
+    .author-article--t__info {
+      line-height: 1;
+      width: calc(100% - 46px);
+      height: 36px;
+      display: table-cell;
+      vertical-align: middle
+    }
+
+    @media (min-width:992px) {
+      .author-article--t__info {
+        display: inline-block;
+        height: auto;
+        width: auto
+      }
+    }
+
+    .author-article--t__info__reviewer {
+      margin-bottom: 5px
+    }
+
+    .author-article--t__info__reviewer+.author-article--t__info__name {
+      font-size: .75rem
+    }
+
+    .author-article--t__info__job-title {
+      display: table-row;
+      vertical-align: middle
+    }
+
+    .author-article--t__info__name,
+    .author-article--t__info__reviewer,
+    .breadcrumbs li {
+      color: #757575;
+      font-size: .75rem
+    }
+
+    .author-article--t__date,
+    .author-article--t__info__name {
+      display: block
+    }
+
+    @media (min-width:992px) {
+
+      .author-article--t__date,
+      .author-article--t__info__name {
+        display: inline-block;
+        float: left
+      }
+    }
+
+    .author-article--t__date {
+      font-size: .75rem;
+      margin: 5px 0 0
+    }
+
+    @media (min-width:992px) {
+      .author-article--t__date {
+        margin: 0
+      }
+    }
+
+    .author-article--t__date .icon-bullet {
+      display: none;
+      position: relative;
+      float: left;
+      top: -1px;
+      margin: 0;
+      text-align: center;
+      width: 12px
+    }
+
+    @media (min-width:992px) {
+      .author-article--t__date .icon-bullet {
+        display: block
+      }
+    }
+
+    .author-article--t__date i {
+      display: inline-block;
+      position: relative;
+      font-size: .65625rem;
+      top: 1px;
+      right: -2px;
+      width: 13px
+    }
+
+    @media (min-width:992px) {
+      .author-article--t__date i {
+        margin-left: 3px
+      }
+    }
+
+    .ncl-authorPage-juli {
+      *zoom: 1
+    }
+
+    .ncl-authorPage-juli:after,
+    .ncl-authorPage-juli:before {
+      content: " ";
+      display: table
+    }
+
+    .ncl-authorPage-juli:after {
+      clear: both
+    }
+
+    .ncl-authorPage-juli .photo {
+      float: left;
+      margin: 5px 15px 10px 0;
+      overflow: hidden;
+      border-radius: 5px;
+      -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
+      width: 100px;
+      height: 100px
+    }
+
+    @media (min-width:992px) {
+      .ncl-authorPage-juli .photo {
+        width: 150px;
+        height: 150px
+      }
+    }
+
+    .ncl-authorPage-juli .photo img,
+    .ncl-featured-movu .post-img img,
+    .ncl-featured-movu .post-img span.preview {
+      opacity: 0
+    }
+
+    .breadcrumbs {
+      margin: 10px 0 0;
+      padding: 0;
+      display: block
+    }
+
+    .breadcrumbs li {
+      position: relative;
+      color: #969696;
+      text-transform: capitalize;
+      display: inline-block
+    }
+
+    .breadcrumbs li:first-child {
+      display: none
+    }
+
+    .breadcrumbs li:not(:last-child)::after {
+      content: '>';
+      position: relative;
+      font-size: .625rem;
+      padding: 0 5px
+    }
+
+    .breadcrumbs a {
+      text-decoration: none;
+      color: #737373;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .ncl-featured-movu {
+      font-family: "Roboto", Helvetica, Arial, sans-serif
+    }
+
+    @media (min-width:768px) {
+      .ncl-featured-movu {
+        margin-top: 20px
+      }
+    }
+
+    .ncl-featured-movu .featured-post {
+      position: relative;
+      background: #fafafa;
+      overflow: hidden
+    }
+
+    @media (min-width:768px) {
+      .ncl-featured-movu .featured-post:first-of-type {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px
+      }
+
+      .ncl-featured-movu .featured-post:last-of-type {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px
+      }
+
+      .ncl-featured-movu .featured-post:not(:first-of-type) {
+        border-left: 2px solid #fff
+      }
+    }
+
+    .ncl-featured-movu img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%)
+    }
+
+    @media (min-width:768px) {
+      .ncl-featured-movu img {
+        bottom: auto;
+        margin: 0;
+        height: auto;
+        width: auto;
+        min-height: 100%;
+        min-width: 100%;
+        max-width: initial;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-transform-origin: 0% 0%;
+        transform-origin: 0% 0%;
+        left: 50%;
+        top: 50%;
+        max-height: 100%
+      }
+    }
+
+    .ncl-featured-movu .post-img {
+      position: relative;
+      height: 155px;
+      width: 100%;
+      line-height: 0;
+      min-height: 100%;
+      min-width: calc(100% + 20px)
+    }
+
+    @media (min-width:768px) {
+      .ncl-featured-movu .post-img {
+        height: 170px
+      }
+    }
+
+    @media (min-width:992px) {
+      .ncl-featured-movu .post-img {
+        height: 270px
+      }
+    }
+
+    .ncl-featured-movu .post-info {
+      position: absolute;
+      z-index: 1;
+      padding: 20px 10px 10px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, .8)));
+      background-image: linear-gradient(-180deg, transparent 0%, rgba(0, 0, 0, .8) 100%);
+      color: #fff
+    }
+
+    .ncl-featured-movu .post-category {
+      display: inline-block;
+      background: #000;
+      font-size: .5625rem;
+      font-weight: 600;
+      padding: 1px 3px 0;
+      text-transform: uppercase;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .ncl-featured-movu .post-title {
+      font-size: 1.1875rem;
+      line-height: 1.2;
+      font-weight: 700;
+      margin: 5px 0 2px;
+      display: block;
+      width: 100%
+    }
+
+    .ncl-featured-movu .post-author {
+      font-size: .75rem;
+      display: inline-block
+    }
+
+    .ncl-featured-movu .post-comments,
+    .ncl-featured-movu .post-date {
+      font-size: .75rem;
+      margin-left: 3px;
+      display: inline-block
+    }
+
+    .ncl-featured-movu .post-author {
+      color: #fff;
+      margin-left: 0
+    }
+
+    .ncl-featured-movu .post-date i {
+      position: relative;
+      display: inline-block;
+      top: 1px;
+      color: #fff;
+      font-size: .625rem;
+      width: 10px
+    }
+
+    .ncl-featured-movu .post-comments i {
+      position: relative;
+      display: inline-block;
+      top: 1px;
+      font-size: .6875rem;
+      width: 18px
+    }
+
+    .ncl-header-eros {
+      position: relative;
+      z-index: 100;
+      background: #f5f5f5;
+      height: 60px;
+      -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, .15);
+      box-shadow: 0 0 15px rgba(0, 0, 0, .15)
+    }
+
+    @media (max-width:1199.98px) {
+      .ncl-header-eros {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        -webkit-transition: top .3s;
+        transition: top .3s
+      }
+
+      .ncl-header-eros+div.container {
+        padding-top: 60px
+      }
+    }
+
+    .ncl-header-eros .ncl-logo {
+      display: inline-block;
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%)
+    }
+
+    .ncl-header-eros .ncl-logo svg {
+      width: 134px;
+      height: auto;
+      display: inline-block
+    }
+
+    @media (min-width:992px) {
+      .ncl-header-eros .ncl-logo {
+        left: 15px;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        z-index: 10
+      }
+    }
+
+    .nav-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      z-index: 100
+    }
+
+    .nav-wrap .menu-toggle {
+      display: block;
+      position: relative;
+      top: 20px;
+      left: 15px;
+      z-index: 1
+    }
+
+    .nav-wrap .menu-toggle input {
+      opacity: 0;
+      display: none
+    }
+
+    .nav-wrap .menu-toggle span {
+      display: block;
+      width: 30px;
+      height: 3px;
+      margin-bottom: 5px;
+      position: relative;
+      background: #000;
+      border-radius: 3px
+    }
+
+    .nav-wrap .menu {
+      opacity: 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: translate(-100%, 0);
+      transform: translate(-100%, 0)
+    }
+
+    .nav-wrap .menu .menu-item {
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      padding: 0
+    }
+
+    .nav-wrap .menu .menu-item>a {
+      padding: 7px 0;
+      font-weight: 700;
+      font-size: 1.25rem;
+      display: inline-block;
+      width: 100%
+    }
+
+    .nav-wrap .sub-menu,
+    .search-wrap button,
+    .search-wrap label {
+      display: none;
+      visibility: hidden
+    }
+
+    @media (min-width:992px) {
+      .nav-wrap {
+        position: relative;
+        z-index: 1
+      }
+
+      .nav-wrap .menu {
+        opacity: 1;
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%)
+      }
+
+      .nav-wrap .menu .menu-item {
+        padding: 0;
+        display: inline-block
+      }
+
+      .nav-wrap .menu .menu-item a {
+        display: inline-block;
+        color: #000;
+        text-transform: uppercase;
+        font-size: .875rem
+      }
+
+      .nav-wrap .menu .menu-item:not(:last-of-type) {
+        padding-right: 20px
+      }
+
+      .nav-wrap .menu .down .sub-menu,
+      .nav-wrap .menu-toggle>input,
+      .nav-wrap .menu-toggle>span,
+      .share-item {
+        display: none;
+        visibility: hidden
+      }
+
+      .nav-wrap .menu .down i {
+        display: inline-block;
+        margin-left: 2px;
+        width: 10px
+      }
+    }
+
+    .search-wrap {
+      height: 60px;
+      float: right
+    }
+
+    @media (min-width:992px) {
+      .search-wrap {
+        margin-top: 8px
+      }
+    }
+
+    .search-wrap input {
+      position: absolute;
+      background: 0 0;
+      border: 0 solid transparent;
+      z-index: 20
+    }
+
+    .search-wrap input::-webkit-input-placeholder {
+      color: transparent
+    }
+
+    .search-wrap input:-moz-placeholder,
+    .search-wrap input::-moz-placeholder {
+      color: transparent
+    }
+
+    .search-wrap input:-ms-input-placeholder {
+      color: transparent
+    }
+
+    .ncl-hero-lava .cat-list {
+      margin: 0 auto 20px
+    }
+
+    .ncl-hero-lava .cat-list li {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: .6875rem;
+      display: inline-block;
+      margin: 0 6px 7px 0;
+      padding: 3px 5px 1px;
+      border: 1px solid #dadada;
+      border-radius: 2px
+    }
+
+    .ncl-hero-lava .cat-list li a {
+      color: #404040
+    }
+
+    .ncl-hero-lava .cat-list li,
+    .ncl-list-bota,
+    .ncl-list-miur,
+    .ncl-list-suko,
+    .ncl-search-puga {
+      font-family: "Roboto", Helvetica, Arial, sans-serif
+    }
+
+    .ncl-list-bota .section-title {
+      font-family: "Montserrat", Helvetica, Arial, sans-serif;
+      position: relative;
+      line-height: 1.2;
+      font-size: 1rem;
+      margin: 20px 0;
+      padding: 0;
+      text-align: left;
+      width: auto;
+      color: #fff;
+      text-transform: none
+    }
+
+    .ncl-list-bota .section-title:after,
+    .ncl-list-miur .section-title:after,
+    .ncl-list-suko .section-title:after {
+      content: '';
+      background: #e68a00;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      position: absolute
+    }
+
+    .ncl-list-bota .section-title span,
+    .ncl-list-miur .section-title span,
+    .ncl-list-suko .section-title span {
+      background: #e68a00;
+      padding: 5px;
+      display: inline-block;
+      letter-spacing: -.5px
+    }
+
+    .ncl-list-bota .post-list {
+      line-height: 1;
+      position: relative;
+      display: inline-block
+    }
+
+    .ncl-list-bota .post-img {
+      float: left;
+      margin-right: 10px;
+      width: 120px;
+      height: 85px;
+      position: relative;
+      text-align: center;
+      background: #fafafa
+    }
+
+    .ncl-list-bota .post-img .thumb {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0
+    }
+
+    @media (min-width:768px) {
+      .ncl-list-bota .post-img {
+        width: 240px;
+        height: 170px
+      }
+    }
+
+    .ncl-list-bota .post-img .preview {
+      opacity: 0
+    }
+
+    .ncl-list-bota .post-category {
+      position: relative;
+      line-height: 1;
+      float: left;
+      display: inline;
+      background: #757575;
+      color: #fff;
+      font-size: .5625rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 2px 3px 1px;
+      margin-bottom: 5px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .ncl-list-bota .post-info {
+      display: inline-block;
+      width: calc(100% - (120px + 10px))
+    }
+
+    @media (min-width:768px) {
+      .ncl-list-bota .post-info {
+        width: calc(100% - ((120px*2) + 10px))
+      }
+    }
+
+    .ncl-list-bota .post-info-link,
+    .ncl-list-bota .post-title {
+      display: inline-block;
+      width: 100%
+    }
+
+    .ncl-list-bota .post-title {
+      margin: -2px 0 5px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #404040;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .ncl-list-bota .post-excerpt {
+      display: inline-block;
+      font-size: .875rem;
+      line-height: 1.4;
+      color: #757575;
+      margin: 0 0 5px
+    }
+
+    .ncl-list-bota .post-authority {
+      margin: 0 0 5px;
+      color: #404040;
+      font-size: .6875rem;
+      line-height: initial
+    }
+
+    .ncl-list-bota .post-author,
+    .ncl-list-bota .post-comments,
+    .ncl-list-bota .post-date {
+      position: relative;
+      display: inline-block;
+      color: #404040;
+      margin: 0 5px 3px 0;
+      float: left
+    }
+
+    .ncl-list-bota .post-comments {
+      margin: 0 0 3px
+    }
+
+    .ncl-list-bota .post-comments i,
+    .ncl-list-bota .post-date i {
+      top: 1px;
+      position: relative;
+      display: inline-block
+    }
+
+    .ncl-list-bota .post-date i {
+      width: 9px;
+      font-size: .59375rem;
+      color: #434343
+    }
+
+    .ncl-list-bota .post-comments i {
+      width: 15px;
+      font-size: .625rem;
+      color: #949494
+    }
+
+    .ncl-list-bota .adsbygoogle-wrap {
+      margin-top: -10px
+    }
+
+    .ncl-list-bota .adsbygoogle-wrap+.post-list {
+      margin-top: 20px
+    }
+
+    @media (min-width:992px) {
+      .ncl-list-bota .side-post .post-title {
+        font-size: 1rem
+      }
+
+      .ncl-list-bota .side-post .post-img,
+      .ncl-list-bota .side-post .preview,
+      .ncl-list-bota .side-post .thumb {
+        width: 120px;
+        height: 85px
+      }
+
+      .ncl-list-bota .side-post .post-info {
+        width: calc(100% - (120px + 10px))
+      }
+    }
+
+    .ncl-list-miur .section-title {
+      font-family: "Montserrat", Helvetica, Arial, sans-serif;
+      position: relative;
+      line-height: 1.2;
+      font-size: 1rem;
+      width: 100%;
+      margin: 20px 0;
+      padding: 0;
+      text-align: left;
+      color: #fff;
+      text-transform: none
+    }
+
+    .ncl-list-miur .post-list {
+      line-height: 1;
+      position: relative;
+      display: inline-block;
+      overflow: hidden
+    }
+
+    .ncl-list-miur .post-img {
+      position: relative;
+      text-align: center;
+      background: #fafafa;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 5px;
+      padding-top: 70.83333%
+    }
+
+    .ncl-list-miur .post-img .thumb {
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0
+    }
+
+    .ncl-list-miur .post-img .preview {
+      opacity: 0
+    }
+
+    .ncl-list-miur .post-category,
+    .ncl-list-miur .post-title {
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .ncl-list-miur .post-category {
+      position: relative;
+      float: left;
+      display: inline;
+      background: #757575;
+      text-transform: uppercase;
+      padding: 2px 3px 1px;
+      margin-bottom: 5px;
+      line-height: 1;
+      color: #fff;
+      font-size: .5625rem
+    }
+
+    .ncl-list-miur .post-title {
+      margin: 0 0 5px;
+      line-height: 1.2;
+      color: #404040;
+      font-size: 1.0625rem
+    }
+
+    .ncl-list-miur .post-info,
+    .ncl-list-miur .post-info-link,
+    .ncl-list-miur .post-title {
+      display: inline-block;
+      width: 100%
+    }
+
+    .ncl-list-miur .post-authority {
+      margin: 0 0 5px;
+      color: #404040;
+      font-size: .6875rem;
+      line-height: initial
+    }
+
+    .ncl-list-miur .post-author,
+    .ncl-list-miur .post-comments,
+    .ncl-list-miur .post-date {
+      position: relative;
+      display: inline-block;
+      color: #404040;
+      margin: 0 5px 3px 0;
+      float: left
+    }
+
+    .ncl-list-miur .post-comments {
+      margin: 0 0 3px
+    }
+
+    .ncl-list-miur .post-comments i,
+    .ncl-list-miur .post-date i {
+      top: 1px;
+      position: relative;
+      display: inline-block
+    }
+
+    .ncl-list-miur .post-date i {
+      width: 9px;
+      font-size: .59375rem;
+      color: #434343
+    }
+
+    .ncl-list-miur .post-comments i {
+      width: 15px;
+      font-size: .625rem;
+      color: #949494
+    }
+
+    .ncl-list-suko .section-title {
+      font-family: "Montserrat", Helvetica, Arial, sans-serif;
+      position: relative;
+      line-height: 1.2;
+      font-size: 1rem;
+      margin: 20px 0;
+      padding: 0;
+      text-align: left;
+      width: auto;
+      color: #fff;
+      text-transform: none
+    }
+
+    .ncl-list-suko .post-list {
+      line-height: 1;
+      position: relative;
+      display: inline-block
+    }
+
+    .ncl-list-suko .post-img {
+      float: left;
+      margin-right: 10px;
+      width: 120px;
+      height: 85px;
+      position: relative;
+      text-align: center;
+      background: #fafafa
+    }
+
+    .ncl-list-suko .post-img .thumb {
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0
+    }
+
+    .ncl-list-suko .post-img .preview,
+    [data-content-timestamp] {
+      opacity: 0
+    }
+
+    .ncl-list-suko .post-info {
+      position: relative;
+      display: inline-block;
+      top: -2px;
+      width: calc(100% - (120px + 10px))
+    }
+
+    .ncl-list-suko .post-category,
+    .ncl-list-suko .post-title {
+      font-weight: 600;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .ncl-list-suko .post-category {
+      position: relative;
+      float: left;
+      background: #757575;
+      text-transform: uppercase;
+      padding: 2px 3px 1px;
+      margin-bottom: 5px;
+      line-height: 1;
+      display: inline;
+      color: #fff;
+      font-size: .5rem
+    }
+
+    .ncl-list-suko .post-title {
+      display: inline-block;
+      width: 100%;
+      margin: -2px 0 5px;
+      line-height: 1.2;
+      color: #404040;
+      font-size: 1rem
+    }
+
+    @media (min-width:992px) {
+      .ncl-list-suko .post-title {
+        font-size: 1.0625rem
+      }
+    }
+
+    .ncl-list-suko .post-authority {
+      margin: 0 0 5px;
+      color: #404040;
+      font-size: .6875rem;
+      line-height: initial
+    }
+
+    .ncl-list-suko .post-author,
+    .ncl-list-suko .post-comments,
+    .ncl-list-suko .post-date {
+      position: relative;
+      display: inline-block;
+      color: #404040;
+      margin: 0 5px 3px 0;
+      float: left
+    }
+
+    .ncl-list-suko .post-comments {
+      margin: 0 0 3px
+    }
+
+    .ncl-list-suko .post-comments i,
+    .ncl-list-suko .post-date i {
+      top: 1px;
+      position: relative;
+      display: inline-block
+    }
+
+    .ncl-list-suko .post-date i {
+      width: 9px;
+      font-size: .59375rem;
+      color: #434343
+    }
+
+    .ncl-list-suko .post-comments i {
+      width: 15px;
+      font-size: .625rem;
+      color: #949494
+    }
+
+    .ncl-search-puga h1 {
+      color: #cc7a00;
+      font-size: 1.5625rem
+    }
+
+    .ncl-search-puga h1 span {
+      font-weight: 400;
+      color: #757575
+    }
+
+    .ncl-search-puga .subtitle {
+      font-size: .875rem;
+      padding-left: 5px;
+      color: #717171
+    }
+
+    .ncl-search-puga .search-title {
+      font-weight: 600;
+      line-height: 1.3;
+      font-size: 1.375rem
+    }
+
+    .ncl-search-puga .search-not-found {
+      font-weight: 400;
+      line-height: 1.3
+    }
+
+    .ncl-search-puga form button,
+    .ncl-search-puga form input {
+      position: relative;
+      font-family: "Roboto", Helvetica, Arial, sans-serif;
+      height: 40px
+    }
+
+    .ncl-search-puga form input {
+      border-radius: 2px;
+      margin-right: -6px;
+      width: calc(100% - 110px);
+      max-width: 340px;
+      border-right: 0;
+      top: 1px;
+      padding: 5px;
+      font-size: 1rem;
+      border: 3px solid #d6d6d6
+    }
+
+    .ncl-search-puga form button {
+      font-size: .875rem;
+      font-weight: 600;
+      padding: 5px 20px 5px 0;
+      border: 0 solid #fff;
+      background: #000;
+      color: #fff;
+      width: 110px;
+      line-height: initial
+    }
+
+    .ncl-search-puga form button i {
+      position: absolute;
+      line-height: 0
+    }
+  </style><noscript>
+    <style>
+      *[data-content-timestamp] {
+        opacity: 1
+      }
+    </style>
+  </noscript>
+  <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
+  <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+  <script async="" src="https://sb.scorecardresearch.com/beacon.js"></script>
+  <script>"localStorage" in window || (window.localStorage = { _data: {}, setItem: function (a, b) { return this._data[a] = String(b) }, getItem: function (a) { return this._data.hasOwnProperty(a) ? this._data[a] : void 0 }, removeItem: function (a) { return delete this._data[a] }, clear: function () { return this._data = {} } })</script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-46327920-1"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag("js", new Date()); gtag("config", "UA-46327920-1", { "use_amp_client_id": true });</script>
+  <script async="" defer="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+  <script>var googletag = window.googletag || { cmd: [] }; if (window.localStorage && !window.localStorage.getItem("sg_gpt_event")) { window.localStorage.setItem("sg_gpt_event", Math.floor((Math.random() * 100) + 1) <= 10 ? 1 : 0); }</script>
+  <script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2020092201.js" async=""></script>
+  <link rel="preload" href="https://adservice.google.com.br/adsid/integrator.js?domain=4gnews.pt" as="script">
+  <script type="text/javascript" src="https://adservice.google.com.br/adsid/integrator.js?domain=4gnews.pt"></script>
+  <link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=4gnews.pt" as="script">
+  <script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=4gnews.pt"></script>
+  <link rel="prefetch"
+    href="https://4d91f04e4c6a9f013cd6ee03da00b08c.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html">
+  <link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-37/html/container.html">
+</head>
+
+<body class="body-index">
+
+  <script
+    type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/4gnews.pt\/","name":"4gnews","potentialAction":{"@type":"SearchAction","target":"https:\/\/4gnews.pt\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+  <script
+    type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/4gnews.pt\/","sameAs":["https:\/\/facebook.com\/4gnewspt","https:\/\/instagram.com\/4gnewspt\/","https:\/\/www.youtube.com\/channel\/UC5GGdEs1HaQcQDCKfVOQu5w","https:\/\/twitter.com\/4gnewspt","https:\/\/www.soundcloud.com.com\/4gnews"],"@id":"https:\/\/4gnews.pt\/#organization","name":"4gnews","logo":"https:\/\/4gnews.pt\/wp-content\/uploads\/2014\/07\/4gnews-logo-facebook-1.jpg"}</script>
+
+  <header class="ncl-header-eros">
+    <div class="container">
+      <div class="row txt-c">
+        <div class="col-12">
+
+          <nav class="nav-wrap">
+            <div class="menu-toggle">
+              <label for="c" class="visually-hidden">Menu</label>
+              <input id="c" name="c" type="checkbox">
+              <span></span>
+              <span></span>
+              <span></span>
+
+              <ul class="menu">
+
+
+                <li class="menu-item"><a href="/category/dicas/" title="Dicas">Dicas</a></li>
+                <li class="menu-item"><a href="/category/podcast/" title="Podcast">Podcast</a></li>
+                <li class="menu-item"><a href="/category/deal-alert/" title="Promoções">Promoções</a></li>
+                <li class="menu-item down">
+                  <a href="/category/movel/" title="Móvel">Móvel <i></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/category/movel/smartphones/android/" title="Android">Android</a></li>
+                    <li><a href="/category/movel/smartphones/apple/" title="Apple">Apple</a></li>
+                    <li><a href="/category/gadgets/" title="Gadgets">Gadgets</a></li>
+                  </ul>
+                </li>
+                <li class="menu-item"><a href="/category/gaming/" title="Gaming">Gaming</a></li>
+                <li class="menu-item"><a href="/category/reviews/" title="Review">Review</a></li>
+
+                <li class="menu-item"><a href="https://www.youtube.com/channel/UC5GGdEs1HaQcQDCKfVOQu5w"
+                    title="Youtube">Youtube</a></li>
+              </ul>
+
+            </div>
+          </nav>
+
+          <a class="ncl-logo" href="/" title="4gnews">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1822 589">
+              <defs>
+                <mask x="238.7" y="292.4" width="216.2" height="296.58" maskUnits="userSpaceOnUse">
+                  <path d="M238.7,292.4H454.91V589H238.7Z" style="fill:#fff;fill-rule:evenodd"></path>
+                </mask>
+              </defs>
+              <title>4gnews</title>
+              <path
+                d="M91.62,227.7,0,402.91V442.7H134.62V509h49.84V442.7H225V396.48H184.46v-65.1H134.62v65.1H57.47l86-168.78Z"
+                style="fill-rule:evenodd"></path>
+              <g>
+                <path
+                  d="M386.79,440.08q15.87-17.07,15.87-44.4t-15.87-44.41q-15.89-17.07-41.19-17.08t-41.19,17.28q-15.89,17.28-16.28,44.21.4,27.33,16.28,44.4t41.19,17.08Q370.92,457.16,386.79,440.08ZM454.91,294V488.51q0,30.54-13.87,53.24t-39.38,35Q376.13,589,342.38,589q-49,0-90.82-28.53l20.9-37.77q30.54,22.5,67.11,22.5,28.94,0,46-14.87t17.07-40.59V464.39a71.41,71.41,0,0,1-28.13,25.12q-17.28,8.65-40.18,8.64-28.14,0-49.83-13.06a89.11,89.11,0,0,1-33.76-36.57q-12.06-23.5-12.06-54,0-30.14,12.06-53.25a88.36,88.36,0,0,1,33.76-36q21.69-12.86,49.83-12.86,22.5,0,40,8.84a73.7,73.7,0,0,1,28.33,24.91V294Z"
+                  style="fill-rule:evenodd"></path>
+              </g>
+              <path
+                d="M1593.91,395.71h129.55c2.6-55.75,25.06-95.74,44.91-131.08,18.21-32.41,35.4-63,35.4-101.55,0-80-65.09-145.08-145.09-145.08S1513.6,83.08,1513.6,163.08c0,38.53,17.2,69.14,35.4,101.55,19.85,35.34,42.31,75.33,44.91,131.08m132,18H1591.49a15.44,15.44,0,0,1-15.47-15c-1.9-52.65-22.65-89.58-42.71-125.3-19.39-34.52-37.71-67.13-37.71-110.37C1495.6,73.16,1568.76,0,1658.69,0s163.08,73.16,163.08,163.09c0,43.23-18.31,75.84-37.7,110.36-20.07,35.72-40.81,72.65-42.72,125.3a15.44,15.44,0,0,1-15.47,15m-9.16,32.9h-118a9,9,0,0,1,0-18.09h118a9,9,0,1,1,0,18.09h0m-10.18,32.91h-97.65a9,9,0,0,1-9.05-9h0a9,9,0,0,1,9.05-9.05h97.65a9.05,9.05,0,0,1,0,18.1h0m-51.27,37c-19.33,0-27.85-10.13-31.33-16.64a3.66,3.66,0,0,1,3.25-5.36h56.16a3.66,3.66,0,0,1,3.25,5.36c-3.47,6.51-12,16.64-31.33,16.64"
+                style="fill-rule:evenodd"></path>
+              <path
+                d="M1549,192.72a10.49,10.49,0,0,1-10.47-9.88c-.17-2.77-.25-5.55-.25-8.32a137.41,137.41,0,0,1,27.52-82.88,139.73,139.73,0,0,1,69.8-49.4,10.5,10.5,0,0,1,6.24,20.06,118.47,118.47,0,0,0-59.22,41.92,116.49,116.49,0,0,0-23.34,70.3c0,2.36.07,4.74.21,7.07a10.51,10.51,0,0,1-9.86,11.11l-.63,0"
+                style="fill:#ff8000;fill-rule:evenodd"></path>
+              <path
+                d="M680,314.72q21.29,22.3,21.3,60.48V509.42H648.66V390.47q0-22.5-12.86-35.57t-35-13q-26.13.39-41.19,17.68t-15.07,44.2V509.42H492.33v-215h52.25v40.19q22.09-41.39,77.15-42.2,37,0,58.28,22.31m209,70.52q-.81-23.7-15.67-37.77T833.91,333.4q-22.9,0-38.37,13.87t-19.09,38Zm21.9-63.09q25.92,29.34,25.92,82.38,0,10.47-.4,15.68H777.65q5.22,22.91,21.5,36t40,13.06A81.79,81.79,0,0,0,870.68,463,77.22,77.22,0,0,0,897,445.12l28.13,29.34A108.85,108.85,0,0,1,886,501.79q-23.12,9.65-51.24,9.64-33,0-58.07-13.66a95.43,95.43,0,0,1-38.78-38.38q-13.67-24.72-13.66-56.87t13.86-57.06a98.15,98.15,0,0,1,38.78-38.78q24.92-13.86,56.66-13.86,51.43,0,77.36,29.33ZM934,294.83l53.85-.4,52.64,162.35,51-162.36h52.64L1196,456.78l51.44-162.36h52.64l-78,215h-53.44l-51.44-151.5-51,151.5h-53.45Zm482,43.4q-16.68-5.22-30.74-5.23-13.26,0-21.1,4.62t-7.83,14.27q0,10,9.84,15.47t31.15,11.46a299.58,299.58,0,0,1,37,13.46A69.68,69.68,0,0,1,1459.41,412q10.65,13.06,10.65,34.36,0,31.35-24.11,48.22t-60.68,16.88a153.75,153.75,0,0,1-48.62-7.84q-23.73-7.83-40.19-22.3l18.08-36.57a105.73,105.73,0,0,0,34.56,19.49q20.1,7,38.18,7,14.46,0,23.11-5a16.34,16.34,0,0,0,8.64-15.07q0-11.25-10-16.88t-32.55-12.46q-21.71-6.42-35.36-12.66a63.77,63.77,0,0,1-23.71-18.88q-10-12.66-10-33.16,0-31.74,23.11-48.42T1388.49,292a149.43,149.43,0,0,1,42,6,130.54,130.54,0,0,1,36.77,16.88l-18.89,37.77A154.13,154.13,0,0,0,1416,338.23"
+                style="fill-rule:evenodd"></path>
+            </svg> </a>
+
+
+          <div class="search-wrap">
+            <form role="search" action="/" method="get" target="_top">
+              <label for="s" class="visuallyhidden">Pesquisar</label>
+              <input id="s" autocomplete="off" type="text" name="s" value="" placeholder="Pesquisar" required=""
+                oninvalid="this.setCustomValidity('Preenche o campo')" oninput="this.setCustomValidity('')">
+              <button title="Pesquisar">
+                <span class="icon-wrapper">
+                  <i></i>
+                </span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row ncl-featured-movu">
+
+      <a href="/xiaomi-vai-abrir-a-6-loja-fisica-em-portugal-mas-os-fas-nao-vao-gostar/"
+        class="featured-post col-12 col-md-4"
+        title="Xiaomi vai abrir a 6ª loja física em Portugal. Mas os fãs não vão gostar!">
+        <div class="post-img row">
+          <img
+            src="https://cdn.4gnews.pt/imagens/xiaomi-vai-abrir-a-6-loja-fisica-em-portugal-mas-os-fas-nao-vao-gostar-n4g.jpg"
+            width="768" height="432" alt="Xiaomi vai abrir a 6ª loja física em Portugal. Mas os fãs não vão gostar!">
+        </div>
+        <div class="post-info">
+          <span class="post-title">Xiaomi vai abrir a 6ª loja física em Portugal. Mas os fãs não vão gostar!</span>
+          <span class="post-author">Vitor Urbano</span> <span class="post-comments"><i></i>1 Comentário</span>
+        </div>
+      </a>
+      <a href="/google-maps-recebera-a-melhor-mudanca-de-design-de-sempre/" class="featured-post col-12 col-md-4"
+        title="Google Maps receberá a melhor mudança de design de sempre!">
+        <div class="post-img row">
+          <img src="https://cdn.4gnews.pt/imagens/google-maps-recebera-a-melhor-mudanca-de-design-de-sempre-n4g.jpg"
+            width="768" height="432" alt="Google Maps receberá a melhor mudança de design de sempre!">
+        </div>
+        <div class="post-info">
+          <span class="post-title">Google Maps receberá a melhor mudança de design de sempre!</span>
+          <span class="post-author">Filipe Alves</span> </div>
+      </a>
+      <a href="/iphone-12-segredo-do-smartphone-da-apple-e-confirmado/" class="featured-post col-12 col-md-4"
+        title="iPhone 12: segredo do smartphone da Apple é confirmado">
+        <div class="post-img row">
+          <img src="https://cdn.4gnews.pt/imagens/iphone-12-segredo-do-smartphone-da-apple-e-revelado-n4g.jpg"
+            width="768" height="432" alt="iPhone 12: segredo do smartphone da Apple é confirmado">
+        </div>
+        <div class="post-info">
+          <span class="post-title">iPhone 12: segredo do smartphone da Apple é confirmado</span>
+          <span class="post-author">Bruno Coelho</span> <span class="post-date">
+            <i></i>
+            <time data-content-timestamp="1601369898" datetime="2020-09-29T09:58:18+01:00" style="opacity: 1;">Há 1
+              hora</time>
+          </span>
+        </div>
+      </a> </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="ncl-list-miur col-12 col-lg-8">
+        <h2 class="section-title"><span>Mais Recentes</span></h2>
+        <div class="row">
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/xiaomi-prepara-novos-auriculares-bluetooth-premium-com-preco-imbativel/"
+            title="Xiaomi prepara novos auriculares Bluetooth premium com preço imbatível">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/xiaomi-prepara-novos-auriculares-bluetooth-premium-com-preco-imbativel-s4g.jpg"
+                width="240" height="170" alt="Xiaomi prepara novos auriculares Bluetooth premium com preço imbatível">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Xiaomi prepara novos auriculares Bluetooth premium com preço imbatível</span>
+                <div class="post-authority">
+                  <span class="post-author">Bruno Coelho</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601374626" datetime="2020-09-29T11:17:06+01:00"
+                      style="opacity: 1;">Há 18 minutos</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/google-meet-para-android-e-ios-recebe-desejada-funcionalidade/"
+            title="Google Meet para Android e iOS recebe desejada funcionalidade!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/google-meet-versao-para-android-e-ios-recebe-desejada-funcionalidade-s4g.jpg"
+                width="240" height="170" alt="Google Meet para Android e iOS recebe desejada funcionalidade!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Google Meet para Android e iOS recebe desejada funcionalidade!</span>
+                <div class="post-authority">
+                  <span class="post-author">Vitor Urbano</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601368809" datetime="2020-09-29T09:40:09+01:00"
+                      style="opacity: 1;">Há 1 hora</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4" href="/oneplus-8t-pro-ceo-da-a-noticia-que-os-fas-queriam-ouvir/"
+            title="OnePlus 8T Pro: CEO dá a notícia que os fãs queriam ouvir">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/oneplus-8t-pro-ceo-da-a-noticia-que-os-fas-queriam-ouvir-s4g.jpg"
+                width="240" height="170" alt="OnePlus 8T Pro: CEO dá a notícia que os fãs queriam ouvir">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> OnePlus 8T Pro: CEO dá a notícia que os fãs queriam ouvir</span>
+                <div class="post-authority">
+                  <span class="post-author">Bruno Coelho</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601366082" datetime="2020-09-29T08:54:42+01:00"
+                      style="opacity: 1;">Há 2 horas</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/nokia-9-3-pureview-e-nokia-7-3-estao-prestes-a-serem-revelados/"
+            title="Nokia 9.3 PureView e Nokia 7.3 estão prestes a serem revelados">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/nokia-9-3-pureview-e-nokia-7-3-estao-prestes-a-serem-revelados-s4g.jpg"
+                width="240" height="170" alt="Nokia 9.3 PureView e Nokia 7.3 estão prestes a serem revelados">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Nokia 9.3 PureView e Nokia 7.3 estão prestes a serem revelados</span>
+                <div class="post-authority">
+                  <span class="post-author">Carlos Oliveira</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601328140" datetime="2020-09-28T22:22:20+01:00"
+                      style="opacity: 1;">Ontem, 18:22</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/android-12-vai-facilitar-a-utilizacao-de-lojas-de-aplicacoes-alternativas-a-play-store/"
+            title="Android 12 vai facilitar a utilização de lojas de aplicações alternativas à Play Store">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/android-12-vai-facilitar-a-utilizacao-de-lojas-de-aplicacoes-alternativas-a-play-store-s4g.jpg"
+                width="240" height="170"
+                alt="Android 12 vai facilitar a utilização de lojas de aplicações alternativas à Play Store">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Android 12 vai facilitar a utilização de lojas de aplicações alternativas à
+                  Play Store</span>
+                <div class="post-authority">
+                  <span class="post-author">Carlos Oliveira</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601326119" datetime="2020-09-28T21:48:39+01:00"
+                      style="opacity: 1;">Ontem, 17:48</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/samsung-galaxy-s30-devera-melhorar-consideravelmente-o-seu-carregamento-rapido/"
+            title="Samsung Galaxy S30 deverá melhorar consideravelmente o seu carregamento rápido">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/samsung-galaxy-s30-devera-melhorar-consideravelmente-o-seu-carregamento-rapido-s4g.jpg"
+                width="240" height="170"
+                alt="Samsung Galaxy S30 deverá melhorar consideravelmente o seu carregamento rápido">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Samsung Galaxy S30 deverá melhorar consideravelmente o seu carregamento
+                  rápido</span>
+                <div class="post-authority">
+                  <span class="post-author">Carlos Oliveira</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601323722" datetime="2020-09-28T21:08:42+01:00"
+                      style="opacity: 1;">Ontem, 17:08</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <div class="w-100 txt-c mb30 adsbygoogle-wrap">
+            <div id="div-gpt-sg-a2db92fbb2fac60546ea075e75c192d8" class="ad-unit ad-unit--pt-pt mt10"
+              data-google-query-id="CIifxLSVjuwCFYkuuQYdJCAPOg">
+              <div id="google_ads_iframe_/1062898/4gnews_leaderboard_lists_0__container__"
+                style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0"
+                  src="https://4d91f04e4c6a9f013cd6ee03da00b08c.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html"
+                  id="google_ads_iframe_/1062898/4gnews_leaderboard_lists_0" title="3rd party ad content" name=""
+                  scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true"
+                  sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+                  data-google-container-id="2" style="border: 0px; vertical-align: bottom;"
+                  data-load-complete="true"></iframe></div>
+            </div>
+          </div>
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/11-anos-depois-farmville-tem-os-dias-contados-data-ja-foi-revelada/"
+            title="11 anos depois, FarmVille tem os dias contados! Data já foi revelada">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/11-anos-depois-farmville-tem-os-dias-contados-data-ja-foi-revelada-s4g.jpg"
+                width="240" height="170" alt="11 anos depois, FarmVille tem os dias contados! Data já foi revelada">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> 11 anos depois, FarmVille tem os dias contados! Data já foi revelada</span>
+                <div class="post-authority">
+                  <span class="post-author">Vitor Urbano</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601322683" datetime="2020-09-28T20:51:23+01:00"
+                      style="opacity: 1;">Ontem, 16:51</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4" href="/google-pixel-tera-um-preco-que-vai-magoar-a-carteira/"
+            title="Google Pixel terá um preço que vai magoar a carteira!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/google-pixel-tera-um-preco-que-vai-magoar-a-carteira-s4g.jpg"
+                width="240" height="170" alt="Google Pixel terá um preço que vai magoar a carteira!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Google Pixel terá um preço que vai magoar a carteira!</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601314366" datetime="2020-09-28T18:32:46+01:00"
+                      style="opacity: 1;">Ontem, 14:32</time>
+                  </span>
+
+                  <span class="post-comments"><i></i>1 Comentário</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/oppo-reno4-f-smartphone-misterio-tem-data-de-apresentacao-confirmada/"
+            title="OPPO Reno4 F: smartphone mistério tem data de apresentação confirmada!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/oppo-reno4-f-smartphone-misterio-tem-data-de-apresentacao-confirmada-s4g.jpg"
+                width="240" height="170" alt="OPPO Reno4 F: smartphone mistério tem data de apresentação confirmada!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> OPPO Reno4 F: smartphone mistério tem data de apresentação confirmada!</span>
+                <div class="post-authority">
+                  <span class="post-author">Vitor Urbano</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601310971" datetime="2020-09-28T17:36:11+01:00"
+                      style="opacity: 1;">Ontem, 13:36</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/tv-da-huawei-sera-a-primeira-a-receber-a-nova-versao-do-sistema-operativo-para-smartphones/"
+            title="TV da Huawei será a primeira a receber a nova versão do sistema operativo para smartphones">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/tv-da-huawei-sera-a-primeira-a-receber-a-nova-versao-do-sistema-operativo-para-smartphones-s4g.jpg"
+                width="240" height="170"
+                alt="TV da Huawei será a primeira a receber a nova versão do sistema operativo para smartphones">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> TV da Huawei será a primeira a receber a nova versão do sistema operativo para
+                  smartphones</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601305108" datetime="2020-09-28T15:58:28+01:00"
+                      style="opacity: 1;">Ontem, 11:58</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/oneplus-8t-nao-vai-chegar-sozinho-marca-vai-apresentar-pelo-menos-5-novos-produtos/"
+            title="OnePlus 8T não vai chegar sozinho. Marca vai apresentar pelo menos 5 novos produtos!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/oneplus-8t-nao-vai-chegar-sozinho-marca-vai-apresentar-pelo-menos-5-novos-produtos-s4g.jpg"
+                width="240" height="170"
+                alt="OnePlus 8T não vai chegar sozinho. Marca vai apresentar pelo menos 5 novos produtos!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> OnePlus 8T não vai chegar sozinho. Marca vai apresentar pelo menos 5 novos
+                  produtos!</span>
+                <div class="post-authority">
+                  <span class="post-author">Vitor Urbano</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601303324" datetime="2020-09-28T15:28:44+01:00"
+                      style="opacity: 1;">Ontem, 11:28</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/xiaomi-mi-tv-lux-de-82-polegadas-sao-um-sonho-mas-nao-para-qualquer-carteira/"
+            title="Xiaomi Mi TV Lux de 82&quot; polegadas são um sonho, mas não para qualquer carteira!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/xiaomi-mi-tv-lux-de-82-polegadas-sao-um-sonho-mas-nao-para-qualquer-carteira-s4g.jpg"
+                width="240" height="170"
+                alt="Xiaomi Mi TV Lux de 82&quot; polegadas são um sonho, mas não para qualquer carteira!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Xiaomi Mi TV Lux de 82" polegadas são um sonho, mas não para qualquer
+                  carteira!</span>
+                <div class="post-authority">
+                  <span class="post-author">Vitor Urbano</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601300143" datetime="2020-09-28T14:35:43+01:00"
+                      style="opacity: 1;">Ontem, 10:35</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/podcast-282-iphone-12-mini-e-novos-produtos-da-amazon-para-a-tua-casa/"
+            title="Podcast 282: iPhone 12 (Mini?) e novos produtos da Amazon para a tua casa">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/podcast-282-iphone-12-mini-e-novos-produtos-da-amazon-para-a-tua-casa-s4g.jpg"
+                width="240" height="170"
+                alt="Podcast 282: iPhone 12 (Mini?) e novos produtos da Amazon para a tua casa">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Podcast 282: iPhone 12 (Mini?) e novos produtos da Amazon para a tua
+                  casa</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601292643" datetime="2020-09-28T12:30:43+01:00"
+                      style="opacity: 1;">Ontem, 08:30</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/estas-a-pensar-comprar-a-ps5-estes-sao-todos-os-jogos-da-ps4-com-upgrade-gratis/"
+            title="Estás a pensar comprar a PS5? Estes são todos os jogos da PS4 com upgrade grátis!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/estas-a-pensar-comprar-a-ps5-estes-sao-todos-os-jogos-da-ps4-com-upgrade-gratis-s4g.jpg"
+                width="240" height="170"
+                alt="Estás a pensar comprar a PS5? Estes são todos os jogos da PS4 com upgrade grátis!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Estás a pensar comprar a PS5? Estes são todos os jogos da PS4 com upgrade
+                  grátis!</span>
+                <div class="post-authority">
+                  <span class="post-author">Vitor Urbano</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601292542" datetime="2020-09-28T12:29:02+01:00"
+                      style="opacity: 1;">Ontem, 08:29</time>
+                  </span>
+
+                  <span class="post-comments"><i></i>1 Comentário</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/amazon-revela-datas-oficiais-do-prime-day-2020-estas-preparado-para-as-promocoes/"
+            title="Amazon revela datas oficiais do Prime Day 2020! Estás preparado para as promoções?">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/amazon-revela-datas-oficiais-do-prime-day-2020-estas-preparado-para-as-promocoes-s4g.jpg"
+                width="240" height="170"
+                alt="Amazon revela datas oficiais do Prime Day 2020! Estás preparado para as promoções?">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Amazon revela datas oficiais do Prime Day 2020! Estás preparado para as
+                  promoções?</span>
+                <div class="post-authority">
+                  <span class="post-author">Vitor Urbano</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601289225" datetime="2020-09-28T11:33:45+01:00"
+                      style="opacity: 1;">Ontem, 07:33</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/huawei-freebuds-pro-levam-te-numa-viagem-atraves-do-som-com-as-sonic-escapes/"
+            title="Huawei FreeBuds Pro levam-te numa viagem através do som com as Sonic Escapes">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/huawei-freebuds-pro-levam-te-numa-viajem-atraves-do-som-com-as-sonic-escapes-s4g.jpg"
+                width="240" height="170"
+                alt="Huawei FreeBuds Pro levam-te numa viagem através do som com as Sonic Escapes">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Huawei FreeBuds Pro levam-te numa viagem através do som com as Sonic
+                  Escapes</span>
+                <div class="post-authority">
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601288633" datetime="2020-09-28T11:23:53+01:00"
+                      style="opacity: 1;">Ontem, 07:23</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/se-nao-es-dono-de-um-smartwatch-ou-smartband-acredita-se-que-venhas-a-ser/"
+            title="Se não és dono de um smartwatch ou smartband acredita-se que venhas a ser!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/se-nao-es-dono-de-um-smartwatch-ou-smartband-acredita-se-que-venhas-a-ser-s4g.jpg"
+                width="240" height="170"
+                alt="Se não és dono de um smartwatch ou smartband acredita-se que venhas a ser!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Se não és dono de um smartwatch ou smartband acredita-se que venhas a
+                  ser!</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601285856" datetime="2020-09-28T10:37:36+01:00"
+                      style="opacity: 1;">Ontem, 06:37</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/xiaomi-mi-10t-e-mi-10t-pro-eis-todas-as-especificacoes-e-design-dos-novos-smartphones/"
+            title="Xiaomi Mi 10T e Mi 10T Pro: eis todas as especificações e design dos novos smartphones">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/xiaomi-mi-10t-e-mi-10t-pro-eis-todas-as-especificacoes-e-design-dos-novos-smartphones-s4g.jpg"
+                width="240" height="170"
+                alt="Xiaomi Mi 10T e Mi 10T Pro: eis todas as especificações e design dos novos smartphones">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Xiaomi Mi 10T e Mi 10T Pro: eis todas as especificações e design dos novos
+                  smartphones</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601282107" datetime="2020-09-28T09:35:07+01:00"
+                      style="opacity: 1;">Ontem, 05:35</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/oneplus-mostra-o-seu-carregador-de-65w-rapido-seguro-e-versatil/"
+            title="OnePlus mostra o seu carregador de 65W! Rápido, seguro e versátil">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/oneplus-mostra-o-seu-carregador-de-65w-rapido-seguro-e-versatil-s4g.jpg"
+                width="240" height="170" alt="OnePlus mostra o seu carregador de 65W! Rápido, seguro e versátil">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> OnePlus mostra o seu carregador de 65W! Rápido, seguro e versátil</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601279112" datetime="2020-09-28T08:45:12+01:00"
+                      style="opacity: 1;">Ontem, 04:45</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/esperemos-que-o-proximo-smartphone-topo-de-gama-da-google-nao-seja-assim/"
+            title="Esperemos que o próximo smartphone topo de gama da Google não seja assim">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/esperemos-que-o-proximo-smartphone-topo-de-gama-da-google-nao-seja-assim-s4g.jpg"
+                width="240" height="170" alt="Esperemos que o próximo smartphone topo de gama da Google não seja assim">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Esperemos que o próximo smartphone topo de gama da Google não seja
+                  assim</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601231505" datetime="2020-09-27T19:31:45+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/o-huawei-mate-40-podera-ser-o-topo-de-gama-mais-exclusivo-de-sempre-entende/"
+            title="O Huawei Mate 40 poderá ser o topo de gama mais exclusivo de sempre! Entende">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/o-huawei-mate-40-podera-ser-o-topo-de-gama-mais-exclusivo-de-sempre-entende-s4g.jpg"
+                width="240" height="170"
+                alt="O Huawei Mate 40 poderá ser o topo de gama mais exclusivo de sempre! Entende">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> O Huawei Mate 40 poderá ser o topo de gama mais exclusivo de sempre!
+                  Entende</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601231486" datetime="2020-09-27T19:31:26+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                  <span class="post-comments"><i></i>1 Comentário</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/apple-proximo-iphone-12-mini-e-a-melhor-jogada-de-sempre-para-combater-os-smartphone-android/"
+            title="Apple: próximo iPhone 12 (Mini) é a melhor jogada de sempre para combater os smartphone Android">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/apple-o-proximo-iphone-12-mini-e-a-melhor-jogada-de-sempre-para-combater-os-smartphone-android-s4g.jpg"
+                width="240" height="170"
+                alt="Apple: próximo iPhone 12 (Mini) é a melhor jogada de sempre para combater os smartphone Android">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Apple: próximo iPhone 12 (Mini) é a melhor jogada de sempre para combater os
+                  smartphone Android</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601207846" datetime="2020-09-27T12:57:26+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                  <span class="post-comments"><i></i>1 Comentário</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/xioami-lanca-um-dispensador-de-agua-para-gatos-e-caes-que-tens-de-conhecer/"
+            title="Xiaomi lança um dispensador de água para gatos e cães que tens de conhecer!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/xioami-lanca-um-dispensador-de-agua-para-gatos-e-caes-que-tens-de-conhecer-s4g.jpg"
+                width="240" height="170"
+                alt="Xiaomi lança um dispensador de água para gatos e cães que tens de conhecer!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Xiaomi lança um dispensador de água para gatos e cães que tens de
+                  conhecer!</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601207473" datetime="2020-09-27T12:51:13+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                  <span class="post-comments"><i></i>3 Comentários</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4" href="/xiaomi-lancou-uma-webcam-para-pc-por-um-preco-impressionante/"
+            title="Xiaomi lançou uma webcam para PC por um preço impressionante">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/xiaomi-lancou-uma-webcam-para-pc-por-um-preco-impressionante-s4g.jpg"
+                width="240" height="170" alt="Xiaomi lançou uma webcam para PC por um preço impressionante">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Xiaomi lançou uma webcam para PC por um preço impressionante</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601204012" datetime="2020-09-27T11:53:32+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/esta-bateria-atomica-dura-20-anos-e-e-tem-um-baixo-custo-de-fabrico/"
+            title="Esta bateria atómica dura 20 anos e tem um baixo custo de fabrico">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/esta-bateria-atomica-dura-20-anos-e-e-tem-um-baixo-custo-de-fabrico-s4g.jpg"
+                width="240" height="170" alt="Esta bateria atómica dura 20 anos e tem um baixo custo de fabrico">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Esta bateria atómica dura 20 anos e tem um baixo custo de fabrico</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601201575" datetime="2020-09-27T11:12:55+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                  <span class="post-comments"><i></i>2 Comentários</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/mensagens-android-nova-funcionalidade-faz-da-aplicacao-ainda-melhor/"
+            title="Mensagens Android: nova funcionalidade faz da aplicação ainda melhor">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/mensagens-android-nova-funcionalidade-faz-da-aplicacao-ainda-melhor-s4g.jpg"
+                width="240" height="170" alt="Mensagens Android: nova funcionalidade faz da aplicação ainda melhor">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Mensagens Android: nova funcionalidade faz da aplicação ainda melhor</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601200692" datetime="2020-09-27T10:58:12+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4" href="/ps5-estes-sao-os-jogos-disponiveis-no-primeiro-dia/"
+            title="PS5: estes são os jogos disponíveis no primeiro dia">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/ps5-estes-sao-os-jogos-disponiveis-no-primeiro-dia-s4g.jpg"
+                width="240" height="170" alt="PS5: estes são os jogos disponíveis no primeiro dia">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> PS5: estes são os jogos disponíveis no primeiro dia</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601200067" datetime="2020-09-27T10:47:47+01:00"
+                      style="opacity: 1;">27 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/realme-7-e-realme-7-pro-serao-lancados-na-europa-e-ja-sabemos-os-precos/"
+            title="Realme 7 e Realme 7 Pro serão lançados na Europa e já sabemos os preços">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/realme-7-e-realme-7-pro-serao-lancados-na-europa-e-ja-sabemos-os-precos-s4g.jpg"
+                width="240" height="170" alt="Realme 7 e Realme 7 Pro serão lançados na Europa e já sabemos os preços">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Realme 7 e Realme 7 Pro serão lançados na Europa e já sabemos os preços</span>
+                <div class="post-authority">
+                  <span class="post-author">Carlos Oliveira</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601148362" datetime="2020-09-26T20:26:02+01:00"
+                      style="opacity: 1;">26 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/o-teu-smartphone-huawei-podera-deixar-o-sistema-android-para-o-harmonyos-no-proximo-ano/"
+            title="O teu smartphone Huawei poderá deixar o sistema Android para o HarmonyOS no próximo ano">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/o-teu-smartphone-huawei-podera-deixar-o-sistema-android-para-o-harmonyos-no-proximo-ano-s4g.jpg"
+                width="240" height="170"
+                alt="O teu smartphone Huawei poderá deixar o sistema Android para o HarmonyOS no próximo ano">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> O teu smartphone Huawei poderá deixar o sistema Android para o HarmonyOS no
+                  próximo ano</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601146984" datetime="2020-09-26T20:03:04+01:00"
+                      style="opacity: 1;">26 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/facebook-messenger-esta-a-pedir-algo-a-apple-que-a-empresa-nao-quer-dar/"
+            title="Facebook Messenger está a pedir algo à Apple que a empresa não quer dar!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/facebook-messenger-esta-a-pedir-algo-a-apple-que-a-empresa-nao-quer-dar-s4g.jpg"
+                width="240" height="170" alt="Facebook Messenger está a pedir algo à Apple que a empresa não quer dar!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Facebook Messenger está a pedir algo à Apple que a empresa não quer
+                  dar!</span>
+                <div class="post-authority">
+                  <span class="post-author">Filipe Alves</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601146965" datetime="2020-09-26T20:02:45+01:00"
+                      style="opacity: 1;">26 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/futuro-smartphone-dobravel-da-huawei-pode-ser-uma-copia-da-samsung/"
+            title="Futuro smartphone dobrável da Huawei? Pode ser uma cópia da Samsung">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/futuro-smartphone-dobravel-da-huawei-pode-ser-uma-copia-da-samsung-s4g.jpg"
+                width="240" height="170" alt="Futuro smartphone dobrável da Huawei? Pode ser uma cópia da Samsung">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Futuro smartphone dobrável da Huawei? Pode ser uma cópia da Samsung</span>
+                <div class="post-authority">
+                  <span class="post-author">Bruno Coelho</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601143330" datetime="2020-09-26T19:02:10+01:00"
+                      style="opacity: 1;">26 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4" href="/football-manager-2021-na-ps5-poe-as-culpas-na-sony/"
+            title="Football Manager 2021 na PS5? Põe as culpas na Sony!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/football-manager-2021-na-ps5-poe-as-culpas-na-sony-s4g.jpg"
+                width="240" height="170" alt="Football Manager 2021 na PS5? Põe as culpas na Sony!">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Football Manager 2021 na PS5? Põe as culpas na Sony!</span>
+                <div class="post-authority">
+                  <span class="post-author">Bruno Coelho</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601136015" datetime="2020-09-26T17:00:15+01:00"
+                      style="opacity: 1;">26 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-6 col-md-4"
+            href="/lucid-air-consegue-ser-ainda-mais-rapido-que-o-potente-tesla-model-s-plaid-video/"
+            title="Lucid Air consegue ser ainda mais rápido que o potente Tesla Model S Plaid (vídeo)">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/lucid-air-consegue-ser-ainda-mais-rapido-que-o-potente-tesla-model-s-plaid-video-s4g.jpg"
+                width="240" height="170"
+                alt="Lucid Air consegue ser ainda mais rápido que o potente Tesla Model S Plaid (vídeo)">
+
+            </div>
+
+            <div class="post-info">
+
+              <div class="post-info-link">
+                <span class="post-title"> Lucid Air consegue ser ainda mais rápido que o potente Tesla Model S Plaid
+                  (vídeo)</span>
+                <div class="post-authority">
+                  <span class="post-author">Carlos Oliveira</span>
+
+                  <span class="post-date">
+                    <i></i>
+                    <time data-content-timestamp="1601134785" datetime="2020-09-26T16:39:45+01:00"
+                      style="opacity: 1;">26 setembro 2020</time>
+                  </span>
+
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="pagination">
+
+          <div class="page page--current"><span>1</span></div>
+          <div class="page"><a href="/page/2/">2</a></div>
+          <div class="page"><a href="/page/3/">3</a></div>
+          <div class="page"><a href="/page/4/">4</a></div>
+          <div class="page"><a href="/page/5/">5</a></div>
+          <div class="page"><a href="/page/6/">6</a></div>
+          <div class="page"><a href="/page/7/">7</a></div>
+          <div class="page"><a href="/page/8/">8</a></div>
+          <div class="page"><a href="/page/9/">9</a></div>
+          <div class="page"><a href="/page/10/">10</a></div>
+
+          <div class="page page--jump"><a href="/page/2/">Seguinte<i></i></a></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-4 mt30" data-sticky-container="">
+        <div id="div-gpt-sg-d83bcbef6f14e4f089e7a1bfd63e44c4" class="ad-unit ad-unit--pt-pt sticky"
+          data-google-query-id="CPv_27SVjuwCFZcwuQYdRZ4HMg">
+          <div id="google_ads_iframe_/1062898/4GNEWS_HOME_300x600_0__container__"
+            style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0"
+              src="https://4d91f04e4c6a9f013cd6ee03da00b08c.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html"
+              id="google_ads_iframe_/1062898/4GNEWS_HOME_300x600_0" title="3rd party ad content"
+              name="1-0-37;12699;<!doctype html><html><head><script>var jscVersion = 'r20200924';</script><script>var google_casm=[];</script></head><body leftMargin=&quot;0&quot; topMargin=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot;><script>window.dicnf = {};</script><script data-jc=&quot;42&quot; data-jc-version=&quot;r20200924&quot;>(function(){/*  Copyright The Closure Library Authors. SPDX-License-Identifier: Apache-2.0 */ 'use strict';window.viewReq=[];const c=a=>{fetch(a,{keepalive:!0,credentials:&quot;include&quot;,redirect:&quot;follow&quot;,method:&quot;get&quot;,mode:&quot;no-cors&quot;}).catch(()=>{{const b=new Image;b.src=a.replace(&quot;&amp;amp;&quot;,&quot;&amp;&quot;);viewReq.push(b)}})};window.vu=a=>{if(window.fetch)c(a);else{{const b=new Image;b.src=a.replace(&quot;&amp;amp;&quot;,&quot;&amp;&quot;);viewReq.push(b)}}};}).call(this);</script><script>vu(&quot;https://securepubads.g.doubleclick.net/pagead/adview?ai\x3dCPMgb4g1zX_uGBZfh5OUPxbyekAOeoaGuXKH56P6fA8CNtwEQASAAYM3A54CcA4IBF2NhLXB1Yi03NjgzMzk1MjY4NTYyMTA4yAEJ4AIAqAMBqgTaAU_QmSI2MFp3IiP2F_Yrev7vJ1NmU340WeWDAc7s6MRJVBdQhOjl9thscGkC4S0YXJ29_0zglS0A-eUB4H_vLaJ6oCdwUsV2CAFD4sZDXN4BNdXOg72MYgvIQ8teKFVERy7J_tA1u_E0EHoSJ2TIcN4tFIcUaBE78ag3mrEAyVsH5GLt9zxbzhf7LZzyZQNMlfmQJQTUucViqjdFTXqHFk0yMfLCSICToC4_k55cIdZBS5SYr25Z44eToCEwIrRB8fN_jSuctv-vZP8dB7EDtm4uGIrVVG2ZhpPl4AQBgAajkf_OpvDKw0KgBiGIBwGQBwKoB6a-G6gH8NkbqAfy2RuoB-zVG6gHltgbqAfk4BuoB8LaG9gHANIIAhACgAoD-gsCCAGADAGyDBRwdWItNzY4MzM5NTI2ODU2MjEwOA\x26sigh\x3d4ABbfrb-hlE\x26cid\x3dCAMSeQClSFh3qPZGZ_MzBYr4T1-fbhHaf8FdzamvrLGrGs5RGPOuNY3mlPBv3ivt28yj818ebvSZk60hTYrjiKPEMBeWv8L77JAZI_6V-LUjL4CCtzD7P9G75Arp-z9Wnbq2Av7HIF1bsD03IjMqpDGqBmQ31O8WC4ScJFs\x26tpd\x3dAGWhJms9pROZka5CJ3LY3ROugpGbF3yceSFodCGvEM6s46Hnxw&quot;)</script><div class=&quot;GoogleActiveViewInnerContainer&quot;style=&quot;left:0px;top:0px;width:100%;height:100%;position:fixed;pointer-events:none;z-index:-9999;&quot;></div><div style=&quot;display:inline&quot;class=&quot;GoogleActiveViewElement&quot;data-google-av-cxn=&quot;https://pagead2.googlesyndication.com/pcs/activeview?xai=AKAOjssYSZf1a2cFkHyuiHYWL6QZ9uLC-3q2unrb3OcpljpstLTrJeQf6gIDyoNCDoQSBrL-nS4hsoe-FDEyNV5_3N-ePzEEsHwMrw&amp;amp;sig=Cg0ArKJSzAg_r_c_bbVbEAE&quot;data-google-av-adk=&quot;965285435&quot;data-google-av-metadata=&quot;la=0&amp;amp;xdi=0&amp;amp;&quot;data-google-av-override=&quot;-1&quot;data-google-av-dm=&quot;2&quot;data-google-av-immediate data-google-av-aid=&quot;0&quot;data-google-av-naid=&quot;1&quot;data-google-av-slift=&quot;&quot;data-google-av-cpmav=&quot;&quot;data-google-av-btr=&quot;&quot;data-google-av-itpl=&quot;20&quot;data-google-av-rs=&quot;4&quot;><iframe src=&quot;https://a4227.casalemedia.com/ifnotify?consent=1&amp;c=155583C&amp;r=2CA7C40F&amp;t=5F730DE2&amp;u=WDBieTN0SE03SkVBQUJsN1Rmd0FBQURR&amp;m=baca9af6d5186f415a12d99305ea0503&amp;wp=67&amp;aid=EB5CA88041838C79&amp;tid=142B4&amp;s=45522&amp;cp=1.03&amp;n=4gnews.pt&amp;pr=xx&amp;epr=X3MN4gADIsUKfieB_wJ8MQ&amp;uds=d5&quot; width=&quot;0&quot; height=&quot;0&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;display:none;&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot;></iframe><!DOCTYPE html><img src=&quot;https://exch.quantserve.com/pixel/p-1RYxePXT9bCS2.gif?&amp;media=ad&amp;p=1.03&amp;r=428114&amp;rand=96910&amp;labels=_qc.imp,_imp.adserver.rtb,_imp.qccampaign.810944,_imp.flight.810537,_imp.lineitem.725861&amp;rtbip=192.184.70.138&amp;rtbdata2=EAwaF0Fkb2JlX0VEVV9MQVRBTV9GWTIwX1E0IMC_MSjlpiwwrdlqOhFodHRwczovLzRnbmV3cy5wdFooYU5DcXBEdUUtdmR3Z0t5aGFkZXpvbVRYcDZOd2c2dWxhWVFLNU9abHU1wRxDgAGxoL-4BKABAagBpIPSBLoBGFgwYnkzdEhNN0pFQUFCbDdUZndBQUFEUcAB3Ig_yAG997jLzS7aARBFQjVDQTg4MDQxODM4Qzc55QGASOY76AFkmAKpvDGwAgi6AgTAuEaKwAICyAIA0ALO4Yb7-J_3zKkB4AIA6AIH-AIAigMGMTg3NjY5mAMAqAMAsgMEsyN2ANgDjvUF4gMPcC0xUll4ZVBYVDliQ1My6gMGCKwCEPoB8gMA-AMAgAQBigQNcXVhbnRjYXN0LXFjMQ&quot; style=&quot;display: none;&quot; border=&quot;0&quot; height=&quot;1&quot; width=&quot;1&quot; alt=&quot;Quantcast&quot;/>
+<div style=&quot;height: 250px; width: 300px; display: table-cell; vertical-align: middle;&quot;>
+  <div style=&quot;width: 300px; margin-left: auto; margin-right: auto;&quot;>
+  
+    <div id=&quot;qc-ad-size&quot; class=&quot;qc-ad-300x250&quot;>
+      <link href=&quot;https://content.quantcount.com/adchoices/v2/css/300x250.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/>
+      <!--[if lte IE 8]>
+      <link href=&quot;https://content.quantcount.com/adchoices/v2/css/ie.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/>
+      <![endif]-->
+      <!--[if lte IE 6]>
+      <link href=&quot;https://content.quantcount.com/adchoices/v2/css/ie6.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;/>
+      <![endif]-->
+      <div class=&quot;quantcast-ad-div&quot;>
+        <script language=&quot;javascript&quot; type=&quot;text/javascript&quot;> 
+new function() {
+this.rand = Math.floor((Math.random() + &quot;&quot;) * 1000000000000);
+this.dvparams = 'ctx=1828362&amp;cmp=115975&amp;plc=4282609&amp;sid=3155';
+this.dvregion = '0';
+this.tagsrc = '<noscr'+'ipt>\n<a href=&quot;http://exch.quantserve.com/r?&amp;a=p-1RYxePXT9bCS2&amp;labels=_qc.clk,_click.adserver.rtb,_click.rand.96910&amp;rtbip=192.184.70.138&amp;rtbdata2=EAwaF0Fkb2JlX0VEVV9MQVRBTV9GWTIwX1E0IMC_MSjlpiwwrdlqOhFodHRwczovLzRnbmV3cy5wdFooYU5DcXBEdUUtdmR3Z0t5aGFkZXpvbVRYcDZOd2c2dWxhWVFLNU9abHU1wRxDgAGxoL-4BKABAagBpIPSBLoBGFgwYnkzdEhNN0pFQUFCbDdUZndBQUFEUcAB3Ig_yAG997jLzS7aARBFQjVDQTg4MDQxODM4Qzc55QGASOY76AFkmAKpvDGwAgi6AgTAuEaKwAICyAIA0ALO4Yb7-J_3zKkB4AIA6AIH-AIAigMGMTg3NjY5mAMAqAMAsgMEsyN2ANgDjvUF4gMPcC0xUll4ZVBYVDliQ1My6gMGCKwCEPoB8gMA-AMAgAQBigQNcXVhbnRjYXN0LXFjMQ&amp;redirecturl2=https://servedby.flashtalking.com/click/8/115975;4282609;0;209;0/?ft_width=300&amp;ft_height=250&amp;url=26156036&quot; target=&quot;_blank&quot;>\n<img border=&quot;0&quot; src=&quot;https://servedby.flashtalking.com/imp/8/115975;4282609;205;gif;Quantcast;QuantcastFY20EDULALEDUPurchaseVABRDSKBAN300x250/?&quot;></a>\n</noscr'+'ipt>\n<scr'+'ipt language=&quot;Javascr'+'ipt1.1&quot; type=&quot;text/javascr'+'ipt&quot;> window.fltk=function(a){try{for(var b=&quot;&quot;,c=a.stuff.length;c--;)if(&quot;fltk&quot;==a.stuff[c].cn){b=a.stuff[c].cv.replace(RegExp(&quot;segID=&quot;,&quot;g&quot;),&quot;&quot;).split(&quot;,&quot;);break}window.ftAdAM=0<b.length?encodeURIComponent(&quot;__&quot;+b.join(&quot;__&quot;)+&quot;__&quot;):&quot;&quot;}catch(d){}try{window.ftAdUuid=a.uuid||&quot;&quot;}catch(d){}};\n</scr'+'ipt>\n<scr'+'ipt language=&quot;Javascr'+'ipt1.1&quot; type=&quot;text/javascr'+'ipt&quot; src=&quot;https://adobe.demdex.net/event?d_stuff=1&amp;d_rtbd=json&amp;d_cb=fltk&quot;></scr'+'ipt>\n<scr'+'ipt language=&quot;Javascr'+'ipt1.1&quot; type=&quot;text/javascr'+'ipt&quot;>\nvar ftKW = window.ftAdAM?&quot;&amp;ft_keyword=&quot;+window.ftAdAM:&quot;&quot;;\nvar ftSection = window.ftAdAM +&quot;__&quot;+(window.ftAdUuid||&quot;&quot;);\nvar ftSec = ftSection?&quot;&amp;ft_section=&quot;+encodeURIComponent(ftSection):&quot;&quot;;\nvar ftClick = &quot;http%3A%2F%2Fexch.quantserve.com%2Fr%3F%26a%3Dp-1RYxePXT9bCS2%26labels%3D_qc.clk%2C_click.adserver.rtb%2C_click.rand.96910%26rtbip%3D192.184.70.138%26rtbdata2%3DEAwaF0Fkb2JlX0VEVV9MQVRBTV9GWTIwX1E0IMC_MSjlpiwwrdlqOhFodHRwczovLzRnbmV3cy5wdFooYU5DcXBEdUUtdmR3Z0t5aGFkZXpvbVRYcDZOd2c2dWxhWVFLNU9abHU1wRxDgAGxoL-4BKABAagBpIPSBLoBGFgwYnkzdEhNN0pFQUFCbDdUZndBQUFEUcAB3Ig_yAG997jLzS7aARBFQjVDQTg4MDQxODM4Qzc55QGASOY76AFkmAKpvDGwAgi6AgTAuEaKwAICyAIA0ALO4Yb7-J_3zKkB4AIA6AIH-AIAigMGMTg3NjY5mAMAqAMAsgMEsyN2ANgDjvUF4gMPcC0xUll4ZVBYVDliQ1My6gMGCKwCEPoB8gMA-AMAgAQBigQNcXVhbnRjYXN0LXFjMQ%26redirecturl2%3D&quot;;\nvar ftExpTrack_4282609 = &quot;&quot;;\nvar ftX = &quot;&quot;;\nvar ftY = &quot;&quot;;\nvar ftZ = &quot;&quot;;\nvar ftOBA = 1;\nvar ftContent = &quot;&quot;;\nvar ftCustom = &quot;pHaphqAMpPXVBaT22Xer_OD5WsU=&quot;;\nvar ft300x250_OOBclickTrack = &quot;&quot;;\nvar ftRandom = Math.random()*1000000;\nvar ftBuildTag1 = &quot;<scr&quot;;\nvar ftBuildTag2 = &quot;</&quot;;\nvar ftClick_4282609 = ftClick;\nif(typeof(ft_referrer)==&quot;undefined&quot;){var ft_referrer=(function(){var r=&quot;&quot;;if(window==top){r=window.location.href;}else{try{r=window.parent.location.href;}catch(e){}r=(r)?r:document.referrer;}while(encodeURIComponent(r).length>1000){r=r.substring(0,r.length-1);}return r;}());}\nvar ftDomain = (window==top)?&quot;&quot;:(function(){var d=document.referrer,h=(d)?d.match(&quot;(?::q/q/)+([qw-]+(q.[qw-]+)+)(q/)?&quot;.replace(/q/g,decodeURIComponent(&quot;%&quot;+&quot;5C&quot;)))[1]:&quot;&quot;;return (h&amp;&amp;h!=location.host)?&quot;&amp;ft_ifb=1&amp;ft_domain=&quot;+encodeURIComponent(h):&quot;&quot;;}());\nvar ftTag = ftBuildTag1 + \'ipt language=&quot;javascr'+'ipt1.1&quot; type=&quot;text/javascr'+'ipt&quot; \';\nftTag += \'src=&quot;https://servedby.flashtalking.com/imp/8/115975;4282609;201;js;Quantcast;QuantcastFY20EDULALEDUPurchaseVABRDSKBAN300x250/?ftx=\'+ftX+\'&amp;fty=\'+ftY+\'&amp;ftadz=\'+ftZ+\'&amp;ftscw=\'+ftContent+\'&amp;ft_custom=\'+ftCustom+\'&amp;ftOBA=\'+ftOBA+ftDomain+\'&amp;ft_agentEnv=\'+(window.mraid||window.ormma?\'1\':\'0\')+\'&amp;ft_referrer=\'+encodeURIComponent(ft_referrer)+ftKW+ftSec+\'&amp;cachebuster=\'+ftRandom+\'&quot; id=&quot;ftscr'+'ipt_300x250&quot; name=&quot;ftscr'+'ipt_300x250&quot;\';\nftTag += \'>\' + ftBuildTag2 + \'scr'+'ipt>\';\ndocument.write(ftTag);\n</scr'+'ipt>\n\n\n      \n';
+this.altsrc = '<scr' + 'ipt src=&quot;https://assets.quantcount.com/psa/us/300x250.js?aid=pHaphqAMpPXVBaT22Xer_OD5WsU=&amp;accid=p-1RYxePXT9bCS2&amp;cid=1748141&quot;></scr' + 'ipt>';
+
+
+this.ispreview = ''; if(this.ispreview=='1'){ this.altsrc = this.tagsrc; }if(this.ispreview=='psa'){ this.tagsrc = this.altsrc; }
+this.callbackName = '__dvredirect_callback_' + this.rand;
+var thisRedirect = this;
+window[this.callbackName] = function () { return thisRedirect; };
+
+var src = 'https://rtbcdn.doubleverify.com/bsredirect5.js?callback=' + this.callbackName;
+document.write('<scr' + 'ipt src=&quot;' + src + '&quot; type=&quot;text/javascript&quot;></scr' + 'ipt>');
+}
+</script>
+      </div>
+      <a class=&quot;qc-adchoices-link top-right &quot; href=&quot;https://pixel.quantcount.com/r?a=p-9fYuixa7g_Hm2;rand=96910;labels=_click.creative.iab,_qc.iab.clk.p-1RYxePXT9bCS2.725861.1748141;redirecturl2=http://www.quantcast.com/adchoices&quot; target=&quot;_blank&quot;>
+        <div class=&quot;qc-adchoices top-right &quot;>
+          <span class=&quot;qc-adchoices-text&quot;>AdChoices</span>
+          <img class=&quot;qc-adchoices-icon&quot; width=12 height=12 src=&quot;https://content.quantcount.com/adchoices/img/adc.png&quot;/>
+        </div>
+      </a>
+      <div class=&quot;border-div&quot;></div>
+    </div>
+
+  <img src=&quot;https://pixel.quantcount.com/pixel/p-9fYuixa7g_Hm2.gif?labels=_imp.creative.iab,_qc.iab.imp.p-1RYxePXT9bCS2.725861.1748141&quot; style=&quot;display: none;&quot; border=&quot;0&quot; height=&quot;1&quot; width=&quot;1&quot; alt=&quot;Quantcast&quot;/>
+  <script src=&quot;https://z.moatads.com/quantcastv2691176990399/moatad.js#moatClientLevel1=p-1RYxePXT9bCS2&amp;moatClientLevel2=810944&amp;moatClientLevel3=725861&amp;moatClientLevel4=1748141&amp;uid=pHaphqAMpPXVBaT22Xer_OD5WsU=&quot; type=&quot;text/javascript&quot;></script>
+  </div>
+</div>
+<script type=&quot;text/javascript&quot; src=&quot;https://pixel.adsafeprotected.com/jload?anId=8095&amp;pubId=283938&amp;chanId=4gnews.pt&quot;></script></div><script data-jc=&quot;22&quot; src=&quot;https://tpc.googlesyndication.com/pagead/js/r20200924/r20110914/client/window_focus_fy2019.js&quot; async data-jc-version=&quot;r20200924&quot; data-jcp-url=&quot;https://googleads.g.doubleclick.net/pagead/conversion/?ai=ClnCK4g1zX_uGBZfh5OUPxbyekAOeoaGuXKH56P6fA8CNtwEQASAAYM3A54CcA4IBF2NhLXB1Yi03NjgzMzk1MjY4NTYyMTA4yAEJ4AIAqAMBqgTdAU_QmSI2MFp3IiP2F_Yrev7vJ1NmU340WeWDAc7s6MRJVBdQhOjl9thscGkC4S0YXJ29_0zglS0A-eUB4H_vLaJ6oCdwUsV2CAFD4sZDXN4BNdXOg72MYgvIQ8teKFVERy7J_tA1u_E0EHoSJ2TIcN4tFIcUaBE78ag3mrEAyVsH5GLt9zxbzhf7LZzyZQNMlfmQJQTUucViqjdFTXqHFk0yMfLCSICToC4_k55cIdZBS5SYr25Z44eToCEwIrRB8fN_jSuctv-vZP8dRbMNJL6IiuBtxhBAZOo4YJ4k4AQBgAajkf_OpvDKw0KgBiGIBwGQBwKoB6a-G6gH8NkbqAfy2RuoB-zVG6gHltgbqAfk4BuoB8LaG9gHANIIAhAC-gsCCAGADAE&amp;amp;sigh=g2ux92gdE1Y&amp;amp;cid=CAQSQwCNIrLMcgLZgj2LdY_2gvhb42K-avqWViZ7TMoQn8m0_9Y7IG2bSwmTSRBNI7nlO4aRR14DY0U0Y6FJMcPv7jWQZak&quot; data-jcp-gws-id=&quot;&quot; data-jcp-qem-id=&quot;CPv_27SVjuwCFZcwuQYdRZ4HMg&quot;></script><script src=&quot;https://www.googletagservices.com/activeview/js/current/osd_listener.js?cache=r20110914&quot;></script><script type=&quot;text/javascript&quot;>osdlfm(-1,'','ByLG44g1zX_uGBZfh5OUPxbyekAMAofno_p8DAAAQATgByAEJ4AIA4AQBoAYhiAcB0ggECAAQAg','',965285435,true,'la\x3d0\x26xdi\x3d0\x26',3,'CAMSeQClSFh3qPZGZ_MzBYr4T1-fbhHaf8FdzamvrLGrGs5RGPOuNY3mlPBv3ivt28yj818ebvSZk60hTYrjiKPEMBeWv8L77JAZI_6V-LUjL4CCtzD7P9G75Arp-z9Wnbq2Av7HIF1bsD03IjMqpDGqBmQ31O8WC4ScJFs','https://pagead2.googlesyndication.com/pcs/activeview?xai\x3dAKAOjssYSZf1a2cFkHyuiHYWL6QZ9uLC-3q2unrb3OcpljpstLTrJeQf6gIDyoNCDoQSBrL-nS4hsoe-FDEyNV5_3N-ePzEEsHwMrw\x26sig\x3dCg0ArKJSzAg_r_c_bbVbEAE','');</script><script data-jc=&quot;23&quot; src=&quot;https://tpc.googlesyndication.com/pagead/js/r20200924/r20110914/client/qs_click_protection_fy2019.js&quot; data-jc-version=&quot;r20200924&quot;></script><script>googqscp.init([[[[null,500,99,2,9,null,null,null,1]]]]);</script><img src=&quot;//www.google.com/ads/measurement/l?ebcid=ALh7CaRY1jFC8g3g5r9tEeujMj7oddYm1yfpBXGgQ8VbAN1ZxYD8-rQZVDvf6kgIHQXHO37Ttpj7&quot; style=&quot;display:none;&quot; alt=&quot;&quot;></img><img src=&quot;https://googleads.g.doubleclick.net/pagead/ide_cookie&quot; style=&quot;display:none;&quot; alt=&quot;&quot;></img><script src=&quot;https://tpc.googlesyndication.com/safeframe/1-0-37/js/ext.js&quot;></script><div style=&quot;bottom:0;right:0;width:300px;height:250px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:pixelated !important;z-index:2147483647;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAACASURBVBjTbZEBDoAwCAOPH/T/rzWDwtA4ppHQ1q6D/xW1zgdxO5RTGdVdIqhiujORdFC5u5t5jDovbZlV2v63a5wwHjR+KK24b4iBSQYrt7VZB80n0bZdrIVeTmgwK40+602wz/pNsHSTo5uZCbTzSdC5FH2hfUPw0b61fCfY7AdETQXOtk3QlQAAAABJRU5ErkJggg==') !important;&quot;></div></body></html>{&quot;uid&quot;:&quot;1&quot;,&quot;hostPeerName&quot;:&quot;https://4gnews.pt&quot;,&quot;initialGeometry&quot;:&quot;{\&quot;windowCoords_t\&quot;:0,\&quot;windowCoords_r\&quot;:1920,\&quot;windowCoords_b\&quot;:1040,\&quot;windowCoords_l\&quot;:0,\&quot;frameCoords_t\&quot;:400,\&quot;frameCoords_r\&quot;:1480.53125,\&quot;frameCoords_b\&quot;:650,\&quot;frameCoords_l\&quot;:1180.53125,\&quot;styleZIndex\&quot;:\&quot;auto\&quot;,\&quot;allowedExpansion_t\&quot;:400,\&quot;allowedExpansion_r\&quot;:422.46875,\&quot;allowedExpansion_b\&quot;:0,\&quot;allowedExpansion_l\&quot;:1180.53125,\&quot;xInView\&quot;:1,\&quot;yInView\&quot;:0.16}&quot;,&quot;permissions&quot;:&quot;{\&quot;expandByOverlay\&quot;:false,\&quot;expandByPush\&quot;:false,\&quot;readCookie\&quot;:false,\&quot;writeCookie\&quot;:false}&quot;,&quot;metadata&quot;:&quot;{\&quot;shared\&quot;:{\&quot;sf_ver\&quot;:\&quot;1-0-37\&quot;,\&quot;ck_on\&quot;:1,\&quot;flash_ver\&quot;:\&quot;0\&quot;}}&quot;,&quot;reportCreativeGeometry&quot;:false,&quot;isDifferentSourceWindow&quot;:false,&quot;goog_safeframe_hlt&quot;:{},&quot;encryptionMode&quot;:null}"
+              scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true"
+              sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              data-google-container-id="1" style="border: 0px; vertical-align: bottom;"></iframe></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+
+      <div class="ncl-list-suko col-12">
+        <h2 class="section-title"><span>Artigos que não podes perder</span></h2>
+        <div class="row">
+          <a class="post-list mb30 col-12 col-lg-6" href="/smartwatch-compativeis-iphone/"
+            title="Os 12 melhores smartwatch compatíveis com iPhone">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/melhores-smartwatch-compativeis-com-iphone-s4g.jpg"
+                width="240" height="170" alt="Os 12 melhores smartwatch compatíveis com iPhone">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Os 12 melhores smartwatch compatíveis com iPhone</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/rowenta-explorer-60-review/"
+            title="Rowenta Explorer 60 review: robot aspirador XS com preço XL">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/rowenta-explorer-60-review-s4g.jpg" width="240"
+                height="170" alt="Rowenta Explorer 60 review: robot aspirador XS com preço XL">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Rowenta Explorer 60 review: robot aspirador XS com preço XL</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/melhor-smartwatch-xiaomi/"
+            title="O melhor smartwatch Xiaomi para cada utilizador em 2020">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/melhor-smartwatch-xiaomi-s4g.jpg" width="240"
+                height="170" alt="O melhor smartwatch Xiaomi para cada utilizador em 2020">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> O melhor smartwatch Xiaomi para cada utilizador em 2020</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/sony-wf-sp800n-review/"
+            title="Sony WF-SP800N Review - auriculares Bluetooth perfeitos para desporto e muito mais">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/sony-wf-sp800n-review-s4g.jpg" width="240"
+                height="170" alt="Sony WF-SP800N Review - auriculares Bluetooth perfeitos para desporto e muito mais">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Sony WF-SP800N Review - auriculares Bluetooth perfeitos para desporto e muito
+                mais</span>
+              <div class="post-authority">
+
+                <span class="post-author">Bruno Coelho</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/melhores-portateis-para-estudantes/"
+            title="Os 10 melhores portáteis para estudantes em 2020">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/os-15-melhores-portateis-para-estudantes-em-2020-s4g.jpg" width="240"
+                height="170" alt="Os 10 melhores portáteis para estudantes em 2020">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Os 10 melhores portáteis para estudantes em 2020</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/xbox-series-preco-specs-jogos/"
+            title="Tudo sobre a Xbox Series X: lançamento, preço, specs e jogos">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/xbox-series-preco-jogos-specs-s4g.jpg" width="240"
+                height="170" alt="Tudo sobre a Xbox Series X: lançamento, preço, specs e jogos">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Tudo sobre a Xbox Series X: lançamento, preço, specs e jogos</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/comprar-poco-x3-nfc-xiaomi/"
+            title="5 razões para comprar o POCO X3 NFC da Xiaomi em Portugal">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/melhores-novidades-poco-x3-nfc-da-xiaomi-s4g.jpg"
+                width="240" height="170" alt="5 razões para comprar o POCO X3 NFC da Xiaomi em Portugal">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> 5 razões para comprar o POCO X3 NFC da Xiaomi em Portugal</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/como-escolher-telemovel/"
+            title="Como escolher um telemóvel: 7 passos para fazer a melhor compra!">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/como-escolher-telemovel-s4g.jpg" width="240"
+                height="170" alt="Como escolher um telemóvel: 7 passos para fazer a melhor compra!">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Como escolher um telemóvel: 7 passos para fazer a melhor compra!</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/como-fazer-assinatura-digital/"
+            title="Como fazer uma Assinatura Digital para usar no Word e PDF">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/como-fazer-assinatura-digital-s4g.jpg" width="240"
+                height="170" alt="Como fazer uma Assinatura Digital para usar no Word e PDF">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Como fazer uma Assinatura Digital para usar no Word e PDF</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/melhores-teclados-pc/"
+            title="Os 17 melhores teclados de PC a comprar em 2020">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/melhores-teclados-pc-s4g.jpg" width="240"
+                height="170" alt="Os 17 melhores teclados de PC a comprar em 2020">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Os 17 melhores teclados de PC a comprar em 2020</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/sony-wf-xb700-review/"
+            title="Sony WF-XB700 Review: Auriculares True Wireless de qualidade!">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/sony-wf-xb700-review-true-wireless-de-qualidade-com-alguns-sacrificios-s4g.jpg"
+                width="240" height="170" alt="Sony WF-XB700 Review: Auriculares True Wireless de qualidade!">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Sony WF-XB700 Review: Auriculares True Wireless de qualidade!</span>
+              <div class="post-authority">
+
+                <span class="post-author">António Guimarães</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/melhores-camaras-de-vigilancia/"
+            title="As 10 melhores câmaras de vigilância para exterior e interior!">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/camaras-de-vigilancia-s4g.jpg" width="240"
+                height="170" alt="As 10 melhores câmaras de vigilância para exterior e interior!">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> As 10 melhores câmaras de vigilância para exterior e interior!</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/melhores-gira-discos-comprar/"
+            title="Os 8 melhores gira-discos a comprar em 2020">
+            <div class="post-img">
+              <img class="thumb" src="https://cdn.4gnews.pt/imagens/melhores-gira-discos-comprar-s4g.jpg" width="240"
+                height="170" alt="Os 8 melhores gira-discos a comprar em 2020">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> Os 8 melhores gira-discos a comprar em 2020</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+          <a class="post-list mb30 col-12 col-lg-6" href="/apps-para-ouvir-musica-offline/"
+            title="10 apps grátis para ouvir música offline no iPhone e Android">
+            <div class="post-img">
+              <img class="thumb"
+                src="https://cdn.4gnews.pt/imagens/10-apps-gratis-para-ouvir-musica-offline-no-android-s4g.jpg"
+                width="240" height="170" alt="10 apps grátis para ouvir música offline no iPhone e Android">
+
+            </div>
+
+
+            <div class="post-info">
+
+              <span class="post-title"> 10 apps grátis para ouvir música offline no iPhone e Android</span>
+              <div class="post-authority">
+
+                <span class="post-author">Rui Bacelar</span>
+
+
+              </div>
+
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="div-gpt-sg-a32d8c2b1e5f2ba49d31fb248dc4b910" class="ad-unit ad-unit--pt-pt col-12">
+    <div id="google_ads_iframe_/1062898/4gnews_bottom_ros_970x90_0__container__"
+      style="border: 0pt none; width: 970px; height: 90px;"></div>
+  </div>
+  <div class="ncl-footer-nozo mt40 txt-c">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="about-title">
+            <span class="visually-hidden">4gnews</span>
+
+            <a href="/" title="4gnews">
+              <svg enable-background="new 0 0 1822 589" viewBox="0 0 1822 589" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <mask height="296.7" maskUnits="userSpaceOnUse" width="216.3" x="238.6" y="292.2">
+                  <path clip-rule="evenodd" d="m238.7 292.4h216.2v296.6h-216.2z" fill="#fff" fill-rule="evenodd"></path>
+                </mask>
+                <path clip-rule="evenodd"
+                  d="m91.6 227.7-91.6 175.2v39.8h134.6v66.3h49.8v-66.3h40.6v-46.2h-40.5v-65.1h-49.8v65.1h-77.2l86-168.8z"
+                  fill="#fff" fill-rule="evenodd"></path>
+                <g>
+                  <path clip-rule="evenodd"
+                    d="m386.8 440.1c10.6-11.4 15.9-26.2 15.9-44.4s-5.3-33-15.9-44.4-24.3-17.1-41.2-17.1-30.6 5.8-41.2 17.3-16 26.3-16.3 44.2c.3 18.2 5.7 33 16.3 44.4s24.3 17.1 41.2 17.1 30.6-5.7 41.2-17.1zm68.1-146.1v194.5c0 20.4-4.6 38.1-13.9 53.2-9.2 15.1-22.4 26.8-39.4 35s-36.8 12.2-59.3 12.2c-32.7 0-62.9-9.5-90.8-28.5l20.9-37.8c20.4 15 42.7 22.5 67.1 22.5 19.3 0 34.6-5 46-14.9s17.1-23.4 17.1-40.6v-25.3c-7 10.7-16.7 19.4-28.1 25.1-11.5 5.8-24.9 8.6-40.2 8.6-18.8 0-35.4-4.4-49.8-13.1-14.5-8.7-26.2-21.4-33.8-36.6-8-15.7-12.1-33.7-12.1-54 0-20.1 4-37.8 12.1-53.2 7.6-15 19.3-27.5 33.8-36 14.5-8.6 31.1-12.9 49.8-12.9 15 0 28.3 2.9 40 8.8 11.4 5.7 21.2 14.3 28.3 24.9v-31.9z"
+                    fill="#fff" fill-rule="evenodd"></path>
+                </g>
+                <g clip-rule="evenodd" fill-rule="evenodd">
+                  <path
+                    d="m1593.9 395.7h129.6c2.6-55.8 25.1-95.7 44.9-131.1 18.2-32.4 35.4-63 35.4-101.6 0-80-65.1-145.1-145.1-145.1s-145.1 65.1-145.1 145.1c0 38.5 17.2 69.1 35.4 101.6 19.8 35.4 42.3 75.4 44.9 131.1m132 18h-134.4c-8.4 0-15.2-6.6-15.5-15-1.9-52.6-22.7-89.6-42.7-125.3-19.4-34.5-37.7-67.1-37.7-110.4 0-89.9 73.2-163 163.1-163s163.1 73.2 163.1 163.1c0 43.2-18.3 75.8-37.7 110.4-20.1 35.7-40.8 72.6-42.7 125.3-.3 8.3-7.2 15-15.5 14.9m-9.2 32.9h-118c-5 0-9-4-9-9s4-9 9-9h118c5 0 9 4 9 9 .1 5-4 9-9 9zm-10.2 33h-97.7c-5 0-9-4-9-8.9 0 0 0 0 0-.1 0-5 4-9 8.9-9h.1 97.7c5 0 9.1 4.1 9.1 9.1 0 4.9-4.1 8.9-9.1 8.9zm-51.2 37c-19.3 0-27.8-10.1-31.3-16.6-.9-1.8-.2-4 1.5-4.9.5-.3 1.1-.4 1.7-.4h56.2c2 0 3.7 1.6 3.7 3.7 0 .6-.1 1.2-.4 1.7-3.6 6.4-12.1 16.5-31.4 16.5"
+                    fill="#fff"></path>
+                  <path
+                    d="m1549 192.7c-5.6 0-10.1-4.3-10.5-9.9-.2-2.8-.2-5.6-.2-8.3-.1-29.9 9.6-59 27.5-82.9 17.5-23.4 41.9-40.6 69.8-49.4 5.5-1.7 11.4 1.4 13.2 6.9s-1.4 11.4-6.9 13.1c-23.6 7.4-44.3 22.1-59.2 41.9-15.2 20.3-23.4 45-23.3 70.3 0 2.4.1 4.7.2 7.1.3 5.8-4.1 10.8-9.9 11.1z"
+                    fill="#ff8000"></path>
+                  <path
+                    d="m680 314.7c14.2 14.9 21.3 35 21.3 60.5v134.2h-52.6v-119c0-15-4.3-26.9-12.9-35.6s-20.2-13-35-13c-17.4.3-31.2 6.2-41.2 17.7s-15.1 26.3-15.1 44.2v105.6h-52.2v-215h52.2v40.2c14.7-27.6 40.4-41.7 77.2-42.2 24.7.1 44.1 7.5 58.3 22.4m209 70.5c-.5-15.8-5.8-28.4-15.7-37.8s-23-14.1-39.4-14.1c-15.3 0-28.1 4.6-38.4 13.9-10.3 9.2-16.7 21.9-19.1 38zm21.9-63.1c17.3 19.6 25.9 47 25.9 82.4 0 7-.1 12.2-.4 15.7h-158.7c3.5 15.3 10.6 27.3 21.5 36s24.2 13.1 40 13.1c10.8 0 21.5-2.1 31.5-6.3 9.9-4.1 18.9-10.2 26.3-17.9l28.1 29.3c-10.9 11.9-24.2 21.2-39.1 27.3-15.4 6.4-32.5 9.6-51.2 9.6-22 0-41.4-4.6-58.1-13.7-16.4-8.7-29.9-22.1-38.8-38.4-9.1-16.5-13.7-35.4-13.7-56.9 0-21.4 4.6-40.5 13.9-57.1 9-16.3 22.4-29.8 38.8-38.8 16.6-9.2 35.5-13.9 56.7-13.9 34.2.3 60 10.1 77.3 29.6zm23.1-27.3 53.8-.4 52.6 162.4 51-162.4h52.6l51.9 162.4 51.4-162.4h52.6l-78 215h-53.4l-51.4-151.5-51 151.5h-53.5zm482 43.4c-11.1-3.5-21.4-5.2-30.7-5.2-8.8 0-15.9 1.5-21.1 4.6s-7.8 7.8-7.8 14.3c0 6.7 3.3 11.8 9.8 15.5 6.6 3.6 16.9 7.5 31.2 11.5 12.6 3.7 25 8.2 37 13.5 9.8 4.5 18.4 11.3 25.1 19.7 7.1 8.7 10.7 20.2 10.7 34.4 0 20.9-8 37-24.1 48.2s-36.3 16.9-60.7 16.9c-16.5 0-32.9-2.6-48.6-7.8-15.8-5.2-29.2-12.7-40.2-22.3l18.1-36.6c10.2 8.6 21.9 15.2 34.6 19.5 13.4 4.7 26.1 7 38.2 7 9.6 0 17.3-1.7 23.1-5 5.5-2.9 8.9-8.8 8.6-15.1 0-7.5-3.3-13.1-10-16.9s-17.5-7.9-32.6-12.5c-14.5-4.3-26.3-8.5-35.4-12.7-9.3-4.3-17.4-10.8-23.7-18.9-6.7-8.4-10-19.5-10-33.2 0-21.2 7.7-37.3 23.1-48.4s34.7-16.7 58-16.7c14.2 0 28.4 2 42 6 13.1 3.7 25.5 9.4 36.8 16.9l-18.9 37.8c-10.3-6.1-21.2-10.9-32.5-14.5"
+                    fill="#fff"></path>
+                </g>
+              </svg> </a>
+
+          </h1>
+        </div>
+        <div class="col-12 footer-info">
+          <span class="footer-info--title">Sobre nós</span>
+          <span class="footer-info--text">Feito com ❤ pela 4gnews®</span>
+          <span class="footer-info--title">Junta-te a nós</span>
+          <div class="share-icon-wrap">
+            <a href="https://www.facebook.com/4gnewspt/" title="4gnews no Facebook"
+              class="share-icon share-icon--fb"><i></i></a>
+            <a href="https://www.instagram.com/4gnewspt/" title="4gnews in Instagram"
+              class="share-icon share-icon--insta"><i></i></a>
+
+            <a rel="alternate" type="application/rss+xml" href="https://4gnews.pt/feed/" title="RSS"
+              class="share-icon share-icon--rss"><i></i></a>
+
+            <a href="https://soundcloud.com/4gnews" title="4gnews no Soundcloud"
+              class="share-icon share-icon--soundcloud"><i></i></a>
+            <a href="https://twitter.com/4gnewspt" title="4gnews in Twitter"
+              class="share-icon share-icon--twitter"><i></i></a>
+            <a href="https://www.youtube.com/channel/UC5GGdEs1HaQcQDCKfVOQu5w" title="4gnews no Youtube"
+              class="share-icon share-icon--youtube"><i></i></a>
+          </div>
+        </div>
+        <div class="col-12 sub-footer">
+          <div class="container">
+            <div class="col-12 col-md-6 txt-l footer-copy">
+              2014 - 2020 © <a class="sg" href="https://www.7graus.com/" rel="nofollow co-worker"
+                target="_blank">7Graus</a>
+
+            </div>
+            <ul class="col-12 col-md-6 txt-r">
+              <li><a href="/politica-de-privacidade/">Política de privacidade</a></li>
+              <li><a href="/sobre-nos/">Sobre nós</a></li>
+              <li><a href="/desativar-notificacoes/">Desativar Notificações</a></li>
+              <li><a href="/estatuto-editorial/">Estatuto Editorial</a></li>
+              <li><a href="/ficha-tecnica/">Ficha Técnica</a></li>
+              <li><a href="/contato/">Contacto</a></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>(function () {
+      googletag.cmd.push(function () {
+        googletag.pubads().enableLazyLoad({ "fetchMarginPercent": 500, "renderMarginPercent": 200, "mobileScaling": 2 }); googletag.pubads().disableInitialLoad(); googletag.enableServices(); var sm0 = googletag.sizeMapping().addSize([0, 0], []).addSize([300, 0], [[300, 250], [250, 250], [200, 200]]).addSize([320, 0], [[300, 250], [250, 250], [200, 200]]).addSize([336, 0], [[336, 280], [300, 250], [250, 250], [200, 200]]).addSize([992, 0], [[300, 600], [240, 400], [160, 600], [300, 250], [120, 600], [250, 250], [200, 200]]).build(), sm1 = googletag.sizeMapping().addSize([0, 0], []).addSize([768, 0], [[468, 60], [300, 75], [234, 60]]).addSize([992, 0], [[468, 60], [300, 75], [234, 60]]).addSize([1200, 0], [[728, 90], [468, 60], [300, 75], [234, 60]]).build(), sm2 = googletag.sizeMapping().addSize([0, 0], []).addSize([300, 0], [[300, 250], [250, 250], [200, 200]]).addSize([320, 0], [[300, 250], [250, 250], [200, 200]]).addSize([336, 0], [[336, 280], [300, 250], [250, 250], [200, 200]]).addSize([470, 0], [[336, 280], [300, 250], [250, 250], [200, 200]]).addSize([992, 0], [[970, 90], [728, 90], [970, 66], [320, 100], [300, 100], [468, 60], [300, 75], [320, 50], [300, 50]]).build(); var ss0 = [[336, 280], [300, 600], [300, 250], [250, 250], [240, 400], [200, 200], [160, 600], [120, 600]], ss1 = [[728, 90], [468, 60], [300, 75], [234, 60]], ss2 = [[970, 90], [970, 66], [728, 90], [468, 60], [336, 280], [320, 100], [320, 50], [300, 250], [300, 100], [300, 75], [300, 50], [250, 250], [200, 200]]; var s0 = googletag.defineSlot('/1062898/4GNEWS_HOME_300x600', ss0, 'div-gpt-sg-d83bcbef6f14e4f089e7a1bfd63e44c4').defineSizeMapping(sm0).addService(googletag.pubads()), s1 = googletag.defineSlot('/1062898/4gnews_leaderboard_lists', ss1, 'div-gpt-sg-a2db92fbb2fac60546ea075e75c192d8').defineSizeMapping(sm1).addService(googletag.pubads()), s2 = googletag.defineSlot('/1062898/4gnews_bottom_ros_970x90', ss2, 'div-gpt-sg-a32d8c2b1e5f2ba49d31fb248dc4b910').defineSizeMapping(sm2).addService(googletag.pubads()); var slots = [s0, s1, s2]; slots.forEach(function (s) { googletag.display(s.getSlotElementId()) }); googletag.pubads().refresh(slots); var mc = { "div-gpt-sg-d83bcbef6f14e4f089e7a1bfd63e44c4": { "reloadTime": 45, "adUnitPaths": ["\/1062898\/4GNEWS_HOME_300x600_R1", "\/1062898\/4GNEWS_HOME_300x600_R2", "\/1062898\/4GNEWS_HOME_300x600_R3", "\/1062898\/4GNEWS_HOME_300x600_R4"], "sizeVar": ss0, "sizeMappingVar": sm0 } }, mcs, nextAdUnitPath, mcslot; var gae = function (e, s) { if (!window.localStorage || window.localStorage.getItem("sg_gpt_event") !== "1") return; if (typeof gtag !== "undefined") { gtag("event", e, { event_category: "Sg_GPT", event_label: s.getAdUnitPath(), non_interaction: true }) } else if (typeof ga !== "undefined") ga("send", "event", "Sg_GPT", e, s.getAdUnitPath(), 0, { nonInteraction: true }) }; googletag.pubads().addEventListener("impressionViewable", function (e) { gae("ImpressionViewable", e.slot) }); googletag.pubads().addEventListener("slotRenderEnded", function (e) { gae("SlotRenderEnded", e.slot) })
+        function setDelay(e, slotOptDiv) {
+          if (e.slot.getSlotElementId() === slotOptDiv) {
+            const mcs = mc[slotOptDiv] || false;
+            let nextAdUnitPath = mcs.adUnitPaths[0] || false;
+            setTimeout(function () {
+              if (nextAdUnitPath) {
+                googletag.destroySlots([e.slot]);
+                mcslot = googletag.defineSlot(nextAdUnitPath, mcs.sizeVar, slotOptDiv);
+                if (mcs.sizeMappingVar) {
+                  mcslot.defineSizeMapping(mcs.sizeMappingVar);
+                }
+                if (e.slot.getCollapseEmptyDiv() !== null) {
+                  mcslot.setCollapseEmptyDiv(e.slot.getCollapseEmptyDiv());
+                }
+                mcslot.addService(googletag.pubads());
+                googletag.display([mcslot][0]);
+                googletag.pubads().refresh([mcslot]);
+                mcs.adUnitPaths.splice(mcs.adUnitPaths, 1);
+                mc[slotOptDiv].adUnitPaths = mcs.adUnitPaths;
+              } else {
+                googletag.pubads().refresh([mcslot]);
+              }
+            }, 1e3 * mcs.reloadTime);
+          }
+        }
+        for (let i = 0; i < Object.keys(mc).length; i++) {
+          const el = Object.keys(mc)[i];
+          googletag.pubads().addEventListener("impressionViewable", function (e) {
+            if (el === e.slot.getSlotElementId()) {
+              setDelay(e, el);
+            }
+          })
+        }
+        ; window.Sg_GPT_get_slots = function () { return slots };
+      })
+    })()</script>
+  <script>!function () { var e = function () { var e = document.getElementById("deferred-styles"), n = document.createElement("div"); n.innerHTML = e.textContent, document.body.appendChild(n), e.parentElement.removeChild(e) }, n = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame; n ? n(function () { window.setTimeout(e, 0) }) : window.addEventListener("load", e) }();</script>
+  <script>
+    var _comscore = _comscore || [];
+    _comscore.push({ c1: "2", c2: "21145335" });
+    _comscore.push({ c1: "8", c2: "21145335", c3: "1111" });
+    (function () {
+
+      if (!("localStorage" in window)) {
+        window.localStorage = {
+          _data: {},
+          setItem: function (id, val) { return this._data[id] = String(val) },
+          getItem: function (id) { return this._data.hasOwnProperty(id) ? this._data[id] : null }
+        }
+      }
+
+      var loadScript = function () {
+        if (eu == "0") {
+          var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+          s.async = true;
+          s.src = "https://sb.scorecardresearch.com/beacon.js";
+          el.parentNode.insertBefore(s, el);
+        }
+      };
+
+      var eu = localStorage.getItem("sg_eu");
+
+      if (eu === null) {
+        var request = new XMLHttpRequest();
+        request.open("GET", window.location.protocol + "//eu.7gra.us/", true);
+        request.onreadystatechange = function () {
+          if (this.readyState === 4 && this.status === 200) {
+            eu = this.responseText;
+            localStorage.setItem("sg_eu", eu)
+            loadScript();
+          }
+        };
+        request.send();
+
+      }
+
+      loadScript();
+
+    })();
+  </script>
+  <script>
+    (function () {
+
+      var loadBar = function (isEu) {
+        if (isEu) {
+          var s = document.createElement("script")
+          var el = document.getElementsByTagName("script")[0];
+          s.src = "https://7gra.us/consentbar/consent-bar.min.js?v=7";
+          el.parentNode.insertBefore(s, el);
+
+          var iterator = 0;
+          var initConsentBar = setInterval(function () {
+            if (typeof window.ConsentBar !== "undefined" || iterator++ > 100) {
+              clearInterval(initConsentBar);
+              window.consentBar = new ConsentBar({ "enable": true, "blocking": false, "language": "pt", "privacy_page": "\/politica-de-privacidade\/" });
+              window.consentBar.showBar();
+            }
+          }, 100);
+        }
+      }
+
+      window[window.attachEvent ? "attachEvent" : "addEventListener"](window.attachEvent ? "onload" : "load", function () {
+        var eu = localStorage.getItem("sg_eu");
+        var btn = document.getElementsByClassName("cookies_manager");
+        if (btn.length > 0) {
+          var btnStyle = "color:#286fb0; text-decoration: underline; cursor: pointer";
+          btn[0].style.cssText = btnStyle;
+        }
+
+        if (eu === null) {
+          var request = new XMLHttpRequest();
+          request.open("GET", window.location.protocol + "//eu.7gra.us/", true);
+          request.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+              eu = this.responseText;
+              localStorage.setItem("sg_eu", eu);
+
+              loadBar(eu == "1");
+            }
+          };
+          request.send();
+        } else {
+          loadBar(eu == "1");
+        }
+
+        var iterator = 0;
+        var isConsentBarRunning = setInterval(function () {
+          if (typeof window.ConsentBar !== "undefined" || iterator++ > 100) {
+            clearInterval(isConsentBarRunning);
+
+            if (btn.length > 0) {
+              btn[0].onclick = function () {
+                window.consentBar.showBar(true);
+              }
+            }
+          }
+        }, 100);
+      }, false);
+    })();
+  </script>
+  <script src="https://cdn.4gnews.pt/frontoffice.029.js"></script>
+  <div>
+    <link rel="stylesheet" type="text/css" href="https://cdn.4gnews.pt/frontoffice.037.css">
+  </div>
+
+  <script>var bhof_options = { "ct": "5yKYqmyTG4ej\/x4iMWynSNxmCbOHzwXv8KB8Ja6zknQ=", "iv": "a1ce6a0e29281717599614276586b53a", "s": "3cb08de7a79bc2fd" };</script>
+  <script>
+    (function (e, b, c) {
+      function d() {
+        a = b.createElement(c); m = b.getElementsByTagName(c)[0];
+        a.async = 1; a.src = "https://cdn.7gra.us/html5-push-notifications/v1.js"; m.parentNode.insertBefore(a, m)
+      } "complete" === b.readyState && d();
+      b.addEventListener("readystatechange", function (f) { "complete" === f.target.readyState && d() })
+    })(window, document, "script");
+    document.addEventListener('Sg_Html5PushNotifications', function () {
+      Sg_Html5PushNotifications.init({ "enabled": true, "domain_token": "2y10o1uE6cJfTmfUpz0jhTiPZOVtwwZ8yhMo3Mjaqvf8CN15BGeBS", "rule": { "enabled": true, "pages": 2, "days": 15 } });
+    }, false);
+  </script>
+  <script>
+    (function () {
+
+      if (window.innerWidth < 992) {
+        var prevScrollpos = window.pageYOffset;
+
+        window.addEventListener('scroll', function () {
+          var currentScrollPos = window.pageYOffset;
+
+          if (
+            prevScrollpos > currentScrollPos ||
+            (prevScrollpos < 0 || currentScrollPos < 0)) // iOS elastic behavior onScrollTOP workaround
+          {
+            document.getElementsByTagName("header")[0].style.top = "0";
+          } else {
+            document.getElementsByTagName("header")[0].style.top = "-60px";
+          }
+          prevScrollpos = currentScrollPos;
+        });
+      }
+    })();
+  </script>
+
+
+  <script>
+    //Track Outbound Link Clicks
+    (function trackOutbounds() {
+
+      var addEvent = function (el, eventName, handler) {
+
+        if (el.addEventListener) {
+          el.addEventListener(eventName, handler);
+        } else {
+          el.attachEvent('on' + eventName, function () {
+            handler.call(el);
+          });
+        }
+      }
+
+      if (document.getElementsByTagName) {
+        var el = document.getElementsByTagName('a');
+        var getDomain = document.domain.split('.').reverse()[1] + '.' + document.domain.split('.').reverse()[0];
+
+        // Look thru each a element
+        for (var i = 0; i < el.length; i++) {
+
+          // Extract it's href attribute
+          var href = (typeof (el[i].getAttribute('href')) == 'string') ? el[i].getAttribute('href') : '';
+
+          // Query the href for the top level domain (xxxxx.com)
+          var myDomain = href.match(getDomain);
+
+          // If link is outbound and is not to this domain
+          if ((href.match(/^(https?:|\/\/)/i) && !myDomain) || href.match(/^mailto\:/i)) {
+
+            // Add an event to click
+            addEvent(el[i], 'click', function (e) {
+              var url = this.getAttribute('href');
+
+              // Log even to Analytics, once done, go to the link
+              gtag('event', 'click', {
+                'event_category': 'outbound',
+                'event_label': url,
+                'non_interaction': true,
+              });
+            });
+          }
+        }
+      }
+    })();
+  </script>
+
+
+  <iframe id="google_osd_static_frame_3223502479393" name="google_osd_static_frame"
+    style="display: none; width: 0px; height: 0px;"></iframe>
+</body>
+
+</html>

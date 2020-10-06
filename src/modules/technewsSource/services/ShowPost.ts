@@ -25,7 +25,9 @@ class ShowPostService {
     });
     //const { link, title, thumb, contents, created_at } = articleAsset as Article;
 
-    const filterType = (str: string) => Object.values(ArticleContentType).includes(str);
+    const contentTypes = ['text', 'text-highlighted', 'image', 'video'];
+
+    const filterType = (str: string) => contentTypes.includes(str);
     const filterValueEmpty = (str: string) => str && str.replace(/\s/g, '').length;
     const contentsFormatted = contents
       .filter(({ type, value }: ArticleContent) => filterValueEmpty(value) && filterType(type));
@@ -35,7 +37,7 @@ class ShowPostService {
       title,
       thumb: prefixProtocol(thumb),
       contents: contentsFormatted,
-      created_at
+      created_at: new Date(created_at)
     };
   }
 }

@@ -12,7 +12,6 @@ class Tecmundo implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@TecMundo/getHome()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 
@@ -32,7 +31,6 @@ class Tecmundo implements IArticlesRepository {
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {
-    console.log(`@TecMundo/getPost()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 

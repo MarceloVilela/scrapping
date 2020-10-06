@@ -12,7 +12,6 @@ class MundoBit implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@MundoBit/getHome()/url:${url}`);
     const response = await JSDOM.fromURL(`${url}`);
     const { document } = response.window;
 
@@ -38,7 +37,6 @@ class MundoBit implements IArticlesRepository {
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {
-    console.log(`@MundoBit/getPost()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 

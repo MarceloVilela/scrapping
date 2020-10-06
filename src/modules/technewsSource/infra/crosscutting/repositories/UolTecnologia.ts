@@ -12,7 +12,6 @@ class UolTecnologia implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@UolTecnologia/getHome()/url:${url}`);
     const response = await JSDOM.fromURL(`${url}`);
     const { document } = response.window;
 
@@ -32,7 +31,6 @@ class UolTecnologia implements IArticlesRepository {
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {
-    console.log(`@UolTecnologia/getPost()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 

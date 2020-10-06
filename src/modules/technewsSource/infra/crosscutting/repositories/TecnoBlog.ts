@@ -14,8 +14,7 @@ class TecnoBlog implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@TecnoBlog/getHome()/url:${url}`);
-    const response = await JSDOM.fromURL(`${url}/noticias`);
+    const response = await JSDOM.fromURL(``);
     const { document } = response.window;
 
     const getContent = (elPost: Element) => {
@@ -43,7 +42,6 @@ class TecnoBlog implements IArticlesRepository {
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {
-    console.log(`@TecnoBlog/getPost()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 

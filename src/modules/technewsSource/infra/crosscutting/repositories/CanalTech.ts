@@ -12,7 +12,6 @@ class CanalTech implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@CanalTech/getHome()/url:${url}`);
     const response = await JSDOM.fromURL(`${url}`);
     const { document } = response.window;
 
@@ -36,7 +35,6 @@ class CanalTech implements IArticlesRepository {
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {
-    console.log(`@CanalTech/getPost()/url:${url}`);
     const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 
@@ -47,8 +45,8 @@ class CanalTech implements IArticlesRepository {
     const thumb = document
       .querySelector('.head-cover-img')
       ?.getAttribute('style')
-      ?.split('("')[1]
-      ?.split('")')[0];
+      ?.split("('")[1]
+      ?.split("')")[0];
 
     const getContent = (el: Element) => {
       if (

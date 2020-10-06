@@ -4,9 +4,17 @@ import { formatDate } from '@shared/utils';
 //
 import IArticlesRepository from '../repositories/IArticlesRepository';
 import IShowPostDTO from '@modules/technewsSource/dtos/IShowPostDTO';
-import IResponseHomeDTO from '../dtos/IResponseHomeDTO';
 
-//import previewsAsset from '../repositories/fakes/assets/json/home/tecnoblog.json';
+interface Post {
+  link: string;
+  title: string;
+  thumb: string;
+  created_at: Date;
+}
+
+interface IResponseHomeDTO {
+  posts: Post[];
+}
 
 @injectable()
 class ShowPostService {
@@ -28,10 +36,12 @@ class ShowPostService {
 
     const posts = previews.posts
       .map(preview => {
-        const created_at = formatDate(preview.created_at);
+        const created_at = formatDate(String(preview.created_at));
 
         return {
-          ...preview,
+          link: String(preview.link),
+          title: String(preview.title),
+          thumb: String(preview.thumb),
           created_at,
         }
       })

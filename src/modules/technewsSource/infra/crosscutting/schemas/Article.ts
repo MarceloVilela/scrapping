@@ -5,5 +5,5 @@ export default interface Article {
   title: string;
   thumb: string;
   contents: Content[];
-  created_at: Date;
+  created_at: Date | string;
 }

@@ -11,7 +11,7 @@ class TecnoBlogMeioBit implements IArticlesRepository {
   }
 
   async getHome(): Promise<IResponseHomeDTO> {
-    return [];
+    return { posts: [] };
   }
 
   async getPost({ url }: IShowPostDTO): Promise<Article> {

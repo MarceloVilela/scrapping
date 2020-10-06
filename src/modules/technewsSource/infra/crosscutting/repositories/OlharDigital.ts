@@ -12,16 +12,17 @@ class OlharDigital implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    console.log(`@TecMundo/getHome()/url:${url}`);
     const response = await JSDOM.fromURL(`${url}/noticias`);
     const { document } = response.window;
 
     const getContent = (elPost: Element) => ({
       link: `https:${elPost.getAttribute('href')}`,
-      title: elPost.querySelector('h3')!.textContent,
-      thumb: `https:` + elPost.querySelector('.ite-img img')!.getAttribute('data-src'),
+      title: elPost.querySelector('h3')?.textContent,
+      thumb: elPost.querySelector('.ite-img img[data-src]')
+        ? `https:` + elPost.querySelector('.ite-img img')?.getAttribute('data-src')
+        : `https:` + elPost.querySelector('.ite-img img')?.getAttribute('src'),
       // preview: '',
-      created_at: elPost.querySelector('.ite-nfo.nfo-tpo')!.textContent,
+      created_at: elPost.querySelector('.ite-nfo.nfo-tpo')?.textContent,
     });
 
     const postsData = [...document.querySelectorAll('.blk-items > a'),]
