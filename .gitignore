@@ -3,6 +3,7 @@
 node_modules/
 build/
 temp/
+coverage
 .env
 
 tmp/*
