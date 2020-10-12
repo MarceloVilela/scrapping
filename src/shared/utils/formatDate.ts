@@ -1,6 +1,10 @@
 const formatDate = (text: string) => {
   const date = new Date();
 
+  if(!text){
+    return date;
+  }
+
   //13/08
   const dayMonth = text.match(/(\d{2})\/(\d{2})/i);
   if (dayMonth) {

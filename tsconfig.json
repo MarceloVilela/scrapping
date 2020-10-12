@@ -18,6 +18,9 @@
       ],
       "@shared/*": [
         "shared/*"
+      ],
+      "@assets/*": [
+        "assets/*"
       ]
     },
     "esModuleInterop": true,
