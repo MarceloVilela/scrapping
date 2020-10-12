@@ -12,7 +12,6 @@ export default class HomePageController {
     const posts = postsQuery && postsQuery.length > 0 ? JSON.parse(String(postsQuery)) : postsBody;
 
     const urls = posts.map(({ link }) => {
-      console.log(link)
       return link;
     });
 

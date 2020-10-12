@@ -18,7 +18,7 @@ class ListPostService {
     const result = await this.postsRepository.findByOrigin({ url, page, allowContents });
 
     if (result.total === 0) {
-      throw new AppError(`Did not find posts for the origin: ${url}`);
+      //throw new AppError(`Did not find posts for the origin: ${url}`);
     }
 
     return result;

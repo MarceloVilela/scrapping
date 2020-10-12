@@ -72,7 +72,7 @@ class PostsRepository implements IPostsRepository {
 
     const formattedData = data.map((item, key) => ({
       ...item,
-      title: `${skip + (key + 1)}: ${item.title}`
+      //title: `${skip + (key + 1)}: ${item.title}`
     }));
 
     return { data: formattedData, total };

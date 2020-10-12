@@ -46,8 +46,6 @@ class CreatePostService {
       posted_at,
     });
 
-    console.log('post created', post._id, post.sourceLink);
-
     return post;
   }
 }

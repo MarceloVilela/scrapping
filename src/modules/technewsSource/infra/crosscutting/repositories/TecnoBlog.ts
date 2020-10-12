@@ -14,7 +14,7 @@ class TecnoBlog implements IArticlesRepository {
 
   async getHome(): Promise<IResponseHomeDTO> {
     const url = this.getOriginUrl();
-    const response = await JSDOM.fromURL(``);
+    const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 
     const getContent = (elPost: Element) => {
