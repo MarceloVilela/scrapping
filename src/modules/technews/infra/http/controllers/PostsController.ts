@@ -7,8 +7,7 @@ import ShowPostService from '@modules/technews/services/ShowPost';
 
 export default class AppointmentController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { link, title, thumb, contents
-    } = request.body;
+    const { link, title, thumb, contents, created_at } = request.body;
 
     const createPost = container.resolve(CreatePostService);
     const post = await createPost.execute({
@@ -16,6 +15,7 @@ export default class AppointmentController {
       title,
       thumb,
       contents,
+      created_at
     });
 
     return response.json(post);

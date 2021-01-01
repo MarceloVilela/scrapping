@@ -15,4 +15,5 @@ export default interface ICreatePostDTO {
   title: string;
   thumb: string;
   contents: Content[];
+  created_at: Date;
 };

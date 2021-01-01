@@ -20,12 +20,14 @@ class PostsRepository implements IPostsRepository {
     title,
     thumb,
     contents,
+    created_at
   }: ICreatePostDTO): Promise<Post> {
     const post = this.ormRepository.create({
       link,
       title,
       thumb,
       contents,
+      posted_at: created_at
     });
 
     const contentRepostitory = getRepository(PostContent, process.env.DB_MONGO_CONNECTION);
@@ -65,7 +67,7 @@ class PostsRepository implements IPostsRepository {
     const [data, total] = await this.ormRepository.findAndCount({
       select: !allowContents ? ['id', 'link', 'title', 'thumb', 'created_at', 'posted_at'] : undefined,
       where: { ...originFilter },
-      order: { created_at: 'DESC' },
+      order: { posted_at: 'DESC' },
       skip,
       take,
     });

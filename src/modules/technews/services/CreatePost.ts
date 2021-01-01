@@ -16,12 +16,14 @@ class CreatePostService {
     title,
     thumb,
     contents,
+    created_at
   }: ICreatePostDTO): Promise<Post> {
     const appointment = await this.postsRepository.create({
       link,
       title,
       thumb,
       contents,
+      created_at
     });
 
     return appointment;

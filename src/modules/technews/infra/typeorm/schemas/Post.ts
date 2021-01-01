@@ -30,7 +30,7 @@ class Post {
   @CreateDateColumn()
   created_at: Date;
 
-  @UpdateDateColumn()
+  @Column()
   posted_at: Date;
 }
 

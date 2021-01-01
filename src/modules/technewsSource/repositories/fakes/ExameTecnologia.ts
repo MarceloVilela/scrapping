@@ -9,7 +9,7 @@ const fakeAlias = 'ExameTecnologia';
 
 class ExameTecnologia implements IArticlesRepository {
   getOriginUrl(): string {
-    return 'https://exame.com/tecnologia';
+    return 'https://exame.com/';
   }
 
   async getHome(): Promise<IResponseHomeDTO> {
