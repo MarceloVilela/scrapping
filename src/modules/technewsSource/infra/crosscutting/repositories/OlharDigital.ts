@@ -16,16 +16,16 @@ class OlharDigital implements IArticlesRepository {
     const { document } = response.window;
 
     const getContent = (elPost: Element) => ({
-      link: `https:${elPost.getAttribute('href')}`,
-      title: elPost.querySelector('h3')?.textContent,
-      thumb: elPost.querySelector('.ite-img img[data-src]')
-        ? `https:` + elPost.querySelector('.ite-img img')?.getAttribute('data-src')
-        : `https:` + elPost.querySelector('.ite-img img')?.getAttribute('src'),
+      link: elPost.getAttribute('href'),
+      title: elPost.getAttribute('alt'),
+      thumb: elPost.querySelector('img')
+        ? url + elPost.querySelector('img')?.getAttribute('src')
+        : '',
       // preview: '',
       created_at: elPost.querySelector('.ite-nfo.nfo-tpo')?.textContent,
     });
 
-    const postsData = [...document.querySelectorAll('.blk-items > a'),]
+    const postsData = [...document.querySelectorAll('.container article > a'),]
       .map((elPost) => getContent(elPost));
 
     return { posts: postsData };
@@ -39,21 +39,20 @@ class OlharDigital implements IArticlesRepository {
       .querySelector('.fb-comments')
       ?.getAttribute('data-href');
 
-    const title = document.querySelector('h1.mat-tit')!.textContent;
+    const title = document.querySelector('.post.current-item')!.textContent;
 
-    const imgSrc = document
-      .querySelector('.mat-imagem img')
-      ?.getAttribute('srcset');
-    const [thumb] = String(imgSrc).split(' ');
+    const thumb = this.getOriginUrl() + document
+      .querySelector('.banner img')
+      ?.getAttribute('src');
 
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null
-        && el.querySelector('img')?.getAttribute('data-lazy-srcset')
+        && el.querySelector('img')?.getAttribute('src')
       ) {
-        const imgSrc = el
+        const imgSrc = this.getOriginUrl() + el
           .querySelector('img')
-          ?.getAttribute('data-lazy-srcset')
+          ?.getAttribute('src')
 
         const [img] = String(imgSrc).split(' ');
         if (img !== thumb) {
@@ -85,7 +84,7 @@ class OlharDigital implements IArticlesRepository {
       return {};
     };
 
-    const contents = [...document.querySelectorAll('.mat-txt *')]
+    const contents = [...document.querySelectorAll('.inner-content *')]
       .map(elPost => getContent(elPost))
       .map(dataPost => ({
         type: String(dataPost.type),

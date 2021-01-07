@@ -50,7 +50,7 @@ class TecnoBlog implements IArticlesRepository {
     const title = document.querySelector('h1.title a')?.textContent;
 
     const imgSrc = document
-      .querySelector('.entry p img')
+      .querySelector('.entry [id^="attachment"] img')
       ?.getAttribute('data-lazy-srcset')
 
     const [thumb] = String(imgSrc).split(' ');

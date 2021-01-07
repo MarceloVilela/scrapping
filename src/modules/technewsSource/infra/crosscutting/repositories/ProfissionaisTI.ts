@@ -26,6 +26,7 @@ class ProfissionaisTI implements IArticlesRepository {
 
     const postsData = [...document.querySelectorAll('#content article')]
       .map(elPost => getContent(elPost))
+      .filter(({ title }) => !!title);
 
     return { posts: postsData };
   }

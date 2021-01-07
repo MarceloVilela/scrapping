@@ -57,7 +57,11 @@ class TecnoBlog implements IArticlesRepository {
 
     const title = document.querySelector('h1.title a')?.textContent;
 
-    const thumb = document.querySelector('[property="og:image"]')?.getAttribute('content');
+    const imgSrc = document
+      .querySelector('.entry [id^="attachment"] img')
+      ?.getAttribute('data-lazy-srcset')
+
+    const [thumb] = String(imgSrc).split(' ');
 
     const getContent = (el: Element) => {
       if (

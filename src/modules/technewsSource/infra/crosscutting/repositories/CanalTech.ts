@@ -21,8 +21,8 @@ class CanalTech implements IArticlesRepository {
         title: elPost.querySelector('.item-info .title') !== null
           ? elPost.querySelector('.item-info .title')?.textContent
           : elPost.querySelector('h3')?.textContent,
-        thumb: elPost.querySelector('[data-src-full]') !== null
-          ? elPost.querySelector('[data-src-full]')?.getAttribute('data-src-full')
+        thumb: elPost.querySelector('[data-url]') !== null
+          ? elPost.querySelector('[data-url]')?.getAttribute('data-url')
           : '',
         created_at: ''
       }
@@ -43,10 +43,8 @@ class CanalTech implements IArticlesRepository {
     const title = document.querySelector('.timeline-wrapper h1.title')?.textContent;
 
     const thumb = document
-      .querySelector('.head-cover-img')
-      ?.getAttribute('style')
-      ?.split("('")[1]
-      ?.split("')")[0];
+      .querySelector('meta[property="og:image"]')
+      ?.getAttribute('content');
 
     const getContent = (el: Element) => {
       if (

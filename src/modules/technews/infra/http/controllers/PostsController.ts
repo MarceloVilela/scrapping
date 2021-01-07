@@ -15,7 +15,7 @@ export default class AppointmentController {
       title,
       thumb,
       contents,
-      created_at
+      created_at: new Date(created_at)
     });
 
     return response.json(post);
