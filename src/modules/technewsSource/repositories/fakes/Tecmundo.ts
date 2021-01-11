@@ -48,6 +48,8 @@ class Tecmundo implements IArticlesRepository {
       .querySelector('.tec--article__header figure img')
       ?.getAttribute('data-src');
 
+    const created_at = document.querySelector('time')?.getAttribute('datetime');
+
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null
@@ -98,7 +100,7 @@ class Tecmundo implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: new Date(),
+      created_at: created_at ? new Date(created_at) : '',
     };
 
     return post;

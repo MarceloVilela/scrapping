@@ -55,6 +55,8 @@ class TecnoBlog implements IArticlesRepository {
 
     const [thumb] = String(imgSrc).split(' ');
 
+    const created_at = document.querySelector('meta[property="article:published_time"]')?.getAttribute('content');
+
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null &&
@@ -104,7 +106,7 @@ class TecnoBlog implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: new Date(),
+      created_at: created_at ? new Date(created_at) : '',
     };
 
     return post;

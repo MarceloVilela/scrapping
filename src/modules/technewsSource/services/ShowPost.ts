@@ -1,6 +1,6 @@
 import { injectable, injectAll } from 'tsyringe';
 //
-import { prefixProtocol } from '@shared/utils';
+import { prefixProtocol, formatDate } from '@shared/utils';
 //
 import IArticlesRepository from '../repositories/IArticlesRepository';
 import IShowPostDTO from '@modules/technewsSource/dtos/IShowPostDTO';
@@ -37,7 +37,8 @@ class ShowPostService {
       title,
       thumb: prefixProtocol(thumb),
       contents: contentsFormatted,
-      created_at: new Date(created_at)
+      created_at: typeof created_at === 'string' ? formatDate(created_at) : created_at
+      //created_at: new Date(formatDate(typeof created_at !== "string" ? created_at.toString() : ''))
     };
   }
 }

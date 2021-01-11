@@ -42,6 +42,8 @@ class Leak implements IArticlesRepository {
 
     const thumb = document.querySelector('meta[property="og:image"]')?.getAttribute('content');
 
+    const created_at = document.querySelector('meta[property="article:published_time"]')?.getAttribute('content');
+
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null &&
@@ -91,7 +93,7 @@ class Leak implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: new Date(),
+      created_at: created_at ? new Date(created_at) : '',
     };
 
     return post;

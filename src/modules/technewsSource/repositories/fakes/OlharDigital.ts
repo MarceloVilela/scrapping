@@ -46,6 +46,8 @@ class OlharDigital implements IArticlesRepository {
       const thumb = this.getOriginUrl() + document
         .querySelector('.banner img')
         ?.getAttribute('src');
+
+      const created_at = document.querySelector('meta[property="article:published_time"]')?.getAttribute('content');
   
       const getContent = (el: Element) => {
         if (
@@ -86,7 +88,7 @@ class OlharDigital implements IArticlesRepository {
       return {};
     };
 
-    const contents = [...document.querySelectorAll('.mat-txt *')]
+    const contents = [...document.querySelectorAll('.inner-content *')]
       .map(elPost => getContent(elPost))
       .map(dataPost => ({
         type: String(dataPost.type),
@@ -98,7 +100,7 @@ class OlharDigital implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: new Date(),
+      created_at: new Date(created_at ? created_at : ''),
     };
 
     return post;

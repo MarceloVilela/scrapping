@@ -91,7 +91,7 @@ class TechTudo implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: String(created_at),
+      created_at: created_at ? new Date(created_at) : '',
     };
 
     return post;

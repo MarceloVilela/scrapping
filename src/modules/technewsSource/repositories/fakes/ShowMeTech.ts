@@ -46,8 +46,8 @@ class ShowMeTech implements IArticlesRepository {
 
     const thumb = document.querySelector('meta[property="og:image"]')?.getAttribute('content');
 
-    const created_at = document.querySelector('.updated')?.textContent;
-
+    const created_at = document.querySelector('meta[property="og:updated_time"]')?.getAttribute('content');
+    
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null &&
@@ -97,7 +97,7 @@ class ShowMeTech implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: String(created_at),
+      created_at: created_at ? new Date(created_at) : '',
     };
 
     return post;

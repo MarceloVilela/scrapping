@@ -49,6 +49,8 @@ class GizModo implements IArticlesRepository {
       .querySelector('.postFeaturedImg--single img')
       ?.getAttribute('src');
 
+    const created_at = document.querySelector('meta[property="article:published_time"]')?.getAttribute('content');
+
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null
@@ -100,7 +102,7 @@ class GizModo implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: new Date(),
+      created_at: created_at ? new Date(created_at) : '',
     };
 
     return post;

@@ -42,6 +42,8 @@ class UolTecnologia implements IArticlesRepository {
       .querySelector('img.pinit-img')
       ?.getAttribute('src');
 
+    const created_at = document.querySelector('p.time')?.getAttribute('ia-date-publish');
+
     const getContent = (el: Element) => {
       if (
         el.querySelector('img') !== null &&
@@ -91,7 +93,7 @@ class UolTecnologia implements IArticlesRepository {
       title: String(title),
       thumb: String(thumb),
       contents,
-      created_at: new Date(),
+      created_at: created_at ? new Date(created_at) : '',
     };
 
     return post;
