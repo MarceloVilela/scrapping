@@ -9,7 +9,7 @@ class CreatePostService {
   constructor(
     @inject('PostsRepository')
     private postsRepository: IPostsRepository,
-  ) {}
+  ) { }
 
   public async execute({
     link,
@@ -18,7 +18,12 @@ class CreatePostService {
     contents,
     created_at
   }: ICreatePostDTO): Promise<Post> {
-    const appointment = await this.postsRepository.create({
+    const [postFound] = await this.postsRepository.findByUrl([link]);
+    if (postFound) {
+      return postFound;
+    }
+
+    const post = await this.postsRepository.create({
       link,
       title,
       thumb,
@@ -26,7 +31,7 @@ class CreatePostService {
       created_at
     });
 
-    return appointment;
+    return post;
   }
 }
 

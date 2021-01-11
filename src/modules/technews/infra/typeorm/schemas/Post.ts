@@ -14,7 +14,7 @@ class Post {
   @ObjectIdColumn()
   id: ObjectID;
 
-  @Column()
+  @Column({ unique: true })
   link: string;
 
   @Column()
