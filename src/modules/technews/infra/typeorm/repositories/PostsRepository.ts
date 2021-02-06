@@ -4,6 +4,7 @@ import IPostsRepository from '@modules/technews/repositories/IPostRepository';
 import ICreatePostDTO from '@modules/technews/dtos/ICreatePostDTO';
 import IResultPostDTO from '@modules/technews/dtos/IResultPostDTO';
 import ISearchPostDTO from '@modules/technews/dtos/ISearchPostDTO';
+import IDeletePostFilterDTO from '@modules/technews/dtos/IDeletePostFilterDTO';
 
 import Post from '../schemas/Post';
 import PostContent from '../schemas/PostContent';
@@ -88,6 +89,22 @@ class PostsRepository implements IPostsRepository {
     const post = await this.ormRepository.findOne({ where: { ...urlFilters } });
 
     return post;
+  }
+
+  public async delete(filterPost: IDeletePostFilterDTO): Promise<Number> {
+    const filters = {
+      ...filterPost
+    };
+
+    //await this.ormRepository.delete({ ...filters });
+
+    const postsFound = await this.ormRepository.find({ where: { ...filters } });
+    const affectedRows = postsFound.length;
+    for (let i = 0; i <= affectedRows; i++) {
+      await this.ormRepository.delete({ ...filters });
+    }
+
+    return affectedRows;
   }
 }
 

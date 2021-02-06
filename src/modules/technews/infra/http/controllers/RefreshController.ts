@@ -6,10 +6,7 @@ import RefreshPostService from '@modules/technews/services/RefreshPost';
 
 export default class HomePageController {
   public async index(request: Request, response: Response): Promise<Response> {
-    const { posts: postsQuery } = request.query;
-    const postsBody = request.body;
-
-    const posts = postsQuery && postsQuery.length > 0 ? JSON.parse(String(postsQuery)) : postsBody;
+    const posts = request.body;
 
     const urls = posts.map(({ link }) => {
       return link;

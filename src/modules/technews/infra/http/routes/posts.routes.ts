@@ -37,6 +37,13 @@ postsRouter.get('/post', celebrate({
     }
 }), postsController.show);
 
+postsRouter.delete('/post', celebrate({
+    [Segments.QUERY]: {
+        title: Joi.string(),
+        thumb: Joi.string(),
+    }
+}), postsController.delete);
+
 postsRouter.post('/refresh', celebrate({
     [Segments.BODY]: Joi.array().items(Joi.object().keys({
         link: Joi.string().uri().required()
