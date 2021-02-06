@@ -27,6 +27,7 @@ class ComputerWorldPt implements IArticlesRepository {
     const postsData = [...document.querySelectorAll('ul.content li')]
       .map(elPost => getContent(elPost))
       .filter(item => item.thumb && item.link?.includes('http'))
+      .filter(item => item.link && item.link?.includes(this.getOriginUrl()))
 
     return { posts: postsData };
   }
