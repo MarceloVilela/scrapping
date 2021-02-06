@@ -11,7 +11,16 @@ const homePageController = new HomePageController();
 
 // sourceRouter.use(ensureAuthenticated);
 
-sourceRouter.get('/', homePageController.index);
-sourceRouter.get('/detail', postsController.index);
+sourceRouter.get('/', celebrate({
+    [Segments.QUERY]: {
+        url: Joi.string().uri().required()
+    }
+}), homePageController.index);
+
+sourceRouter.get('/detail', celebrate({
+    [Segments.QUERY]: {
+        url: Joi.string().uri().required()
+    }
+}), postsController.index);
 
 export default sourceRouter;
