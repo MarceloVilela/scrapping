@@ -38,6 +38,7 @@ export default class AppointmentController {
     const createPost = container.resolve(CreatePostService);
     const updateHistory = container.resolve(UpdateHistoryService);
 
+    console.clear();
     console.log('Planet@Refresh@Create', url, labels);
 
     const { posts } = await showPost.execute({
@@ -70,6 +71,9 @@ export default class AppointmentController {
           minute,
         );
       } else {
+        const dateCurrent = new Date();
+        const year = Number(dateCurrent.getFullYear());
+        const month = dateCurrent.getMonth() + 1;
         const [dayTextual, hourMinute] = date.split(' ');
         const [hour, minute] = hourMinute.split(':');
         const day =
@@ -77,9 +81,9 @@ export default class AppointmentController {
           ? new Date().getDate() - 1
           : new Date().getDate();
         posted_at = new Date(
-          parseInt(year),
-          monthVal[month],
-          parseInt(day),
+          year,
+          month,
+          day,
           parseInt(hour),
           minute,
         );

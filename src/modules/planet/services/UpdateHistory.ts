@@ -14,8 +14,7 @@ class UpdateHistoryService {
   ) {}
 
   public async execute({ labels, page }: IUpdateHistoryDTO): Promise<void> {
-    console.log('update-history-service', page);
-    const history = await this.historyRepository.update({
+    await this.historyRepository.update({
       labels,
       page,
     });

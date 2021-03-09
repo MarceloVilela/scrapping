@@ -9,14 +9,12 @@ import IPostsRepository from '../repositories/IPostRepository';
 class ShowPostService {
   constructor(
     // https://github.com/microsoft/tsyringe#injectall
-    @injectAll('PlanetSource')
+    @injectAll('GallerySource')
     private sources: IPostsRepository[],
   ) {}
 
   public async execute({ url }: IShowPostDTO): Promise<any> {
-    const [sourceCurrent] = this.sources.filter(item =>
-      url.includes(item.getOriginUrl()),
-    );
+    const [sourceCurrent] = this.sources;
 
     const post = await sourceCurrent.getPost({
       url,

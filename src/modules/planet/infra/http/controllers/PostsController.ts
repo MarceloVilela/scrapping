@@ -74,9 +74,10 @@ export default class AppointmentController {
 
   public async index(request: Request, response: Response): Promise<Response> {
     // const user_id = request.user.id;
-    const { search_query: searchQuery, sp, page } = request.query;
-    const searchFilters = sp ? sp.split(',') : [];
+    const { search_query: searchQuery, labels, page } = request.query;
     const pageFormatted = Number(page) ? Number(page) : 1;
+    let searchFilters = typeof (labels) === 'string' ? [labels] : labels;
+    searchFilters = labels === undefined ? [] : searchFilters;
 
     const listPost = container.resolve(ListPostsService);
 

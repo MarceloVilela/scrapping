@@ -57,16 +57,19 @@ class HistoryRepository implements IPostsRepository {
       labels: { $in: [filter] },
     }));
 
-    const history = await this.ormRepository.update(
-      {
-        where: {
-          $and: [...labels],
-        },
+    const history = await this.ormRepository.findOne({
+      where: {
+        $and: [...labels],
       },
-      { page },
-    );
+    });
 
-    console.log('update-history-service', page);
+    history.page = page;
+
+    await this.ormRepository.save(history);
+
+    console.log('update-history-repository', JSON.stringify({
+      $and: [...labels],
+    }), searchFilters, page);
     // history.page = page;
     // history.save();
   }
