@@ -7,8 +7,7 @@ import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 class Zq implements IEngineRepository {
   getOriginUrl(): string {
-    return 'zq'
-    return 'https://www.pirate-bay.net/top#';
+    return 'zq';
   }
 
 
@@ -55,7 +54,7 @@ class Zq implements IEngineRepository {
     const { document } = response.window;
 
     const results = this.parseResults(document);
-    
+
     return results;
   }
 }

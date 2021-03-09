@@ -6,7 +6,6 @@ import Answer from '../schemas/Answer';
 
 class Bf implements IEngineRepository {
   getOriginUrl(): string {
-    return 'bf'
     return 'https://baixarfilmetorrent.net';
   }
 

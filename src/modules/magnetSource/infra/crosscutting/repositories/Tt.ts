@@ -8,13 +8,15 @@ let jsdomDetail: JSDOM = {} as JSDOM;
 
 class Tt implements IEngineRepository {
   getOriginUrl(): string {
-    return 'tt'
-    return 'https://baixarfilmetorrent.net';
+    return 'https://torrentool.org';
   }
 
   async detail(url: string) {
+    const response = await JSDOM.fromURL(url);
+
     //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = jsdomDetail;
+    //const response = jsdomDetail;
+
     const { document } = response.window;
 
     const name = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
@@ -39,7 +41,7 @@ class Tt implements IEngineRepository {
   async parseResults(document: Document) {
 
     const getContent = async (art: Element) => {
-      const { links } = await this.detail(String(art.querySelector('a')?.getAttribute('href')));
+      //const { links } = await this.detail(String(art.querySelector('a')?.getAttribute('href')));
 
       return {
         //link: String(art.querySelector('a')?.getAttribute('href')),
@@ -49,7 +51,7 @@ class Tt implements IEngineRepository {
           ?.replace(/\\n|\\r|\\t/g, '')
           ?.replace(/\s{2,}/g, '')),
         thumb: String(art.querySelector('img')?.getAttribute('src')),
-        links,
+        links: [],
         engine_url: this.getOriginUrl(),
         desc_link: String(art.querySelector('a')?.getAttribute('href')),
       }
@@ -66,11 +68,11 @@ class Tt implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Answer[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tt.html');
-    const { document } = response.window;
+    const url = `${this.getOriginUrl()}/index.php?s=${search_query}`;
+    const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tt.html');
 
-    jsdomDetail = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tt-detail.html');
+    const { document } = response.window;
 
     const results = await this.parseResults(document);
 

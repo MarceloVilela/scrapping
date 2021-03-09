@@ -7,8 +7,7 @@ import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 class Lime implements IEngineRepository {
   getOriginUrl(): string {
-    return 'lime'
-    return 'https://www.pirate-bay.net/top#';
+    return 'https://limetor.com';
   }
 
 

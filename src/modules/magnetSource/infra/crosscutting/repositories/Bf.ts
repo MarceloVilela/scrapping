@@ -6,7 +6,6 @@ import Answer from '../schemas/Answer';
 
 class Bf implements IEngineRepository {
   getOriginUrl(): string {
-    return 'bf'
     return 'https://baixarfilmetorrent.net';
   }
 
@@ -34,7 +33,7 @@ class Bf implements IEngineRepository {
   async parseResults(document: Document) {
 
     const getContent = async (art: Element) => {
-      const { links } = await this.detail(String(art.querySelector('a')?.getAttribute('href')))
+      //const { links } = await this.detail(String(art.querySelector('a')?.getAttribute('href')))
 
       return {
         name: String(art.querySelector('a')
@@ -43,7 +42,7 @@ class Bf implements IEngineRepository {
           ?.replace(/\\n|\\r|\\t/g, '')
           ?.replace(/\s{2,}/g, '')),
         thumb: String(art.querySelector('img')?.getAttribute('src')),
-        links,
+        links: [],
         engine_url: this.getOriginUrl(),
         desc_link: String(art.querySelector('a')?.getAttribute('href')),
       }
@@ -60,8 +59,10 @@ class Bf implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Answer[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/bf.html');
+    const url = `${this.getOriginUrl()}/?s=${search_query}`
+    const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/bf.html');
+
     const { document } = response.window;
 
     const results = await this.parseResults(document);

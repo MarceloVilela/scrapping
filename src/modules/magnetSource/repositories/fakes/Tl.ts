@@ -7,7 +7,6 @@ import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 class Tl implements IEngineRepository {
   getOriginUrl(): string {
-    return 'tl'
     return 'https://www.torlock.com';
   }
 

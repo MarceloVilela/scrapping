@@ -7,8 +7,7 @@ import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 class Rb implements IEngineRepository {
   getOriginUrl(): string {
-    return 'rb'
-    return 'https://rarbg.to';
+    return 'https://rarbgproxied.org';
   }
 
 
@@ -54,7 +53,7 @@ class Rb implements IEngineRepository {
     const { document } = response.window;
 
     const results = this.parseResults(document);
-    
+
     return results;
   }
 }

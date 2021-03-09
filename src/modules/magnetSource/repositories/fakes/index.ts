@@ -20,7 +20,7 @@ export default {
     Zooqle,
 
     //
-    //BaixarFilmeTorrent,
+    BaixarFilmeTorrent,
     ComandoTorrents,
     MegaTorrentsHD,
     OndeBaixa,

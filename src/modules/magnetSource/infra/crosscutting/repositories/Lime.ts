@@ -7,8 +7,7 @@ import Result from '../schemas/Result';
 
 class Lime implements IEngineRepository {
   getOriginUrl(): string {
-    return 'lime'
-    return 'https://www.pirate-bay.net/top#';
+    return 'https://limetor.com';
   }
 
 
@@ -17,8 +16,6 @@ class Lime implements IEngineRepository {
     const getContent = (art: Element) => ({
       link: String(art.querySelector('[href*=".torrent"]')
         ?.getAttribute('href')
-        ?.split('/')[4]
-        ?.split('?')[0]
       ),
       name: String(art.querySelector('td:nth-of-type(1)')
         ?.textContent
@@ -36,7 +33,7 @@ class Lime implements IEngineRepository {
         ?.textContent || 0
       ),
       engine_url: this.getOriginUrl(),
-      desc_link: String(art.querySelector('[href*=".torrent"]')
+      desc_link: this.getOriginUrl() + '/' + String(art.querySelector('.tt-name [href]:nth-of-type(2)')
         ?.getAttribute('href')
       ),
     });
@@ -45,14 +42,14 @@ class Lime implements IEngineRepository {
       .filter(el => el.querySelector('[href*=".torrent"]') !== null)
       .map(el => getContent(el))
       .filter(item => item.link !== 'undefined' && !isNaN(item.seeds) && !isNaN(item.leech))
-      .map(item => ({ ...item, link: 'https://limetor.com/' + item.link }))
 
     return contents;
   }
 
   async search({ search_query }: ISearchParams): Promise<Result[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/lime.html');
+    const url = `${this.getOriginUrl()}/search/all/${search_query}/`;
+    const response = await JSDOM.fromURL(url);
+
     const { document } = response.window;
 
     const results = this.parseResults(document);

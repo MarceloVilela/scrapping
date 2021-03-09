@@ -1,0 +1,39 @@
+code Bf.ts
+code Ct.ts
+code Mt.ts
+code Tt.ts
+code Tf.ts
+
+code Ob.ts
+code Tpb.ts
+code Tl.ts
+code Lime.ts
+code Rb.ts
+code Zq.ts
+
+$ grep -r "return 'https"
+Bf.ts:    return 'https://baixarfilmetorrent.net';
+Ct.ts:    return 'https://comandotorrent.net';
+Lime.ts:    return 'https://limetor.com';
+Mt.ts:    return 'https://megatorrentshd.net'
+Ob.ts:    return 'https://ondebaixa.com';
+Rb.ts:    return 'https://rarbgproxied.org';
+Tf.ts:    return 'https://torrentfilmes.net';
+Tl.ts:    return 'https://www.torlock.com';
+Tpb.ts:    return 'https://pirateproxy.live';
+Tpb.ts:    return 'https://www.pirate-bay.net';
+Tt.ts:    return 'https://torrentool.org';
+Zq.ts:    return 'https://www.pirate-bay.net/top#';
+
+'https://baixarfilmetorrent.net',
+'https://comandotorrent.net',
+'https://megatorrentshd.net',
+'https://torrentool.org',
+'https://torrentfilmes.net',
+'https://ondebaixa.com',
+
+'https://www.pirate-bay.net',
+'https://www.torlock.com',
+'https://limetor.com',
+'https://rarbgproxied.org',
+'https://www.pirate-bay.net/top#'

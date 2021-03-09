@@ -20,6 +20,7 @@ import Movie from '@modules/techSource/infra/crosscutting/repositories/Movie';
 //
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import AvailableMagnetSources from '@modules/magnetSource/infra/crosscutting/repositories';
+import AvailableMagnetFakes from '@modules/magnetSource/repositories/fakes';
 
 //
 
@@ -39,15 +40,18 @@ container.registerSingleton<IPostsRepository>(
 //
 //
 //
-Object.values(AvailableNewsSources).map((source: ITechNewsSourcePost) => 
+Object.values(AvailableNewsSources).map((source: ITechNewsSourcePost) =>
   container.registerSingleton<ITechNewsSourcePost>('TechNewsSource', source)
 );
 
 //
 //
 //
-Object.values(AvailableMagnetSources).map((source) => 
+Object.values(AvailableMagnetSources).map((source) =>
   container.registerSingleton<IEngineRepository>('EngineSource', source)
+);
+Object.values(AvailableMagnetFakes).map((source) =>
+  container.registerSingleton<IEngineRepository>('EngineFake', source)
 );
 
 //
@@ -70,4 +74,4 @@ container.registerSingleton<IPlanetHistoryRepository>(
   PlanetHistoryRepository,
 );
 
-container.registerSingleton<IPlanetSourcePost>('PlanetSource', PlanetSuzy);
+container.registerSingleton<IPlanetSourcePost>('GallerySource', PlanetSuzy);

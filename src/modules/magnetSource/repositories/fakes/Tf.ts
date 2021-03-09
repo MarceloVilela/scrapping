@@ -8,7 +8,6 @@ let jsdomDetail: JSDOM = {} as JSDOM;
 
 class Tf implements IEngineRepository {
   getOriginUrl(): string {
-    return 'tf'
     return 'https://torrentfilmes.net';
   }
 

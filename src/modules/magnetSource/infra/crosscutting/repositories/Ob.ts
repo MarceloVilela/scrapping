@@ -8,13 +8,11 @@ let jsdomDetail: JSDOM = {} as JSDOM;
 
 class Ob implements IEngineRepository {
   getOriginUrl(): string {
-    return 'ob'
-    return 'https://baixarfilmetorrent.net';
+    return 'https://ondebaixa.com';
   }
 
   async detail(url: string) {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = jsdomDetail;
+    const response = await JSDOM.fromURL(url);
     const { document } = response.window;
 
     //const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
@@ -31,9 +29,9 @@ class Ob implements IEngineRepository {
       .map((el, key) => getLinks(el, String(key + 1)))
 
     return {
-      //title, 
-      //desc_link, 
-      //thumb, 
+      //title,
+      //desc_link,
+      //thumb,
       links
     };
   }
@@ -41,7 +39,7 @@ class Ob implements IEngineRepository {
   async parseResults(document: Document) {
 
     const getContent = async (art: Element) => {
-      const { links } = await this.detail(String(art.querySelector('h2 a')?.getAttribute('href')));
+      //const { links } = await this.detail(String(art.querySelector('h2 a')?.getAttribute('href')));
 
       return {
         name: String(art.querySelector('h3 a')
@@ -50,7 +48,7 @@ class Ob implements IEngineRepository {
           ?.replace(/\\n|\\r|\\t/g, '')
           ?.replace(/\s{2,}/g, '')),
         thumb: String(art.querySelector('img')?.getAttribute('src')),
-        links,
+        links: [],
         engine_url: this.getOriginUrl(),
         desc_link: String(art.querySelector('h3 a')?.getAttribute('href'))
       }
@@ -67,11 +65,11 @@ class Ob implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Answer[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/ob.html');
-    const { document } = response.window;
+    const url = `${this.getOriginUrl()}/index.php?s=${search_query}`
+    const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/ob.html');
 
-    jsdomDetail = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/ob-detail.html');
+    const { document } = response.window;
 
     const results = await this.parseResults(document);
 

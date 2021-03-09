@@ -7,8 +7,7 @@ import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 class Tpb implements IEngineRepository {
   getOriginUrl(): string {
-    return 'bay'
-    return 'https://www.pirate-bay.net/top#';
+    return 'https://pirateproxy.live';
   }
 
 

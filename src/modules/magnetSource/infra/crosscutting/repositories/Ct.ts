@@ -6,8 +6,7 @@ import Answer from '../schemas/Answer';
 
 class Ct implements IEngineRepository {
   getOriginUrl(): string {
-    return 'ct'
-    return 'https://comandotorrents.com';
+    return 'https://comandotorrent.net';
   }
 
   async detail(url: string) {
@@ -34,16 +33,16 @@ class Ct implements IEngineRepository {
   async parseResults(document: Document) {
 
     const getContent = async (art: Element) => {
-      const { links } = await this.detail(String(art.querySelector('h2 a')?.getAttribute('href')));
+      //const { links } = await this.detail(String(art.querySelector('h2 a')?.getAttribute('href')));
 
       return {
-        name: String(art.querySelector('h2 a')
-          ?.getAttribute('title')
+        name: String(art.querySelector('h2.entry-title a')
+          ?.textContent
           ?.replace(/\n|\r|\t/g, '')
           ?.replace(/\\n|\\r|\\t/g, '')
           ?.replace(/\s{2,}/g, '')),
         thumb: String(art.querySelector('img')?.getAttribute('src')),
-        links,
+        links: [],
         engine_url: this.getOriginUrl(),
         desc_link: String(art.querySelector('h2 a')?.getAttribute('href')),
       }
@@ -60,8 +59,10 @@ class Ct implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Answer[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/ct.html');
+    const url = `${this.getOriginUrl()}/?s=${search_query}`
+    const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/ct.html');
+
     const { document } = response.window;
 
     const results = await this.parseResults(document);

@@ -7,8 +7,7 @@ import Result from '../schemas/Result';
 
 class Rb implements IEngineRepository {
   getOriginUrl(): string {
-    return 'rb'
-    return 'https://rarbg.to';
+    return 'https://rarbgproxied.org';
   }
 
 
@@ -40,8 +39,7 @@ class Rb implements IEngineRepository {
       desc_link: `${this.getOriginUrl()}${art.querySelector('td:nth-of-type(1) a')?.getAttribute('href')}`,
     });
 
-    document.documentElement.outerHTML
-    const contents = [...document.querySelectorAll('.table-striped tbody tr')]
+    const contents = [...document.querySelectorAll('.lista-rounded tbody tr')]
       //.filter(el => el.querySelector('[href^="magnet"]') !== null)
       .map(el => getContent(el))
 
@@ -49,12 +47,14 @@ class Rb implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Result[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/rb.html');
+    const url = `${this.getOriginUrl()}/torrents.php?search=${search_query}`
+    const response = await JSDOM.fromURL(url);
+    console.log(url);
+
     const { document } = response.window;
 
     const results = this.parseResults(document);
-    
+
     return results;
   }
 }

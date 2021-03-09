@@ -8,8 +8,7 @@ let jsdomDetail: JSDOM = {} as JSDOM;
 
 class Ob implements IEngineRepository {
   getOriginUrl(): string {
-    return 'ob'
-    return 'https://baixarfilmetorrent.net';
+    return 'https://ondebaixa.com';
   }
 
   async detail(url: string) {
@@ -31,9 +30,9 @@ class Ob implements IEngineRepository {
       .map((el, key) => getLinks(el, String(key + 1)))
 
     return {
-      //title, 
-      //desc_link, 
-      //thumb, 
+      //title,
+      //desc_link,
+      //thumb,
       links
     };
   }

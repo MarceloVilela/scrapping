@@ -7,8 +7,8 @@ import Result from '../schemas/Result';
 
 class Tl implements IEngineRepository {
   getOriginUrl(): string {
-    return 'tl'
     return 'https://www.torlock.com';
+    return 'tl'
   }
 
 
@@ -49,8 +49,10 @@ class Tl implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Result[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tl.html');
+    const url = `${this.getOriginUrl()}/all/torrents/${search_query}.html?`;
+    const response = await JSDOM.fromURL(url);
+
+    //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tl.html');
     const { document } = response.window;
 
     const results = this.parseResults(document);

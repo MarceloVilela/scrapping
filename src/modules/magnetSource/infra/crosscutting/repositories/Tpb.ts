@@ -7,8 +7,9 @@ import Result from '../schemas/Result';
 
 class Tpb implements IEngineRepository {
   getOriginUrl(): string {
+    return 'https://pirateproxy.live';
+    return 'https://www.pirate-bay.net';
     return 'bay'
-    return 'https://www.pirate-bay.net/top#';
   }
 
 
@@ -42,7 +43,7 @@ class Tpb implements IEngineRepository {
       ),
     });
 
-    document.documentElement.outerHTML
+    console.log('results', [...document.querySelectorAll('#searchResult tbody tr')]);
     const contents = [...document.querySelectorAll('#searchResult tbody tr')]
       //.filter(el => el.querySelector('[href^="magnet"]') !== null)
       .map(el => getContent(el))
@@ -51,8 +52,10 @@ class Tpb implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Result[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tpb.html');
+    const url = `${this.getOriginUrl()}/search/${search_query}/1/99/0`;
+    const response = await JSDOM.fromURL(url);
+
+    //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tpb.html');
     const { document } = response.window;
 
     const results = this.parseResults(document);

@@ -8,13 +8,12 @@ let jsdomDetail: JSDOM = {} as JSDOM;
 
 class Tf implements IEngineRepository {
   getOriginUrl(): string {
-    return 'tf'
     return 'https://torrentfilmes.net';
   }
 
   async detail(url: string) {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = jsdomDetail;
+    const response = await JSDOM.fromURL(url);
+    //const response = jsdomDetail;
     const { document } = response.window;
 
     const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
@@ -36,7 +35,7 @@ class Tf implements IEngineRepository {
   async parseResults(document: Document) {
 
     const getContent = async (art: Element) => {
-      const { links } = await this.detail(String(art.querySelector('h2 a')?.getAttribute('href')));
+      //const { links } = await this.detail(String(art.querySelector('h2 a')?.getAttribute('href')));
 
       return {
         name: String(art.querySelector('a')
@@ -45,9 +44,9 @@ class Tf implements IEngineRepository {
           ?.replace(/\\n|\\r|\\t/g, '')
           ?.replace(/\s{2,}/g, '')),
         thumb: String(art.querySelector('img')?.getAttribute('src')),
-        links,
+        links: [],
         engine_url: this.getOriginUrl(),
-        desc_link: String(art.querySelector('h3 a')?.getAttribute('href'))
+        desc_link: String(art.querySelector('a')?.getAttribute('href'))
       }
     };
 
@@ -55,7 +54,7 @@ class Tf implements IEngineRepository {
     //.filter(el => el.querySelector('[href*=".torrent"]') !== null)
     //.map(el => getContent(el))
 
-    const elements = [...document.querySelectorAll('#home-destaques .item')];
+    const elements = [...document.querySelectorAll('.listagem .item')];
     let contents = [];
 
     for (let i = 0; i < elements.length; i++) {
@@ -67,12 +66,12 @@ class Tf implements IEngineRepository {
   }
 
   async search({ search_query }: ISearchParams): Promise<Answer[]> {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tf.html');
+    const url = `${this.getOriginUrl()}/?s=${search_query}`;
+    const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tf.html');
+    console.log(url);
+
     const { document } = response.window;
-
-    jsdomDetail = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tf-detail.html');
-
     const results = await this.parseResults(document);
 
     return results;

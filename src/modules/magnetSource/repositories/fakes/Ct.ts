@@ -6,8 +6,7 @@ import Answer from '../schemas/Answer';
 
 class Ct implements IEngineRepository {
   getOriginUrl(): string {
-    return 'ct'
-    return 'https://comandotorrents.com';
+    return 'https://comandotorrent.net';
   }
 
   async detail(url: string) {

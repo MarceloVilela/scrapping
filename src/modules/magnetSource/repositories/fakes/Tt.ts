@@ -8,8 +8,7 @@ let jsdomDetail: JSDOM = {} as JSDOM;
 
 class Tt implements IEngineRepository {
   getOriginUrl(): string {
-    return 'tt'
-    return 'https://baixarfilmetorrent.net';
+    return 'https://torrentool.org';
   }
 
   async detail(url: string) {
