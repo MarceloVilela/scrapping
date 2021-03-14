@@ -31,6 +31,7 @@ class CreatePostService {
     // console.log(sourceLink);
     // prevent duplicate
     const [postExists] = data.filter((item) => item.sourceLink === sourceLink);
+
     if (postExists) {
       console.log(`prevents duplicate${postExists.sourceLink}`);
       return postExists;

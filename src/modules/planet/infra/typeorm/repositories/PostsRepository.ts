@@ -41,12 +41,21 @@ class PostsRepository implements IPostsRepository {
     searchFilters,
     page,
   }: ISearchPostDTO): Promise<IResultPostDTO> {
+
+    let title = {};
+    try {
+      const titleValueFormatted = new RegExp(searchQuery, 'i');
+      title = { title: { $regex: titleValueFormatted } }
+    } catch (error) {
+      title = { title: searchQuery };
+    }
+    console.log(title, searchQuery);
+
     try {
       const itemsPerPage = 100;
       const skip = (page - 1) * itemsPerPage; // 0
       const take = page * itemsPerPage; // 10
 
-      const titleValueFormatted = new RegExp(searchQuery, 'i');
       // const whereTitle = searchQuery ? { $regex: titleValueFormatted } : //;
       const labels = searchFilters.map((filter) => ({
         labels: { $in: [filter] },
@@ -70,9 +79,9 @@ class PostsRepository implements IPostsRepository {
         where:
           searchFilters.length > 0
             ? {
-              $and: [{ title: { $regex: titleValueFormatted } }, ...labels],
+              $and: [title, ...labels],
             }
-            : { title: { $regex: titleValueFormatted } },
+            : title,
         order: { posted_at: 'DESC' },
         skip,
         take,
