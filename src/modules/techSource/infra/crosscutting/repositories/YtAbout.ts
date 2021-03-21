@@ -30,8 +30,11 @@ class YtAbout implements IYtAboutRepository {
       profileImage = el ? el.getAttribute('content') : '';
     }
 
+    const userGithub = document.querySelector('[href*="github"]')?.getAttribute('href')
+
     return {
-      profileImage: String(profileImage)
+      profileImage: String(profileImage),
+      userGithub: userGithub ? userGithub : ''
     };
   }
 }

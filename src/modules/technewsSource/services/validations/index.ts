@@ -3,7 +3,7 @@
  */
 expect.extend({
   toContainHomePageObject(received: Object) {
-    
+
     const pass = this.equals(
       received,
       expect.objectContaining({
@@ -48,7 +48,7 @@ expect.extend({
  */
 expect.extend({
   toContainPostObject(received: Object) {
-    
+
     const pass = this.equals(
       received,
       expect.objectContaining({

@@ -12,7 +12,7 @@ class TechChannelsBR implements IPostsRepository {
 
   async getPost({ url }: IShowPostDTO): Promise<ChannelData[]> {
     console.log(`@Tech-Channel/getPost()/url:${url}`);
-    const response = await JSDOM.fromURL(url);
+    const response = await JSDOM.fromURL(this.getOriginUrl());
     const { document } = response.window;
 
     const getContent = (el: Element) => {
