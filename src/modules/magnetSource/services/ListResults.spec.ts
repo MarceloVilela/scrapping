@@ -59,7 +59,7 @@ describe('@magnetSource/ListResults', () => {
       .mockImplementationOnce(() => JSDOM.fromFile(filePath.replace('%s', 'tl.html')));
 
     const results = await listResults.execute({
-      alias: 'tl',
+      alias: 'torlock',
       search_query: ''
     });
 
@@ -82,7 +82,7 @@ describe('@magnetSource/ListResults', () => {
   //link, name, size, seeds, leech, engine_url, desc_link
   it('should be able to list results by ct engine', async () => {
     const results = await listResults.execute({
-      alias: 'ct',
+      alias: 'comandotorrent',
       search_query: ''
     });
 
@@ -91,7 +91,7 @@ describe('@magnetSource/ListResults', () => {
 
   it('should be able to list results by mt engine', async () => {
     const results = await listResults.execute({
-      alias: 'mt',
+      alias: 'megatorrentshd',
       search_query: ''
     });
 
@@ -100,7 +100,7 @@ describe('@magnetSource/ListResults', () => {
 
   it('should be able to list results by ob engine', async () => {
     const results = await listResults.execute({
-      alias: 'ob',
+      alias: 'ondebaixa',
       search_query: ''
     });
 
