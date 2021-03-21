@@ -5,6 +5,8 @@ import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
 import { errors } from 'celebrate';
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('../../../../swagger_output.json');
 
 import AppError from '@shared/errors/AppError';
 import routes from './routes';
@@ -16,7 +18,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(routes);
+
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile, false, { docExpansion: "none", persistAuthorization: true }))
+app.use('/v1', routes);
 
 app.use(errors());
 

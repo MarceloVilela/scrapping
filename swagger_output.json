@@ -1,0 +1,709 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Scrapping",
+    "description": "API for scrape: news, content about technology; magnetic links"
+  },
+  "host": "api-siteplaceholder.herokuapp.com",
+  "basePath": "",
+  "tags": [],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "authorization",
+      "description": "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+      "token": "aaa"
+    }
+  },
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/v1/technews/post": {
+      "post": {
+        "tags": [
+          "TechNews (stored)"
+        ],
+        "summary": "Create post",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "A JSON object containing data for the post",
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/TechNewsSource_Detail"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechNews_PostDetail"
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "TechNews (stored)"
+        ],
+        "summary": "Get full data of stored post",
+        "description": "",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url of post",
+            "type": "string",
+            "default": "https://tecnoblog.net/398460/google-chrome-prepara-mudanca-para-abrir-sites-mais-rapido/"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechNewsSource_Detail"
+            },
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TechNews (stored)"
+        ],
+        "summary": "Remove post as filter",
+        "description": "",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "description": "title of post",
+            "type": "string"
+          },
+          {
+            "name": "thumb",
+            "in": "query",
+            "description": "thumb of post",
+            "type": "string",
+            "default": "https:null"
+          }
+        ],
+        "responses": {
+          "200": {
+            "type": "string",
+            "example": "0 affected rows",
+            "default": "undefined",
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/technews/post/origin": {
+      "get": {
+        "tags": [
+          "TechNews (stored)"
+        ],
+        "summary": "Get previews of stored posts by source",
+        "description": "",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url of source website",
+            "type": "string",
+            "default": "https://tecnoblog.net"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechNews_PostPagination"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/technews/refresh": {
+      "post": {
+        "tags": [
+          "TechNews (stored)"
+        ],
+        "summary": "Check which posts are not yet registered",
+        "description": "",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "A JSON object containing list of urls to be checked",
+            "type": "object",
+            "schema": {
+              "$ref": "#/definitions/TechNews_RefreshParam"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechNews_RefreshResponse"
+            },
+            "description": "A JSON object containing posts are not yet registered"
+          }
+        }
+      }
+    },
+    "/v1/technews-source/": {
+      "get": {
+        "tags": [
+          "TechNewsSource"
+        ],
+        "summary": "Get previews of posts on homepage of source website",
+        "description": "",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url of source website",
+            "type": "string",
+            "default": "https://tecnoblog.net"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechNewsSource_Previews"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/technews-source/detail": {
+      "get": {
+        "tags": [
+          "TechNewsSource"
+        ],
+        "summary": "Get full post data",
+        "description": "",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url of post in source website",
+            "type": "string",
+            "default": "https://tecnoblog.net/398460/google-chrome-prepara-mudanca-para-abrir-sites-mais-rapido/"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechNewsSource_Detail"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/tech-source/channels/br": {
+      "get": {
+        "tags": [
+          "TechSource"
+        ],
+        "summary": "Get array of technology channels on youtube (in PT-BR)",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechSource_ArrayOfChannels"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/tech-source/meetups": {
+      "get": {
+        "tags": [
+          "TechSource"
+        ],
+        "summary": "Get array of technology meetups",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechSource_ArrayOfMeetups"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/tech-source/react/br": {
+      "get": {
+        "tags": [
+          "TechSource"
+        ],
+        "summary": "Get array of companies that use react in brazil",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechSource_ArrayOfCompanies"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/tech-source/yt/about": {
+      "get": {
+        "tags": [
+          "TechSource"
+        ],
+        "summary": "Get info about youtube channel",
+        "description": "",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "url of post in source website",
+            "type": "string",
+            "default": "https://www.youtube.com/engenhariareversa"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechSource_YtAbout"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/tech-source/movies": {
+      "get": {
+        "tags": [
+          "TechSource"
+        ],
+        "summary": "Get array of movies for ...",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/TechSource_ArrayOfMovies"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/magnet-source/search": {
+      "get": {
+        "tags": [
+          "MagnetSource"
+        ],
+        "summary": "Get array of results",
+        "description": "",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "description": "alias from source site",
+            "type": "string",
+            "default": "pirateproxy"
+          },
+          {
+            "name": "search_query",
+            "in": "query",
+            "description": "search parameter",
+            "type": "string",
+            "default": "snes"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/MagnetSource_ArrayOfResults"
+            },
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TechNewsSource_Detail": {
+      "type": "object",
+      "properties": {
+        "link": {
+          "type": "string",
+          "example": "https://tecnoblog.net/398460/google-chrome-prepara-mudanca-para-abrir-sites-mais-rapido/"
+        },
+        "title": {
+          "type": "string",
+          "example": "Google Chrome prepara mudança para abrir sites mais rápido"
+        },
+        "thumb": {
+          "type": "string",
+          "example": "https://tecnoblog.net/wp-content/uploads/2021/01/google-chrome-tecnoblog-700x396.png"
+        },
+        "contents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "text"
+              },
+              "value": {
+                "type": "string",
+                "example": "A discussão que revela a preparação para este recurso foi encontrada no fórum Chromium Gerrit, local onde os desenvolvedores trocam figurinhas sobre novas funções e implementações futuras e que ainda estão no papel – longe até mesmo da versão beta do Chrome."
+              }
+            }
+          }
+        },
+        "created_at": {
+          "type": "string",
+          "example": "2021-01-04T14:04:02.000Z"
+        }
+      }
+    },
+    "TechNewsSource_Previews": {
+      "type": "object",
+      "properties": {
+        "posts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "example": "https://tecnoblog.net/409256/uber-flash-rival-rappi-loggi-chega-a-todo-brasil/"
+              },
+              "title": {
+                "type": "string",
+                "example": "Uber Flash, rival da Rappi e Loggi, chega a todo o Brasil"
+              },
+              "thumb": {
+                "type": "string",
+                "example": "https://tecnoblog.net/wp-content/uploads/2021/02/uber-flash-iphone-700x394-340x191.jpg"
+              },
+              "created_at": {
+                "type": "string",
+                "example": "2021-02-05T17:57:30.524Z"
+              }
+            }
+          }
+        }
+      }
+    },
+    "TechNews_PostDetail": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "604fb418c0194e2d883213d7"
+        },
+        "link": {
+          "type": "string",
+          "example": "https://tecnoblog.net/398460/google-chrome-prepara-mudanca-para-abrir-sites-mais-rapido/"
+        },
+        "title": {
+          "type": "string",
+          "example": "Google Chrome prepara mudança para abrir sites mais rápido"
+        },
+        "thumb": {
+          "type": "string",
+          "example": "https://tecnoblog.net/wp-content/uploads/2021/01/google-chrome-tecnoblog-700x396.png"
+        },
+        "created_at": {
+          "type": "string",
+          "example": "2021-01-04T19:29:01.817Z"
+        },
+        "posted_at": {
+          "type": "string",
+          "example": "2021-01-04T14:04:02.000Z"
+        },
+        "contents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "example": "text"
+              },
+              "value": {
+                "type": "string",
+                "example": "A discussão que revela a preparação para este recurso foi encontrada no fórum Chromium Gerrit, local onde os desenvolvedores trocam figurinhas sobre novas funções e implementações futuras e que ainda estão no papel – longe até mesmo da versão beta do Chrome."
+              }
+            }
+          }
+        }
+      }
+    },
+    "TechNews_PostPagination": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "example": "60494b28b8eba3001764f3b1"
+              },
+              "link": {
+                "type": "string",
+                "example": "https://tecnoblog.net/420003/pubg-mobile-recebe-patch-1-3-com-evento-de-musica-eletronica/"
+              },
+              "title": {
+                "type": "string",
+                "example": "PUBG Mobile recebe patch 1.3 com evento de música eletrônica"
+              },
+              "thumb": {
+                "type": "string",
+                "example": "https://tecnoblog.net/wp-content/uploads/2021/03/EwCwcvfXAAAKCLi-700x394.jpg"
+              },
+              "created_at": {
+                "type": "string",
+                "example": "2021-03-10T22:41:44.345Z"
+              },
+              "posted_at": {
+                "type": "string",
+                "example": "2021-03-10T22:22:20.000Z"
+              }
+            }
+          }
+        },
+        "total": {
+          "type": "number",
+          "example": 490
+        },
+        "count": {
+          "type": "number",
+          "example": 20
+        }
+      }
+    },
+    "TechNews_RefreshParam": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "example": "https://www.uol.com.br/tilt/noticias/redacao/2020/10/07/filha-de-haitianos-executiva-do-google-trabalha-por-tecnologias-inclusivass.htm"
+          }
+        }
+      }
+    },
+    "TechNews_RefreshResponse": {
+      "type": "array",
+      "example": [
+        "https://www.uol.com.br/tilt/noticias/redacao/2020/10/07/filha-de-haitianos-executiva-do-google-trabalha-por-tecnologias-inclusivass.htm"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "TechSource_ArrayOfChannels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "example": "https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw"
+          },
+          "title": {
+            "type": "string",
+            "example": "Filipe Deschamps"
+          },
+          "description": {
+            "type": "string",
+            "example": "O lema do canal descreve bem o que o Filipe quer nos apresentar com seu conteúdo. Como diz a descrição: programação vai muito além da sintaxe."
+          },
+          "tags": {
+            "type": "array",
+            "example": [
+              "entrevistas"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "category": {
+            "type": "string",
+            "example": "Entrevista, Webinars & Dicas 📣"
+          }
+        }
+      }
+    },
+    "TechSource_ArrayOfMeetups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "example": "https://www.meetup.com/pt-BR/globotech/events/276854651/"
+          },
+          "title": {
+            "type": "string",
+            "example": "#23 Globotech: A SmartTV, o Globoplay e a Agilidade"
+          },
+          "date": {
+            "type": "string",
+            "example": "qua, 17 de mar, 18:00 BRT"
+          },
+          "owner": {
+            "type": "string",
+            "example": "globotech"
+          },
+          "address": {
+            "type": "string",
+            "example": "Evento on-line"
+          }
+        }
+      }
+    },
+    "TechSource_ArrayOfCompanies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "iFood"
+          },
+          "address": {
+            "type": "string",
+            "example": "São Paulo, SPCampinas, SPSalvador, BA"
+          },
+          "techs": {
+            "type": "string",
+            "example": "Redux, Recompose, Ducks, Saga, Jest, Enzyme, actionz"
+          },
+          "url": {
+            "type": "string",
+            "example": "https://ifood.com.br"
+          }
+        }
+      }
+    },
+    "TechSource_YtAbout": {
+      "type": "object",
+      "properties": {
+        "profileImage": {
+          "type": "string",
+          "example": "https://yt3.ggpht.com/ytc/AAUvwngOAr7RVpz7KFey_j1mHjerywyoX0XV_vo725vcOg=s900-c-k-c0x00ffffff-no-rj"
+        },
+        "userGithub": {
+          "type": "string",
+          "example": ""
+        }
+      }
+    },
+    "TechSource_ArrayOfMovies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "example": "https://hackermovie.club/title/tt0244244/"
+          },
+          "title": {
+            "type": "string",
+            "example": "Swordfish"
+          },
+          "cloudTag": {
+            "type": "string",
+            "example": "Thriller,Caper Story"
+          },
+          "category": {
+            "type": "string",
+            "example": "Thrillers / Drama"
+          },
+          "type": {
+            "type": "string",
+            "example": "MOVIE"
+          },
+          "year": {
+            "type": "number",
+            "example": 2001
+          },
+          "rating": {
+            "type": "number",
+            "example": 6.5
+          },
+          "thumb": {
+            "type": "string",
+            "example": ""
+          }
+        }
+      }
+    },
+    "MagnetSource_ArrayOfResults": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "example": "magnet:?xt=urn:btih:684E3D0CFAB237DED715DCC546BFBCF90FDFA09F&dn=%5BSNES%5D+Super+Nintendo+Games+Collection+%5B765+ROMS%5D+%2B+Snes9x+1.53&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce"
+          },
+          "name": {
+            "type": "string",
+            "example": "[SNES] Super Nintendo Games Collection [765 ROMS] + Snes9x 1.53"
+          },
+          "size": {
+            "type": "string",
+            "example": "1.03 GB"
+          },
+          "seeds": {
+            "type": "number",
+            "example": 139
+          },
+          "leech": {
+            "type": "number",
+            "example": 21
+          },
+          "engine_url": {
+            "type": "string",
+            "example": "https://pirateproxy.live"
+          },
+          "desc_link": {
+            "type": "string",
+            "example": "https://pirateproxy.live/torrent/8028980/[SNES]_Super_Nintendo_Games_Collection_[765_ROMS]___Snes9x_1.53"
+          }
+        }
+      }
+    },
+    "AppInfo": {
+      "type": "object",
+      "properties": {
+        "appname": {
+          "type": "string",
+          "example": "SitePlaceholder"
+        }
+      }
+    }
+  }
+}
