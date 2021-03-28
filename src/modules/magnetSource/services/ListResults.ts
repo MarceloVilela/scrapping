@@ -12,8 +12,8 @@ import Result from '@modules/magnetSource/repositories/schemas/Result';
 class ListResults {
   constructor(
     // https://github.com/microsoft/tsyringe#injectall
-    @injectAll('EngineFake')
-    //@injectAll('EngineSource')
+    //@injectAll('EngineFake')
+    @injectAll('EngineSource')
     private sources: IEngineRepository[],
   ) { }
 

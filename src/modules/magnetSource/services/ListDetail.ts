@@ -11,8 +11,8 @@ import Answer from '@modules/magnetSource/repositories/schemas/Answer';
 class ShowTechChannelsBR {
   constructor(
     // https://github.com/microsoft/tsyringe#injectall
-    @injectAll('EngineFake')
-    //@injectAll('EngineSource')
+    //@injectAll('EngineFake')
+    @injectAll('EngineSource')
     private sources: IEngineRepository[],
   ) { }
 
