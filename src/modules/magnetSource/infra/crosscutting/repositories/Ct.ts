@@ -2,32 +2,40 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import Answer from '../schemas/Answer';
+import IShowDetailMagnetDTO from '@modules/magnetSource/dtos/IShowDetailMagnetDTO';
+import Answer from '@modules/magnetSource/repositories/schemas/Answer';
 
 class Ct implements IEngineRepository {
   getOriginUrl(): string {
     return 'https://comandotorrent.net';
   }
 
-  async detail(url: string) {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/ct-detail.html');
+  async detail({ url }: IShowDetailMagnetDTO): Promise<Answer> {
+    const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/detail/ct-detail.html');
+
     const { document } = response.window;
 
-    const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
-    const desc_link = document.querySelector('meta[property="og:url"]')?.getAttribute('content')
-    const thumb = document.querySelector('.content img:nth-of-type(1)')?.getAttribute('src')
+    const name = document.querySelector('h1')?.textContent
+    const desc_link = document.querySelector('h1 a')?.getAttribute('href')
+    const thumb = document.querySelector('.entry-content img')?.getAttribute('src');
 
     const getLinks = (link: Element) => {
-      let text = String(link.closest('.bt-down')?.textContent)
-      text = text.replace(String(link.textContent), "")
+      let text = link.closest('p')?.innerText || ''
+      //text = text.replace(String(link.textContent), "")
+
+      text = !text
+        ? String(new URLSearchParams(String(link.getAttribute('href'))).get('dn'))
+        : text;
+
       return { url: String(link.getAttribute('href')), text, type: 'magnet' }
     }
 
-    const links = [...document.querySelectorAll('.content a')]
+    const links = [...document.querySelectorAll('a[href^="magnet"]')]
       .map(el => getLinks(el))
+      .filter(item => item.url.includes('magnet'))
 
-    return { title, desc_link, thumb, links };
+    return { name: String(name), thumb: String(thumb), links, engine_url: this.getOriginUrl(), desc_link: String(desc_link) };
   }
 
   async parseResults(document: Document) {

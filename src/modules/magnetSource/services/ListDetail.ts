@@ -3,13 +3,12 @@ import { injectable, injectAll } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 
-import ISearchMagnetDTO from '@modules/magnetSource/dtos/ISearchMagnetDTO';
+import IShowDetailMagnetDTO from '@modules/magnetSource/dtos/IShowDetailMagnetDTO';
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import Answer from '@modules/magnetSource/repositories/schemas/Answer';
-import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 @injectable()
-class ListResults {
+class ShowTechChannelsBR {
   constructor(
     // https://github.com/microsoft/tsyringe#injectall
     @injectAll('EngineFake')
@@ -17,7 +16,9 @@ class ListResults {
     private sources: IEngineRepository[],
   ) { }
 
-  public async execute({ alias, search_query = '' }: ISearchMagnetDTO): Promise<Result[] | Answer[]> {
+  public async execute({ url }: IShowDetailMagnetDTO): Promise<Answer> {
+    console.log(url);
+    const alias = url.split('/')[2].replace('www.', '');
     const [engine] = this.sources.filter((item) => item.getOriginUrl().includes(alias));
 
     if (!engine) {
@@ -25,12 +26,16 @@ class ListResults {
       throw new AppError(`Alias not found: ${alias}. Available: ${available}`);
     }
 
-    const results = await engine.search({
-      search_query
+    if (!engine.detail) {
+      throw new AppError(`Engine ${alias} does not have this method: detail|full-page`);
+    }
+
+    const results = await engine.detail({
+      url: url
     });
 
     return results;
   }
 }
 
-export default ListResults;
+export default ShowTechChannelsBR;

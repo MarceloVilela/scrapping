@@ -2,8 +2,7 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import AppError from '@shared/errors/AppError';
-import Result from '../schemas/Result';
+import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 class Tpb implements IEngineRepository {
   getOriginUrl(): string {
@@ -43,7 +42,6 @@ class Tpb implements IEngineRepository {
       ),
     });
 
-    console.log('results', [...document.querySelectorAll('#searchResult tbody tr')]);
     const contents = [...document.querySelectorAll('#searchResult tbody tr')]
       //.filter(el => el.querySelector('[href^="magnet"]') !== null)
       .map(el => getContent(el))
@@ -54,8 +52,8 @@ class Tpb implements IEngineRepository {
   async search({ search_query }: ISearchParams): Promise<Result[]> {
     const url = `${this.getOriginUrl()}/search/${search_query}/1/99/0`;
     const response = await JSDOM.fromURL(url);
-
     //const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/tpb.html');
+
     const { document } = response.window;
 
     const results = this.parseResults(document);

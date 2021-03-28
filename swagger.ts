@@ -163,6 +163,18 @@ const doc = {
       "engine_url": "https://pirateproxy.live",
       "desc_link": "https://pirateproxy.live/torrent/8028980/[SNES]_Super_Nintendo_Games_Collection_[765_ROMS]___Snes9x_1.53"
     }],
+    MagnetSource_Detail: {
+      "name": "Liga da JustiÃ§a de Zack Snyder Torrent (2021) Dual Ã�udio 5.1 / Dublado WEB-DL 720p | 1080p | 2160p 4K FULL HD â€“ Download",
+      "thumb": "https://www.themoviedb.org/t/p/w342/yox4nyshPZkAwRchjat37fmVhQ.jpg",
+      "links": [
+        {
+          "url": "magnet:?xt=urn:btih:02c4214302c84a1dae1b0aa8fb90a338ee189a41&dn=COMANDO.TO%20-%20Zack.Snyders.Justice.League.2021.720p.WEB-DL.DDP5.1.DUAL&tr=udp%3a%2f%2fpublic.popcorn-tracker.org%3a6969%2fannounce&tr=udp%3a%2f%2ftracker.internetwarriors.net%3a1337%2fannounce&tr=udp%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2fexodus.desync.com%3a6969%2fannounce&tr=udp%3a%2f%2fretracker.lanta-net.ru%3a2710%2fannounce&tr=udp%3a%2f%2fopen.stealth.si%3a80%2fannounce&tr=udp%3a%2f%2fwww.torrent.eu.org%3a451%2fannounce&tr=udp%3a%2f%2fopentracker.i2p.rocks%3a6969%2fannounce&tr=http%3a%2f%2ftracker.opentrackr.org%3a1337%2fannounce&tr=udp%3a%2f%2f3rt.tace.ru%3a60889%2fannounce",
+          "text": "WEB-DL 720p Dual Ã�udio 5.1 (MKV) | 2.7 GB\n",
+          "type": "magnet"
+        },],
+      "engine_url": "https://comandotorrent.net",
+      "desc_link": "https://comandotorrent.net/liga-da-justica-de-zack-snyder-torrent/"
+    },
     AppInfo: {
       "appname": "SitePlaceholder"
     }

@@ -2,19 +2,20 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import Answer from '../schemas/Answer';
+import IShowDetailMagnetDTO from '@modules/magnetSource/dtos/IShowDetailMagnetDTO';
+import Answer from '@modules/magnetSource/repositories/schemas/Answer';
 
 class Bf implements IEngineRepository {
   getOriginUrl(): string {
     return 'https://baixarfilmetorrent.net';
   }
 
-  async detail(url: string) {
+  async detail({ url }: IShowDetailMagnetDTO): Promise<Answer> {
     //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/engine/bf-detail.html');
+    const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/detail/bf-detail.html');
     const { document } = response.window;
 
-    const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
+    const name = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
     const desc_link = document.querySelector('meta[property="og:url"]')?.getAttribute('content')
     const thumb = document.querySelector('.entry-content img.alignleft')?.getAttribute('src')
 
@@ -27,13 +28,13 @@ class Bf implements IEngineRepository {
     const links = [...document.querySelectorAll('a[href^="magnet"]')]
       .map(el => getLinks(el))
 
-    return { title, desc_link, thumb, links };
+    return { name: String(name), thumb: String(thumb), links, engine_url: this.getOriginUrl(), desc_link: String(desc_link) };
   }
 
   async parseResults(document: Document) {
 
     const getContent = async (art: Element) => {
-      const { links } = await this.detail(String(art.querySelector('a')?.getAttribute('href')))
+      const { links } = await this.detail({ url: String(art.querySelector('a')?.getAttribute('href')) })
 
       return {
         name: String(art.querySelector('a')

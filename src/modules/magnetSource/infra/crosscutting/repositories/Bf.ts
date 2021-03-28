@@ -2,24 +2,27 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import Answer from '../schemas/Answer';
+import IShowDetailMagnetDTO from '@modules/magnetSource/dtos/IShowDetailMagnetDTO';
+import Answer from '@modules/magnetSource/repositories/schemas/Answer';
 
 class Bf implements IEngineRepository {
   getOriginUrl(): string {
     return 'https://baixarfilmetorrent.net';
   }
 
-  async detail(url: string) {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = await JSDOM.fromFile('./src/modules/magnetSource/infra/crosscutting/repositories/bf-detail.html');
+  async detail({ url }: IShowDetailMagnetDTO): Promise<Answer> {
+    const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/detail/bf-detail.html');
+
     const { document } = response.window;
 
-    const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
+    const name = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
     const desc_link = document.querySelector('meta[property="og:url"]')?.getAttribute('content')
     const thumb = document.querySelector('.entry-content img.alignleft')?.getAttribute('src')
 
     const getLinks = (link: Element) => {
-      let text = String(link.closest('tr')?.querySelector('td')?.textContent);
+      let th = String(link.closest('table')?.querySelector('th')?.textContent);
+      let text = String(link.closest('tr')?.querySelector('td')?.textContent) + th;
       text = text.replace(String(link.textContent), "")
       return { url: String(link.getAttribute('href')), text: String(text), type: 'magnet' }
     }
@@ -27,7 +30,7 @@ class Bf implements IEngineRepository {
     const links = [...document.querySelectorAll('a[href^="magnet"]')]
       .map(el => getLinks(el))
 
-    return { title, desc_link, thumb, links };
+    return { name: String(name), thumb: String(thumb), links, engine_url: this.getOriginUrl(), desc_link: String(desc_link) };
   }
 
   async parseResults(document: Document) {

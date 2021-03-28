@@ -2,7 +2,8 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import Answer from '../schemas/Answer';
+import IShowDetailMagnetDTO from '@modules/magnetSource/dtos/IShowDetailMagnetDTO';
+import Answer from '@modules/magnetSource/repositories/schemas/Answer';
 
 let jsdomDetail: JSDOM = {} as JSDOM;
 
@@ -11,13 +12,15 @@ class Ob implements IEngineRepository {
     return 'https://ondebaixa.com';
   }
 
-  async detail(url: string) {
+  async detail({ url }: IShowDetailMagnetDTO): Promise<Answer> {
     const response = await JSDOM.fromURL(url);
+    //const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/detail/ob-detail.html');
+
     const { document } = response.window;
 
-    //const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
-    //const desc_link = document.querySelector('meta[property="og:url"]')?.getAttribute('content')
-    //const thumb = document.querySelector('.entry-content img.alignleft')?.getAttribute('src')
+    const name = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
+    const desc_link = document.querySelector('meta[property="og:url"]')?.getAttribute('content')
+    const thumb = document.querySelector('meta[property="og:image"]')?.getAttribute('content')
 
     const getLinks = (link: Element, key: string) => {
       let text = String(link.getAttribute('title'));
@@ -28,12 +31,7 @@ class Ob implements IEngineRepository {
     const links = [...document.querySelectorAll('a[href^="magnet"]')]
       .map((el, key) => getLinks(el, String(key + 1)))
 
-    return {
-      //title,
-      //desc_link,
-      //thumb,
-      links
-    };
+    return { name: String(name), thumb: String(thumb), links, engine_url: this.getOriginUrl(), desc_link: String(desc_link) };
   }
 
   async parseResults(document: Document) {

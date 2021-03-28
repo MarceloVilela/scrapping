@@ -10,7 +10,7 @@ const searchController = new SearchController();
 // appointmentsRouter.use(ensureAuthenticated);
 
 magnetRouter.get(
-// #swagger.tags = ['MagnetSource']
+  // #swagger.tags = ['MagnetSource']
   // #swagger.path = '/v1/magnet-source/search'
   // #swagger.summary = 'Get array of results'
   /* #swagger.parameters['url'] = {
@@ -25,11 +25,40 @@ magnetRouter.get(
     type: 'string',
     default: 'snes'
   } */
+  /* #swagger.parameters['encoded'] = {
+    in: 'query',
+    description: 'indicates whether the parameters are encoded',
+    type: 'string',
+    default: 'false'
+  } */
   /* #swagger.responses[200] = {
     schema: { $ref: "#/definitions/MagnetSource_ArrayOfResults" },
   } */
   '/search',
   searchController.index
+);
+
+magnetRouter.get(
+  // #swagger.tags = ['MagnetSource']
+  // #swagger.path = '/v1/magnet-source/detail'
+  // #swagger.summary = 'Get data on full post page'
+  /* #swagger.parameters['url'] = {
+    in: 'query',
+    description: 'url of full post page',
+    type: 'string',
+    default: 'https://comandotorrent.net/liga-da-justica-de-zack-snyder-torrent/'
+  } */
+  /* #swagger.parameters['encoded'] = {
+    in: 'query',
+    description: 'indicates whether the parameters are encoded',
+    type: 'string',
+    default: 'false'
+  } */
+  /* #swagger.responses[200] = {
+    schema: { $ref: "#/definitions/MagnetSource_Detail" },
+  } */
+  '/detail',
+  searchController.show
 );
 
 export default magnetRouter;

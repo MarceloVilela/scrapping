@@ -2,26 +2,23 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import Answer from '../schemas/Answer';
-
-let jsdomDetail: JSDOM = {} as JSDOM;
+import IShowDetailMagnetDTO from '@modules/magnetSource/dtos/IShowDetailMagnetDTO';
+import Answer from '@modules/magnetSource/repositories/schemas/Answer';
 
 class Tt implements IEngineRepository {
   getOriginUrl(): string {
     return 'https://torrentool.org';
   }
 
-  async detail(url: string) {
+  async detail({ url }: IShowDetailMagnetDTO): Promise<Answer> {
     const response = await JSDOM.fromURL(url);
-
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    //const response = jsdomDetail;
+    //const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/detail/tt-detail.html');
 
     const { document } = response.window;
 
     const name = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
     const desc_link = document.querySelector('meta[property="og:url"]')?.getAttribute('content')
-    const thumb = document.querySelector('.entry-content img.alignleft')?.getAttribute('src')
+    const thumb = document.querySelector('img.capa')?.getAttribute('src')
 
     const getLinks = (link: Element) => {
       let text = String(link.getAttribute('title')
@@ -35,7 +32,7 @@ class Tt implements IEngineRepository {
     const links = [...document.querySelectorAll('a[href^="magnet"]')]
       .map(el => getLinks(el))
 
-    return { name, desc_link, thumb, links };
+    return { name: String(name), thumb: String(thumb), links, engine_url: this.getOriginUrl(), desc_link: String(desc_link) };
   }
 
   async parseResults(document: Document) {

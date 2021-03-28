@@ -2,40 +2,40 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import Answer from '../schemas/Answer';
-
-let jsdomDetail: JSDOM = {} as JSDOM;
+import IShowDetailMagnetDTO from '@modules/magnetSource/dtos/IShowDetailMagnetDTO';
+import Answer from '@modules/magnetSource/repositories/schemas/Answer';
 
 class Tf implements IEngineRepository {
   getOriginUrl(): string {
     return 'https://torrentfilmes.net';
   }
 
-  async detail(url: string) {
-    //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
-    const response = jsdomDetail;
+  async detail({ url }: IShowDetailMagnetDTO): Promise<Answer> {
+    //const response = await JSDOM.fromURL(url);
+    const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/detail/tf-detail.html');
+
     const { document } = response.window;
 
-    const title = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
+    const name = document.querySelector('meta[property="og:title"]')?.getAttribute('content')
     const desc_link = document.querySelector('meta[property="og:url"]')?.getAttribute('content')
     const thumb = document.querySelector('.content img:nth-of-type(1)')?.getAttribute('src')
 
     const getLinks = (link: Element) => {
       let text = String(link.closest('.bt-down')?.textContent)
       text = text.replace(String(link.textContent), "")
-      return { url: String(link.getAttribute('href')), text, type: 'magnet' }
+      return { url: String(link.getAttribute('href')), text, type: 'magnet-ads' }
     }
 
-    const links = [...document.querySelectorAll('.content a')]
+    const links = [...document.querySelectorAll('.bt-down a')]
       .map(el => getLinks(el))
 
-    return { title, desc_link, thumb, links };
+    return { name: String(name), thumb: String(thumb), links, engine_url: this.getOriginUrl(), desc_link: String(desc_link) };
   }
 
   async parseResults(document: Document) {
 
     const getContent = async (art: Element) => {
-      const { links } = await this.detail(String(art.querySelector('h2 a')?.getAttribute('href')));
+      const { links } = await this.detail({ url: String(art.querySelector('h2 a')?.getAttribute('href')) });
 
       return {
         name: String(art.querySelector('a')
@@ -69,8 +69,6 @@ class Tf implements IEngineRepository {
     //const response = await JSDOM.fromURL(this.getOriginUrl()+'/search/mulan');
     const response = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/engine/tf.html');
     const { document } = response.window;
-
-    jsdomDetail = await JSDOM.fromFile('./src/assets/fakes/html/magnet-source/engine/tf-detail.html');
 
     const results = await this.parseResults(document);
 

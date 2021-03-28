@@ -80,3 +80,44 @@ expect.extend({
     };
   },
 });
+
+/**
+ * Abstracts the full post page test through the corresponding toContainMagnetAnswers
+ */
+expect.extend({
+  toContainMagnetDetail(received: Object, argument: Object) {
+    const pass = this.equals(
+      received,
+      expect.objectContaining({
+        name: expect.stringMatching(/\w/),
+        thumb: expect.stringContaining('://'),
+        links: expect.arrayContaining([
+          expect.objectContaining({
+            url: expect.stringMatching(/magnet/),
+            text: expect.stringMatching(/\w/),
+            type: expect.stringMatching(/\w/),
+          }),
+        ]),
+        engine_url: expect.stringMatching(/\w/),
+        desc_link: expect.stringContaining('://'),
+      }),
+    );
+
+    if (pass) {
+      return {
+        message: () =>
+          `expected ${this.utils.printReceived(
+            received
+          )} not to contain object`,
+        pass: true,
+      };
+    }
+    return {
+      message: () =>
+        `expected ${this.utils.printReceived(
+          received
+        )} to contain object`,
+      pass: false,
+    };
+  },
+});

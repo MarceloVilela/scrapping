@@ -2,21 +2,19 @@ import { JSDOM } from 'jsdom';
 import path from 'path';
 
 import './validations'
-import AppError from '@shared/errors/AppError';
 
 import ListResultsService from './ListResults';
-//import AvailableNewsSources from '@modules/magnetSource/infra/crosscutting/repositories';
-import AvailableNewsSources from '@modules/magnetSource/repositories/fakes';
-import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
+
+//import magnetSources from '@modules/magnetSource/infra/crosscutting/repositories';
+import MagnetFakesSources from '@modules/magnetSource/repositories/fakes';
 
 const filePath = path.resolve('src', 'assets', 'mock', 'magnet-source', 'engine', '%s');
 
-let fakeEngineRepository: IEngineRepository[];
 let listResults: ListResultsService;
 
 describe('@magnetSource/ListResults', () => {
   beforeAll(() => {
-    const sources = Object.values(AvailableNewsSources).map((Source) => (
+    const sources = Object.values(MagnetFakesSources).map((Source) => (
       new Source()
     ));
 

@@ -2,8 +2,7 @@ import { JSDOM } from 'jsdom';
 
 import IEngineRepository from '@modules/magnetSource/repositories/IEngineRepository';
 import ISearchParams from '@modules/magnetSource/dtos/ISearchParams';
-import AppError from '@shared/errors/AppError';
-import Result from '../schemas/Result';
+import Result from '@modules/magnetSource/repositories/schemas/Result';
 
 class Tl implements IEngineRepository {
   getOriginUrl(): string {
