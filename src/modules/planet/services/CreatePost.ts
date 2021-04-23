@@ -23,7 +23,8 @@ class CreatePostService {
     posted_at,
   }: ICreatePostDTO): Promise<Bulletin | undefined> {
     const { data } = await this.postsRepository.find({
-      searchQuery: title,
+      //searchQuery: title,
+      searchQuery: links[0],
       searchFilters: [],
       page: 1,
     });

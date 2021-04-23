@@ -43,11 +43,15 @@ class PostsRepository implements IPostsRepository {
   }: ISearchPostDTO): Promise<IResultPostDTO> {
 
     let title = {};
-    try {
-      const titleValueFormatted = new RegExp(searchQuery, 'i');
-      title = { title: { $regex: titleValueFormatted } }
-    } catch (error) {
-      title = { title: searchQuery };
+    if (!searchQuery.includes('http')) {
+      try {
+        const titleValueFormatted = new RegExp(searchQuery, 'i');
+        title = { title: { $regex: titleValueFormatted } }
+      } catch (error) {
+        title = { title: searchQuery };
+      }
+    } else {
+      title = { links: { $in: [searchQuery] } };
     }
     console.log(title, searchQuery);
 
