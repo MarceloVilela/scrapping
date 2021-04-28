@@ -31,7 +31,7 @@ class PostsRepository implements IPostsRepository {
       posted_at,
     });
 
-    await this.ormRepository.save(post);
+    await this.ormRepository.save(post, { transaction: true });
 
     return post;
   }
