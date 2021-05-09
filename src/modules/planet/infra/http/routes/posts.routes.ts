@@ -31,5 +31,6 @@ planetRouter.post('/history', historyController.create);
 
 planetRouter.get('/', postsController.index);
 planetRouter.get('/:id', postsController.show);
+planetRouter.delete('/', postsController.delete);
 
 export default planetRouter;

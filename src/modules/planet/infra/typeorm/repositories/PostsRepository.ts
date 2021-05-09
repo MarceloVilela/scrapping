@@ -2,6 +2,7 @@ import { Repository, getRepository, getMongoRepository } from 'typeorm';
 import IPostsRepository from '@modules/planet/repositories/IPostRepository';
 import ICreatePostDTO from '@modules/planet/dtos/ICreatePostDTO';
 import ISearchPostDTO from '@modules/planet/dtos/ISearchPostDTO';
+import IDeletePostFilterDTO from '@modules/planet/dtos/IDeletePostFilterDTO';
 import IResultPostDTO from '@modules/planet/dtos/IResultPostDTO';
 import Bulletin from '../schemas/Bulletin';
 
@@ -102,6 +103,21 @@ class PostsRepository implements IPostsRepository {
     const post = await this.ormRepository.findOne(id);
 
     return post;
+  }
+
+  public async delete(filterPost: IDeletePostFilterDTO): Promise<Number> {
+    const { ids } = filterPost;
+
+    //await this.ormRepository.delete({ ...filters });
+
+    const postsFound = await this.ormRepository.find({ where: { _id: { $in: ids } } });
+    const affectedRows = postsFound.length;
+
+    for (let i = 0; i <= affectedRows; i++) {
+      await this.ormRepository.delete(ids);
+    }
+
+    return affectedRows;
   }
 }
 

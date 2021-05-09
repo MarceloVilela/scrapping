@@ -78,8 +78,8 @@ export default class AppointmentController {
         const [hour, minute] = hourMinute.split(':');
         const day =
           dayTextual === 'Yesterday'
-          ? new Date().getDate() - 1
-          : new Date().getDate();
+            ? new Date().getDate() - 1
+            : new Date().getDate();
         posted_at = new Date(
           year,
           month,

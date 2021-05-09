@@ -5,14 +5,15 @@ import { container } from 'tsyringe';
 import CreatePostService from '@modules/planet/services/CreatePost';
 import ListPostsService from '@modules/planet/services/ListPosts';
 import ShowPostsService from '@modules/planet/services/ShowPost';
+import DeletePostsService from '@modules/planet/services/DeletePost';
 
 import data from './data.json';
 
 export default class AppointmentController {
   public async create(request: Request, response: Response): Promise<Response> {
     // const user_id = request.user.id;
-    // const { listPost: posts } = request.body;
-    const { listPost: posts } = data;
+    const { listPost: posts } = request.body;
+    //const { listPost: posts } = data;
 
     const createPost = container.resolve(CreatePostService);
 
@@ -34,16 +35,16 @@ export default class AppointmentController {
     for (let i = 0; i < posts.length; i++) {
       const {
         link,
-        titulo: title,
-        listImage: images,
-        listLink: links,
-        contents,
+        title,
+        images,
+        links,
+        //contents,
         // label,
         data,
       } = posts[i];
 
       const sourceLink = `http://www.planetsuzy.org/${link}`;
-      const contentsFormatted = contents.length ? contents : [];
+      //const contentsFormatted = contents.length ? contents : [];
       const labels = ['Valentina Nappi', 'planetsuzy.org', 'HD'];
       console.log(`${labels.join('@')}:${i}`);
       const [day, month, year, hourMinute] = data.split(' ');
@@ -62,7 +63,7 @@ export default class AppointmentController {
         title,
         images,
         links,
-        contents: contentsFormatted,
+        contents: [],
         labels,
         posted_at,
       });
@@ -98,5 +99,14 @@ export default class AppointmentController {
     const content = await showPost.execute(id);
 
     return response.json(content);
+  }
+
+  public async delete(request: Request, response: Response): Promise<Response> {
+    const { ids } = request.query;
+
+    const deletePost = container.resolve(DeletePostsService);
+    const affectedRows = await deletePost.execute({ ids });
+
+    return response.status(200).send(`${affectedRows} affected rows`);
   }
 }
