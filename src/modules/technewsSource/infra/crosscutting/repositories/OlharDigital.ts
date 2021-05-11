@@ -18,9 +18,9 @@ class OlharDigital implements IArticlesRepository {
     const getContent = (elPost: Element) => ({
       link: elPost.getAttribute('href'),
       title: elPost.getAttribute('alt'),
-      thumb: elPost.querySelector('img')
-        ? url + elPost.querySelector('img')?.getAttribute('src')
-        : '',
+      thumb: !elPost.querySelector('img')?.getAttribute('src')?.includes('http')
+        ? 'https:' + elPost.querySelector('img')?.getAttribute('src')
+        : elPost.querySelector('img')?.getAttribute('src'),
       // preview: '',
       created_at: elPost.querySelector('.ite-nfo.nfo-tpo')?.textContent,
     });
@@ -41,7 +41,7 @@ class OlharDigital implements IArticlesRepository {
 
     const title = document.querySelector('.post.current-item')!.textContent;
 
-    const thumb = this.getOriginUrl() + document
+    const thumb = document
       .querySelector('.banner img')
       ?.getAttribute('src');
 
