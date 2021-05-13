@@ -26,6 +26,7 @@ class TechTudo implements IArticlesRepository {
 
     const postsData = [...document.querySelectorAll('.bastian-feed-item')]
       .map(elPost => getContent(elPost))
+      .filter(({ link }) => link?.includes(this.getOriginUrl()));
 
     return { posts: postsData };
   }
