@@ -5,7 +5,7 @@
     "title": "Scrapping",
     "description": "API for scrape: news, content about technology; magnetic links"
   },
-  "host": "api-siteplaceholder.herokuapp.com",
+  "host": "api2-siteplaceholder.herokuapp.com",
   "basePath": "",
   "tags": [],
   "schemes": [

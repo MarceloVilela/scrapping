@@ -14,15 +14,15 @@
 
 ## Demonstração
 
-Caso deseje visualizar os endpoints, você pode acessar <a href="https://api-siteplaceholder.herokuapp.com/v1/docs">este link</a>.
+Caso deseje visualizar os endpoints, você pode acessar <a href="https://api2-siteplaceholder.herokuapp.com/v1/doc">este link</a>.
 
 ## Conteúdos
-.[TechNews - notícias sobre tecnologia](https://api-siteplaceholder.herokuapp.com/v1/doc/#/TechNews%20(stored)) <br />
-.[Canais sobre Tecnologia, Desenvolvimento e Programação em Português.](https://api-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_channels_br) <br />
-.[Meetups de tecnologia](https://api-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_meetups) <br />
-.[Empresas que usam React no Brasil](https://api-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_react_br) <br />
-.[Filmes para hackers](https://api-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_movies) <br />
-.[Busca de magnet links](https://api-siteplaceholder.herokuapp.com/v1/doc/#/MagnetSource/get_v1_magnet_source_search) <br />
+.[TechNews - notícias sobre tecnologia](https://api2-siteplaceholder.herokuapp.com/v1/doc/#/TechNews%20(stored)) <br />
+.[Canais sobre Tecnologia, Desenvolvimento e Programação em Português.](https://api2-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_channels_br) <br />
+.[Meetups de tecnologia](https://api2-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_meetups) <br />
+.[Empresas que usam React no Brasil](https://api2-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_react_br) <br />
+.[Filmes para hackers](https://api2-siteplaceholder.herokuapp.com/v1/doc/#/TechSource/get_v1_tech_source_movies) <br />
+.[Busca de magnet links](https://api2-siteplaceholder.herokuapp.com/v1/doc/#/MagnetSource/get_v1_magnet_source_search) <br />
 
 # Para executar locamente:
 
