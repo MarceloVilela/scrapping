@@ -19,6 +19,9 @@ class History {
   labels: string[];
 
   @Column()
+  cover: string;
+
+  @Column()
   page: number;
 
   @Column()

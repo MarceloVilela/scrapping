@@ -9,7 +9,7 @@ import IUpdateHistoryDTO from '@modules/planet/dtos/IUpdateHistoryDTO';
 import History from '../schemas/History';
 
 class HistoryRepository implements IPostsRepository {
-  private ormRepository: Repository<Post>;
+  private ormRepository: Repository<History>;
 
   constructor() {
     this.ormRepository = getRepository(History, process.env.DB_MONGO_CONNECTION);
@@ -27,6 +27,13 @@ class HistoryRepository implements IPostsRepository {
     });
 
     await this.ormRepository.save(history);
+
+    return history;
+  }
+
+
+  public async findAll(): Promise<History[]> {
+    const history = await this.ormRepository.find();
 
     return history;
   }
