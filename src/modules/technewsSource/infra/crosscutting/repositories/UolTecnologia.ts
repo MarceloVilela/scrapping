@@ -25,7 +25,8 @@ class UolTecnologia implements IArticlesRepository {
     };
 
     const postsData = [...document.querySelectorAll('.thumbnails-wrapper'),]
-      .map(elPost => getContent(elPost));
+      .map(elPost => getContent(elPost))
+      .filter(({ thumb, link }) => thumb?.includes('http') && link?.includes(this.getOriginUrl()));
 
     return { posts: postsData };
   }
