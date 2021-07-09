@@ -10,6 +10,10 @@ import ITechNewsSourcePost from '@modules/technewsSource/repositories/IPostRepos
 import AvailableNewsSources from '@modules/technewsSource/infra/crosscutting/repositories';
 
 //
+import IBrowserRepository from '@modules/browser/repositories/repositories/IBrowserRepository';
+import Firefox from '@modules/browser/infra/crosscutting/Firefox';
+
+//
 import ITechSourcePost from '@modules/techSource/repositories/IPostRepository';
 import TechChannelsBR from '@modules/techSource/infra/crosscutting/repositories/TechChannelsBR';
 import MeetUp from '@modules/techSource/infra/crosscutting/repositories/MeetUp';
@@ -53,6 +57,11 @@ Object.values(AvailableMagnetSources).map((source) =>
 Object.values(AvailableMagnetFakes).map((source) =>
   container.registerSingleton<IEngineRepository>('EngineFake', source)
 );
+
+//
+//
+//
+container.registerSingleton<IBrowserRepository>('Browser', Firefox);
 
 //
 //
