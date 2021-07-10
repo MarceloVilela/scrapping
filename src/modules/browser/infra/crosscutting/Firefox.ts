@@ -30,7 +30,6 @@ class Firefox implements IBrowserRepository {
       }
     });
     await page.goto(`${url}?${queryStringRest}`);
-    await page.waitForTimeout(1000);
 
     let urls = [];
 
