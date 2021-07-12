@@ -7,7 +7,8 @@ const endpointsFiles = [
   './src/modules/technews/infra/http/routes/posts.routes.ts',
   './src/modules/technewsSource/infra/http/routes/posts.routes.ts',
   './src/modules/techSource/infra/http/routes/tech.routes.ts',
-  './src/modules/magnetSource/infra/http/routes/magnet.routes.ts'
+  './src/modules/magnetSource/infra/http/routes/magnet.routes.ts',
+  './src/modules/browser/infra/http/routes/browser.routes.ts'
 ]
 
 const doc = {
@@ -175,6 +176,11 @@ const doc = {
       "engine_url": "https://comandotorrent.net",
       "desc_link": "https://comandotorrent.net/liga-da-justica-de-zack-snyder-torrent/"
     },
+    BrowserScreenshotUrls: [
+      "https://i.imgur.com/4BPDf8E.png",
+      "https://i.imgur.com/4E4UUUw.png",
+      "https://i.imgur.com/0Leb0GW.png"
+    ],
     AppInfo: {
       "appname": "SitePlaceholder"
     }

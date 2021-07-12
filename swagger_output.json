@@ -382,6 +382,40 @@
           }
         }
       }
+    },
+    "/v1/browser/screenshot": {
+      "get": {
+        "tags": [
+          "Browser"
+        ],
+        "summary": "Get urls to page screenshot",
+        "description": "",
+        "parameters": [
+          {
+            "name": "browserUrl",
+            "in": "query",
+            "description": "url of page",
+            "type": "string",
+            "default": "https://www.youtube.com/"
+          },
+          {
+            "name": "browserPosY",
+            "in": "query",
+            "description": "position of scroll on page (allows comma-separated numbers)",
+            "type": "string",
+            "default": "0",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/BrowserScreenshotUrls"
+            },
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -775,6 +809,17 @@
           "type": "string",
           "example": "https://comandotorrent.net/liga-da-justica-de-zack-snyder-torrent/"
         }
+      }
+    },
+    "BrowserScreenshotUrls": {
+      "type": "array",
+      "example": [
+        "https://i.imgur.com/4BPDf8E.png",
+        "https://i.imgur.com/4E4UUUw.png",
+        "https://i.imgur.com/0Leb0GW.png"
+      ],
+      "items": {
+        "type": "string"
       }
     },
     "AppInfo": {
